@@ -1,8 +1,8 @@
 ---
-published: false
+published: true
 title: Iniciando com Angular 2
 layout: post
-tags: [angular2, ng2, typescript, webcomponent]
+tags: [angular2, ng2, typescript, webcomponent, ecmascript6]
 categories: [Angular2]
 permalink: iniciando-com-angular2
 ---
