@@ -1,7 +1,10 @@
 ---
-published: true
+published: false
 title: Iniciando com Angular 2
 layout: post
+tags: [angular2, ng2, typescript, webcomponent]
+categories: [Angular2]
+permalink: iniciando-com-angular2
 ---
 ![Iniciando com Angular 2](/public/image/01-iniciando-com-angular2.png)
 
