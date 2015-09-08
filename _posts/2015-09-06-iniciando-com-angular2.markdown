@@ -12,54 +12,68 @@ Vamos começar com um rápido tutorial de Angular 2, de início uma breve observ
 
 O TypeScript possue um gerenciador de pacotes próprio o TSD vamos instalar com o npm para termos acesso a algumas ferramentas e tambem vamos instalar seu compilador
 
-    npm install tsd -g
-    npm install typescript -g
+{% highlight ruby %}
+npm install tsd -g
+npm install typescript -g
+{% endhighlight %}
 
 Com o TSD instalado acesse a pasta do seu futuro projeto, e baixe os seguintes repositórios
 
-    tsd install angular2 es6-promise rx rx-lite
+{% highlight ruby %}
+tsd install angular2 es6-promise rx rx-lite
+{% endhighlight %}
 
 Para facilitar o desenvolvimento do projeto utilize o editor de código [vscode](https://www.visualstudio.com/en-us/products/code-vs.aspx), o vscode reconheçe a sintaxe do TypeScript ou instale alguns plugins em seu Sublime ou no Atom, vai do editor que você usa por default nos seus projetos.
 
 Na pasta do projeto crie o arquivo main.ts e adicione uma espécie de comentário que ira instruir a compilação do TypeScript.
 
-    /// <reference path="typings/angular2/angular2.d.ts" />
+{% highlight javascript %}
+/// <reference path="typings/angular2/angular2.d.ts" />
+{% endhighlight %}
 
 Agora podemos importar alguns dependências para nosso componente Angular 2
 
-    import {Component, View, bootstrap} from 'angular2/angular2';
+{% highlight javascript %}
+import {Component, View, bootstrap} from 'angular2/angular2';
+{% endhighlight %}
 
 Agora algumas annotations que definira algumas instruções para nosso primeiro componente e a class do nosso componente.
 
-    @Component({
-        selector: 'meu-componente'
-    })
-    @View({
-        template: '<h1>Meu Primeiro Componente<h1>'
-    })
-    class MeuComponente {}
+{% highlight javascript %}
+@Component({
+    selector: 'meu-componente'
+})
+@View({
+    template: '<h1>Meu Primeiro Componente<h1>'
+})
+class MeuComponente {}
 
-    bootstrap(MeuComponente);
+bootstrap(MeuComponente);
+{% endhighlight %}
 
 Vamos para nosso index.html
 
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Iniciando com Angular 2</title>
-            <script src="https://github.jspm.io/jmcriffey/bower-traceur-runtime@0.0.91/traceur-runtime.js"></script>
-            <script src="https://jspm.io/system@0.16.js"></script>
-            <script src="https://code.angularjs.org/2.0.0-alpha.36/angular2.dev.js"></script>
-        </head>
-        <body>
-            <meu-componente></meu-componente>
-            <script>System.import('main');</script>
-        </body>
-    </html>
+{% highlight html %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Iniciando com Angular 2</title>
+        <script src="https://github.jspm.io/jmcriffey/bower-traceur-runtime@0.0.91/traceur-runtime.js"></script>
+        <script src="https://jspm.io/system@0.16.js"></script>
+        <script src="https://code.angularjs.org/2.0.0-alpha.36/angular2.dev.js"></script>
+    </head>
+    <body>
+        <meu-componente></meu-componente>
+        <script>System.import('main');</script>
+    </body>
+</html>
+{% endhighlight %}
 
 Basta rodar o compilador agora pra criar seu arquivo JS, o comando a seguir criará um arquivo js compatível com os atuais navegadores.
 
-    tsc -m commonjs -t es5 --emitDecoratorMetadata main.ts
+{% highlight ruby %}
+tsc -m commonjs -t es5 --emitDecoratorMetadata main.ts
+{% endhighlight %}
 
 Agora só visualizar o resultado
 

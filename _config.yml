@@ -1,8 +1,10 @@
 excerpt_separator: ""
-pygments: true
 markdown: kramdown
 url: http://jhonmike.github.io
 title: Jhon Mike
 tagline: blog, angular2, zend2, javascript, php, doctrine2
 description:
 paginate: 5
+highlighter: pygments
+github_username: jhonmike
+email: developer@jhonmike.com.br
