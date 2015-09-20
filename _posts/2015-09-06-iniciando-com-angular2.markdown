@@ -6,7 +6,7 @@ tags: [angular2, ng2, typescript, webcomponent, ecmascript6]
 categories: [Angular2]
 permalink: iniciando-com-angular2
 ---
-![Iniciando com Angular 2](/public/image/01-iniciando-com-angular2.png)
+![Iniciando com Angular 2](/public/image/angular2.png)
 
 Vamos começar com um rápido tutorial de Angular 2, de início uma breve observação, vamos utilizar o TypeScript da Microsoft, resumidamente TypeScript é uma linguagem para desenvolvimento em JavaScript, ela possibilita escrevermos código EcmaScript6 que não é totalmente compatível com os navegadores atuais, e por fim ela compila todo nosso código em JavaScript "Compatível" e como a sintaxe do Angular 2 fica muito mais elegante e tipada com EcmaScript 6 vamos utiliza-lo em nosso tutorial.
 

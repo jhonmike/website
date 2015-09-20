@@ -6,7 +6,7 @@ tags: [nodejs 4.0, iojs, linux, ubuntu, ecmascript6]
 categories: [NodeJs]
 permalink: instalando-nodejs-4
 ---
-![Instalando NodeJS 4](/public/image/02-instalando-nodejs4.png)
+![Instalando NodeJS 4](/public/image/nodejs4.png)
 Lançado hoje à tarde a versão mais recente do NodeJS, a versão 4.0, para os desinformados que estavam apenas acompanhando o node em sua versão 0.12 pesquisem sobre "iojs" que vão entender bem o que aconteceu e porque o NodeJS deu este salto de versão que foi, na minha opnião, uma das melhores conquistas da comunidade Node. Vamos iniciar a instalação.
 
 * Baixe o NodeJS 4.0 do site oficial, [https://nodejs.org/](https://nodejs.org)
