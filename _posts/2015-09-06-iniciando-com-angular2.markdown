@@ -77,6 +77,6 @@ tsc -m commonjs -t es5 --emitDecoratorMetadata main.ts
 
 Agora só visualizar o resultado
 
-[Source no GITHUB](https://github.com/jhonmike/blog-iniciando-com-angular2)
+[Source no GITHUB](https://github.com/jhonmike/blog-posts-example/tree/master/01-iniciando-com-angular2)
 
 [Dúvidas e comentários em issues do blog](https://github.com/jhonmike/jhonmike.github.io/issues)
