@@ -227,3 +227,15 @@ gulp.task('clean', function (done) {
 	del(['dist'], done);
 });
 {% endhighlight %}
+
+Execute o gulp
+
+{% highlight ruby %}
+gulp
+{% endhighlight %}
+
+Agora só visualizar o resultado
+
+[Source no GITHUB](https://github.com/jhonmike/blog-posts-example/tree/master/02-angular2-router)
+
+[Dúvidas e comentários em issues do blog](https://github.com/jhonmike/jhonmike.github.io/issues)
