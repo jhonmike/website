@@ -12,34 +12,34 @@ Vamos começar com um rápido tutorial de Angular 2, de início uma breve observ
 
 O TypeScript possue um gerenciador de pacotes próprio o TSD vamos instalar com o npm para termos acesso a algumas ferramentas e tambem vamos instalar seu compilador
 
-{% highlight ruby %}
+```shell
 npm install tsd -g
 npm install typescript -g
-{% endhighlight %}
+```
 
 Com o TSD instalado acesse a pasta do seu futuro projeto, e baixe os seguintes repositórios
 
-{% highlight ruby %}
+```shell
 tsd install angular2 es6-promise rx rx-lite
-{% endhighlight %}
+```
 
 Para facilitar o desenvolvimento do projeto utilize o editor de código [vscode](https://www.visualstudio.com/en-us/products/code-vs.aspx), o vscode reconheçe a sintaxe do TypeScript ou instale alguns plugins em seu Sublime ou no Atom, vai do editor que você usa por default nos seus projetos.
 
 Na pasta do projeto crie o arquivo main.ts e adicione uma espécie de comentário que ira instruir a compilação do TypeScript.
 
-{% highlight javascript %}
+```javascript
 /// <reference path="typings/angular2/angular2.d.ts" />
-{% endhighlight %}
+```
 
 Agora podemos importar alguns dependências para nosso componente Angular 2
 
-{% highlight javascript %}
+```javascript
 import {Component, View, bootstrap} from 'angular2/angular2';
-{% endhighlight %}
+```
 
 Agora algumas annotations que definira algumas instruções para nosso primeiro componente e a class do nosso componente.
 
-{% highlight javascript %}
+```javascript
 @Component({
     selector: 'meu-componente'
 })
@@ -49,11 +49,11 @@ Agora algumas annotations que definira algumas instruções para nosso primeiro 
 class MeuComponente {}
 
 bootstrap(MeuComponente);
-{% endhighlight %}
+```
 
 Vamos para nosso index.html
 
-{% highlight html %}
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -67,13 +67,13 @@ Vamos para nosso index.html
         <script>System.import('main');</script>
     </body>
 </html>
-{% endhighlight %}
+```
 
 Basta rodar o compilador agora pra criar seu arquivo JS, o comando a seguir criará um arquivo js compatível com os atuais navegadores.
 
-{% highlight ruby %}
+```shell
 tsc -m commonjs -t es5 --emitDecoratorMetadata main.ts
-{% endhighlight %}
+```
 
 Agora só visualizar o resultado
 
