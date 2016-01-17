@@ -1,37 +1,10 @@
----
-layout: default
-title: Home
----
-
-<div class="posts">
-    {% for post in paginator.posts %}
-        <div class="post">
-            <h1 class="post-title">
-                <a href="{{ post.url }}">
-                    {{ post.title }}
-                </a>
-            </h1>
-
-            <span class="post-date">{{ post.date | date_to_string }}</span>
-
-            {{ post.content }}
-        </div>
-    {% endfor %}
-</div>
-
-<div class="pagination">
-    {% if paginator.next_page %}
-        <a class="pagination-item older" href="/page{{paginator.next_page}}">Post mais antigos</a>
-    {% else %}
-        <span class="pagination-item older">Post mais antigos</span>
-    {% endif %}
-    {% if paginator.previous_page %}
-        {% if paginator.page == 2 %}
-            <a class="pagination-item newer" href="/">Post mais novos</a>
-        {% else %}
-            <a class="pagination-item newer" href="/page{{paginator.previous_page}}">Post mais novos</a>
-        {% endif %}
-    {% else %}
-        <span class="pagination-item newer">Post mais novos</span>
-    {% endif %}
-</div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Jhon Mike Soares</title>
+</head>
+<body>
+    <a href="https://github.com/jhonmike">https://github.com/jhonmike</a>
+</body>
+</html>
