@@ -11,9 +11,9 @@ author:
   googleplus: https://plus.google.com/108374101422119170685
   github: jhonmike
   twitter: DevJhonMike
-  # disqus: your_disqus_forum_shortname
+  disqus: jhonmike14
 
-# google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: 'UA-66932751-3'
 
 # Syntax highlighting
 highlightstyle: ''
