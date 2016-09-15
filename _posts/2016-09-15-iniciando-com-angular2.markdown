@@ -52,7 +52,7 @@ Sem mais delongas, começamos pelo `package.json`
 }
 {% endhighlight %}
 alguns scripts para facilitar a vida, um servidor node, typescript o transpile que o angular2 utiliza por padrao, e suas libs, um bootstrap v3 ainda só pra dar uma cara pro projeto no futuro, bom podemos executar as instalações do NPM
-{% highlight shell %}
+{% highlight bash %}
 npm install -g typescript
 npm install //dentro da pasta do projeto com o arquivo package.json
 {% endhighlight %}
@@ -202,7 +202,7 @@ export class AppComponent { }
 
 bom esta feito, vamos iniciar nossa aplicação com o seguinte comando!
 
-{% highlight shell %}
+{% highlight bash %}
 npm start
 {% endhighlight %}
 vai abrir a tela do navegador com nosso Hello World em NG2! bom acho que proximo post poderemos criar mais componentes e usar o angular-router3 a sim angular3 hahaha! deixe sua sujestão nos comentarios e até a proxima!
