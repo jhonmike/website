@@ -1,10 +1,12 @@
 ---
 layout: post
 title:  "Iniciando com Angular2"
-subtitle: ""
+subtitle: "part01 - Estrutura do Projeto"
 date:   2016-09-15 01:47:01
 categories: [javascript]
 ---
+![Iniciando com Angular2](/assets/img/iniciando-com-angular2.png)
+
 Finalmente saiu a versão estavel do Angular2 a 2.0.0, boatos aparte talvez pra um futuro post, e vamos lá!
 
 Quero demostrar neste post apenas como estou trabalhando com o Angular2, talvez não seja o melhor padrão ou o mais completo, mas pra mim esta fazendo sentido aos poucos estou melhorando, e sempre que possivel vou postar novidades sobre como esta o projeto!
@@ -67,7 +69,6 @@ npm install //dentro da pasta do projeto com o arquivo package.json
         <title>Jhon Mike - Default Angular2</title>
         <link rel="icon" href="assets/img/favicon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <base href="/">
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
         <!-- 1. Load libraries -->
         <!-- Polyfill(s) for older browsers -->
@@ -198,6 +199,21 @@ import {Component} from '@angular/core';
     template: `Hello World!`
 })
 export class AppComponent { }
+{% endhighlight %}
+
+obs.: Sua estrutura de pasta deve ser..
+{% highlight %}
+-node_modules
+-src
+    -app.component.ts
+    -app.module.ts
+    -main.ts
+-typings
+-index.html
+-package.json
+-systemjs.config.js
+-tsconfig.json
+-typings.json
 {% endhighlight %}
 
 bom esta feito, vamos iniciar nossa aplicação com o seguinte comando!
