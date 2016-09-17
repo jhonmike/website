@@ -14,7 +14,7 @@ Quero demonstrar neste post apenas como estou trabalhando com o Angular2, talvez
 Obs.: não estou usando o `angular-cli`, ele não estava atualizando juntamente com as releases e na minha opinião estava trazendo muito lixo para o projeto, eu sei que tudo que tem lá é muito útil, mas eu gosto mais de elaborar o padrão do zero, com o mínimo de dependências dentro do possível e aos poucos ir crescendo o projeto e meu conhecimento dentro da ferramenta!
 
 Sem mais delongas, começamos pelo `package.json`
-{% highlight javascript %}
+```javascript
 {
   "name": "jm-default",
   "version": "1.0.0",
@@ -52,16 +52,16 @@ Sem mais delongas, começamos pelo `package.json`
     "typings":"^1.3.2"
   }
 }
-{% endhighlight %}
+```
 
 alguns scripts para facilitar a vida, um servidor node, typescript o transpile que o angular2 utiliza por padrão, e suas libs, um bootstrap v3 ainda só pra dar uma cara pro projeto no futuro, bom podemos executar as instalações do NPM
-{% highlight bash %}
+```bash
 npm install -g typescript
 npm install //dentro da pasta do projeto com o arquivo package.json
-{% endhighlight %}
+```
 
 `index.html`
-{% highlight html %}
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -90,11 +90,11 @@ npm install //dentro da pasta do projeto com o arquivo package.json
         </my-app>
     </body>
 </html>
-{% endhighlight %}
+```
 bom o `index.html` não tem segredo apenas vamos prestar atenção no System.import que o próximo arquivo o `systemjs.config.js` vai explicar melhor o que ele faz.
 
 `systemjs.config.js`
-{% highlight javascript %}
+```javascript
 (function(global) {
     System.config({
         paths: {
@@ -124,11 +124,11 @@ bom o `index.html` não tem segredo apenas vamos prestar atenção no System.imp
         }
     });
 })(this);
-{% endhighlight %}
+```
 bom este arquivo é o nosso "autoload" vamos dizer que ele vai criar alguns alias aos modules npm facilitando o autoload dos mesmos na aplicação e também não tem muito segredo basta ler com atenção que vai conseguir entender, o registro dos modules utilizados!
 
 `typings.json`
-{% highlight javascript %}
+```javascript
 {
     "globalDependencies": {
         "core-js": "registry:dt/core-js#0.0.0+20160602141332",
@@ -136,12 +136,12 @@ bom este arquivo é o nosso "autoload" vamos dizer que ele vai criar alguns alia
         "node": "registry:dt/node#6.0.0+20160807145350"
     }
 }
-{% endhighlight %}
+```
 
 e pra finalizar a parte de configurações vamos utilizar o `tsconfig.json` que vai trazer as configurações da compilação que o typescript vai executar
 
 `tsconfig.json`
-{% highlight javascript %}
+```javascript
 {
     "compilerOptions": {
         "target": "es5",
@@ -157,7 +157,7 @@ e pra finalizar a parte de configurações vamos utilizar o `tsconfig.json` que 
         "node_modules"
     ]
 }
-{% endhighlight %}
+```
 
 Agora a partir daqui iniciaremos a criação do module angular e os componentes iniciais
 
@@ -166,7 +166,7 @@ crie a pasta `src` dentro do seu projeto se preferir usar o padrão use `app` ma
 dentro da pasta `src` vamos criar algumas arquivos como o `main.ts` definido no arquivo `systemjs.config.js` como o main do app em questão, vamos criar também o arquivo `app.module.ts` e o arquivo do nosso primeiro componente ou container do ng2 o `app.component.ts`...
 
 `src/main.ts`
-{% highlight javascript %}
+```javascript
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {enableProdMode} from '@angular/core';
 
@@ -174,10 +174,10 @@ import {AppModule} from './app.module';
 
 const platform = platformBrowserDynamic();
 platform.bootstrapModule(AppModule);
-{% endhighlight %}
+```
 
 `src/app.module.ts`
-{% highlight javascript %}
+```javascript
 import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent}  from './app.component';
@@ -189,10 +189,10 @@ import {AppComponent}  from './app.component';
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }
-{% endhighlight %}
+```
 
 `src/app.component.ts`
-{% highlight javascript %}
+```javascript
 import {Component} from '@angular/core';
 
 @Component({
@@ -200,26 +200,26 @@ import {Component} from '@angular/core';
     template: `Hello World!`
 })
 export class AppComponent { }
-{% endhighlight %}
+```
 
 obs.: Sua estrutura de pasta deve ser..
 ```
--node_modules
--src
-    -app.component.ts
-    -app.module.ts
-    -main.ts
--typings
--index.html
--package.json
--systemjs.config.js
--tsconfig.json
--typings.json
+| -node_modules
+| -src
+|  | -app.component.ts
+|  | -app.module.ts
+|  | -main.ts
+| -typings
+| -index.html
+| -package.json
+| -systemjs.config.js
+| -tsconfig.json
+| -typings.json
 ```
 
 bom está feito, vamos iniciar nossa aplicação com o seguinte comando:
 
-{% highlight bash %}
+```bash
 npm start
-{% endhighlight %}
+```
 vai abrir a tela do navegador com nosso Hello World em NG2! bom acho que próximo post poderemos criar mais componentes e usar o angular-router3 ah! sim angular3 hahaha! deixe sua sugestão nos comentários e até a próxima!
