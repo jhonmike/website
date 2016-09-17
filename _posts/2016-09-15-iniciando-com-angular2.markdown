@@ -13,7 +13,7 @@ Quero demonstrar neste post apenas como estou trabalhando com o Angular2, talvez
 
 Obs.: não estou usando o `angular-cli`, ele não estava atualizando juntamente com as releases e na minha opinião estava trazendo muito lixo para o projeto, eu sei que tudo que tem lá é muito útil, mas eu gosto mais de elaborar o padrão do zero, com o mínimo de dependências dentro do possível e aos poucos ir crescendo o projeto e meu conhecimento dentro da ferramenta!
 
-Sem mais delongas, começamos pelo `package.json`
+Sem mais delongas, começamos pelo package.json
 ```javascript
 {
   "name": "jm-default",
@@ -60,7 +60,7 @@ npm install -g typescript
 npm install //dentro da pasta do projeto com o arquivo package.json
 ```
 
-`index.html`
+index.html
 ```html
 <!DOCTYPE html>
 <html>
@@ -93,7 +93,7 @@ npm install //dentro da pasta do projeto com o arquivo package.json
 ```
 bom o `index.html` não tem segredo apenas vamos prestar atenção no System.import que o próximo arquivo o `systemjs.config.js` vai explicar melhor o que ele faz.
 
-`systemjs.config.js`
+systemjs.config.js
 ```javascript
 (function(global) {
     System.config({
@@ -127,7 +127,7 @@ bom o `index.html` não tem segredo apenas vamos prestar atenção no System.imp
 ```
 bom este arquivo é o nosso "autoload" vamos dizer que ele vai criar alguns alias aos modules npm facilitando o autoload dos mesmos na aplicação e também não tem muito segredo basta ler com atenção que vai conseguir entender, o registro dos modules utilizados!
 
-`typings.json`
+typings.json
 ```javascript
 {
     "globalDependencies": {
@@ -140,7 +140,7 @@ bom este arquivo é o nosso "autoload" vamos dizer que ele vai criar alguns alia
 
 e pra finalizar a parte de configurações vamos utilizar o `tsconfig.json` que vai trazer as configurações da compilação que o typescript vai executar
 
-`tsconfig.json`
+tsconfig.json
 ```javascript
 {
     "compilerOptions": {
@@ -165,7 +165,7 @@ crie a pasta `src` dentro do seu projeto se preferir usar o padrão use `app` ma
 
 dentro da pasta `src` vamos criar algumas arquivos como o `main.ts` definido no arquivo `systemjs.config.js` como o main do app em questão, vamos criar também o arquivo `app.module.ts` e o arquivo do nosso primeiro componente ou container do ng2 o `app.component.ts`...
 
-`src/main.ts`
+src/main.ts
 ```javascript
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {enableProdMode} from '@angular/core';
@@ -176,7 +176,7 @@ const platform = platformBrowserDynamic();
 platform.bootstrapModule(AppModule);
 ```
 
-`src/app.module.ts`
+src/app.module.ts
 ```javascript
 import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
@@ -191,7 +191,7 @@ import {AppComponent}  from './app.component';
 export class AppModule { }
 ```
 
-`src/app.component.ts`
+src/app.component.ts
 ```javascript
 import {Component} from '@angular/core';
 
