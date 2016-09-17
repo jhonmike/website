@@ -53,6 +53,7 @@ Sem mais delongas, começamos pelo `package.json`
   }
 }
 {% endhighlight %}
+
 alguns scripts para facilitar a vida, um servidor node, typescript o transpile que o angular2 utiliza por padrão, e suas libs, um bootstrap v3 ainda só pra dar uma cara pro projeto no futuro, bom podemos executar as instalações do NPM
 {% highlight bash %}
 npm install -g typescript
@@ -202,7 +203,7 @@ export class AppComponent { }
 {% endhighlight %}
 
 obs.: Sua estrutura de pasta deve ser..
-{% highlight %}
+```
 -node_modules
 -src
     -app.component.ts
@@ -214,7 +215,7 @@ obs.: Sua estrutura de pasta deve ser..
 -systemjs.config.js
 -tsconfig.json
 -typings.json
-{% endhighlight %}
+```
 
 bom está feito, vamos iniciar nossa aplicação com o seguinte comando:
 
