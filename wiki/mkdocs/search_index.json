@@ -1,0 +1,919 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome to my Wiki\n\n\nFor full documentation ...",
+            "title": "Home"
+        },
+        {
+            "location": "/#welcome-to-my-wiki",
+            "text": "For full documentation ...",
+            "title": "Welcome to my Wiki"
+        },
+        {
+            "location": "/apache/",
+            "text": "Virtual Host Example\n\n\n<VirtualHost *:80>\n    ServerName jhonmike.com.br\n    ServerAlias www.jhonmike.com.br\n\n    ServerAdmin developer@jhonmike.com.br\n    DocumentRoot /var/www/jhonmike/public\n    <Directory /var/www/jhonmike/public>\n        Options Indexes FollowSymLinks MultiViews\n        AllowOverride All\n        Order allow,deny\n        allow from all\n    </Directory>\n\n    ErrorLog ${APACHE_LOG_DIR}/error.log\n    CustomLog ${APACHE_LOG_DIR}/access.log combined\n</VirtualHost>\n\n\n\n\n\nAtivando Virtual Host\n\n\na2ensite /etc/apache2/sites-available/jhonmike.com.br.conf\n\n\n\n\nModRewrite\n\n\nPara habilitar o m\u00f3dulo no Apache basta esta linha:\n\n\na2enmod rewrite\n\n\n\n\nAgora abra o arquivo de configura\u00e7\u00e3o:\n\n\nvim  /etc/apache2/sites-available/default\n\n\n\n\nProcure no seu arquivo a entrada \"AllowOverride None\"\nAltere esse valor para \"AllowOverride All\" .\nSalve o arquivo e reinicie o Apache.\n\n\n/etc/init.d/apache2 restart\nor\nservice apache2 restart",
+            "title": "Apache"
+        },
+        {
+            "location": "/apache/#virtual-host-example",
+            "text": "<VirtualHost *:80>\n    ServerName jhonmike.com.br\n    ServerAlias www.jhonmike.com.br\n\n    ServerAdmin developer@jhonmike.com.br\n    DocumentRoot /var/www/jhonmike/public\n    <Directory /var/www/jhonmike/public>\n        Options Indexes FollowSymLinks MultiViews\n        AllowOverride All\n        Order allow,deny\n        allow from all\n    </Directory>\n\n    ErrorLog ${APACHE_LOG_DIR}/error.log\n    CustomLog ${APACHE_LOG_DIR}/access.log combined\n</VirtualHost>",
+            "title": "Virtual Host Example"
+        },
+        {
+            "location": "/apache/#ativando-virtual-host",
+            "text": "a2ensite /etc/apache2/sites-available/jhonmike.com.br.conf",
+            "title": "Ativando Virtual Host"
+        },
+        {
+            "location": "/apache/#modrewrite",
+            "text": "Para habilitar o m\u00f3dulo no Apache basta esta linha:  a2enmod rewrite  Agora abra o arquivo de configura\u00e7\u00e3o:  vim  /etc/apache2/sites-available/default  Procure no seu arquivo a entrada \"AllowOverride None\"\nAltere esse valor para \"AllowOverride All\" .\nSalve o arquivo e reinicie o Apache.  /etc/init.d/apache2 restart\nor\nservice apache2 restart",
+            "title": "ModRewrite"
+        },
+        {
+            "location": "/go/",
+            "text": "Go Lang\n\n\nCheck that Go is installed correctly by building a simple program, as follows:\n\n\nhello.go\n\npackage main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Arch!\")\n}\n\n\n\n\nThen run it with the go tool:\n\n\n$ go run hello.go\n\nHello, Arch!\n\n\n\n\nCompilation with standard gc compiler (same as go build -compiler=gc hello.go):\n\n\n$ go build hello.go\n$ ./hello\n\nHello, Arch!\n\n\n\n\nSimple Api GO\n\n\npackage main\n\nimport (\n    \"fmt\"\n    \"html\"\n    \"log\"\n    \"net/http\"\n)\n\nfunc main() {\n    http.HandleFunc(\"/\", func(w http.ResponseWriter, r *http.Request) {\n        fmt.Fprintf(w, \"Hello, %q\", html.EscapeString(r.URL.Path))\n    })\n\n    log.Fatal(http.ListenAndServe(\":8080\", nil))\n}",
+            "title": "Go"
+        },
+        {
+            "location": "/go/#go-lang",
+            "text": "Check that Go is installed correctly by building a simple program, as follows:  hello.go\n\npackage main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Arch!\")\n}  Then run it with the go tool:  $ go run hello.go\n\nHello, Arch!  Compilation with standard gc compiler (same as go build -compiler=gc hello.go):  $ go build hello.go\n$ ./hello\n\nHello, Arch!",
+            "title": "Go Lang"
+        },
+        {
+            "location": "/go/#simple-api-go",
+            "text": "package main\n\nimport (\n    \"fmt\"\n    \"html\"\n    \"log\"\n    \"net/http\"\n)\n\nfunc main() {\n    http.HandleFunc(\"/\", func(w http.ResponseWriter, r *http.Request) {\n        fmt.Fprintf(w, \"Hello, %q\", html.EscapeString(r.URL.Path))\n    })\n\n    log.Fatal(http.ListenAndServe(\":8080\", nil))\n}",
+            "title": "Simple Api GO"
+        },
+        {
+            "location": "/ingles/",
+            "text": "",
+            "title": "Ingles"
+        },
+        {
+            "location": "/mkdocs/",
+            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.\n\n\n\nmkdocs file\n\n\nsite_name: Jhon Mike Wiki\ntheme: readthedocs",
+            "title": "Mkdocs"
+        },
+        {
+            "location": "/mkdocs/#welcome-to-mkdocs",
+            "text": "For full documentation visit  mkdocs.org .",
+            "title": "Welcome to MkDocs"
+        },
+        {
+            "location": "/mkdocs/#commands",
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.",
+            "title": "Commands"
+        },
+        {
+            "location": "/mkdocs/#project-layout",
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
+            "title": "Project layout"
+        },
+        {
+            "location": "/mkdocs/#mkdocs-file",
+            "text": "site_name: Jhon Mike Wiki\ntheme: readthedocs",
+            "title": "mkdocs file"
+        },
+        {
+            "location": "/shell/",
+            "text": "Comando para dar redirect no shell e limpar mensagens\n\n\n[:command] &>/dev/null\n\n\n\n\nPython pipe\n\n\nWith Python 2.6+ you can just do:\n\n\necho '{\"foo\": \"lorem\", \"bar\": \"ipsum\"}' | python -m json.tool\n\n\nor, if the JSON is in a file, you can do:\n\n\npython -m json.tool my_json.json\n\n\nif the JSON is from an internet source such as an API, you can use\n\n\ncurl http://my_url/ | python -m json.tool\n\n\nfor convenience in all of these cases you can make an alias:\n\n\nalias prettyjson='python -m json.tool'",
+            "title": "Shell"
+        },
+        {
+            "location": "/shell/#comando-para-dar-redirect-no-shell-e-limpar-mensagens",
+            "text": "[:command] &>/dev/null",
+            "title": "Comando para dar redirect no shell e limpar mensagens"
+        },
+        {
+            "location": "/shell/#python-pipe",
+            "text": "With Python 2.6+ you can just do:  echo '{\"foo\": \"lorem\", \"bar\": \"ipsum\"}' | python -m json.tool  or, if the JSON is in a file, you can do:  python -m json.tool my_json.json  if the JSON is from an internet source such as an API, you can use  curl http://my_url/ | python -m json.tool  for convenience in all of these cases you can make an alias:  alias prettyjson='python -m json.tool'",
+            "title": "Python pipe"
+        },
+        {
+            "location": "/sql/",
+            "text": "INSERT\n\n\nINSERT INTO table_name VALUES (value1,value2,value3);\n\nOR\n\nINSERT INTO table_name (column1,column2,column3) VALUES (value1,value2,value3);\n\n\n\n\nUPDATE\n\n\nUPDATE table_name SET column1=value1,column2=value2 WHERE some_column=some_value;\n\n\n\n\nDELETE\n\n\nDELETE FROM table_name WHERE some_column=some_value;\n\n\n\n\nSELECT\n\n\nSELECT * FROM table_name WHERE some_column=some_value ORDER BY column_name ASC, column_name DESC;\n\n\n\n\nJOIN\n\n\nSELECT * FROM Orders INNER JOIN Customers ON Orders.customerId=Customers.id; \n\n\n\n\nCREATE TABLE\n\n\nCREATE TABLE table_name (\n    id INT AUTO_INCREMENT NOT NULL,\n    sequence INT(10) NOT NULL,\n    account_id INT DEFAULT NULL,\n    revenue_id INT DEFAULT NULL,\n    created DATETIME NOT NULL,\n    updated DATETIME DEFAULT NULL,\n    INDEX IDX_921775439B6B5FBA (account_id),\n    INDEX IDX_92177543224718EB (revenue_id),\n    PRIMARY KEY(id)\n);\n\n\n\n\nALTER TABLE\n\n\nALTER TABLE ApplicationClient ADD email_accountant varchar(100);\nALTER TABLE CoreZipCode MODIFY COLUMN zipCode varchar(8);\nALTER TABLE ApplicationClient CHANGE columnOldName columnNewName varchar(10);\n\n\n\n\nShow info table\n\n\nDESCRIBE ApplicationClient;",
+            "title": "Sql"
+        },
+        {
+            "location": "/sql/#insert",
+            "text": "INSERT INTO table_name VALUES (value1,value2,value3);\n\nOR\n\nINSERT INTO table_name (column1,column2,column3) VALUES (value1,value2,value3);",
+            "title": "INSERT"
+        },
+        {
+            "location": "/sql/#update",
+            "text": "UPDATE table_name SET column1=value1,column2=value2 WHERE some_column=some_value;",
+            "title": "UPDATE"
+        },
+        {
+            "location": "/sql/#delete",
+            "text": "DELETE FROM table_name WHERE some_column=some_value;",
+            "title": "DELETE"
+        },
+        {
+            "location": "/sql/#select",
+            "text": "SELECT * FROM table_name WHERE some_column=some_value ORDER BY column_name ASC, column_name DESC;",
+            "title": "SELECT"
+        },
+        {
+            "location": "/sql/#join",
+            "text": "SELECT * FROM Orders INNER JOIN Customers ON Orders.customerId=Customers.id;",
+            "title": "JOIN"
+        },
+        {
+            "location": "/sql/#create-table",
+            "text": "CREATE TABLE table_name (\n    id INT AUTO_INCREMENT NOT NULL,\n    sequence INT(10) NOT NULL,\n    account_id INT DEFAULT NULL,\n    revenue_id INT DEFAULT NULL,\n    created DATETIME NOT NULL,\n    updated DATETIME DEFAULT NULL,\n    INDEX IDX_921775439B6B5FBA (account_id),\n    INDEX IDX_92177543224718EB (revenue_id),\n    PRIMARY KEY(id)\n);",
+            "title": "CREATE TABLE"
+        },
+        {
+            "location": "/sql/#alter-table",
+            "text": "ALTER TABLE ApplicationClient ADD email_accountant varchar(100);\nALTER TABLE CoreZipCode MODIFY COLUMN zipCode varchar(8);\nALTER TABLE ApplicationClient CHANGE columnOldName columnNewName varchar(10);",
+            "title": "ALTER TABLE"
+        },
+        {
+            "location": "/sql/#show-info-table",
+            "text": "DESCRIBE ApplicationClient;",
+            "title": "Show info table"
+        },
+        {
+            "location": "/ecmascript/angular-2/",
+            "text": "",
+            "title": "Angular 2"
+        },
+        {
+            "location": "/editor/sublime-text/",
+            "text": "My Config Sublime\n\n\n{\n    \"color_scheme\": \"Packages/Color Scheme - Default/Monokai.tmTheme\",\n    \"draw_white_space\": \"all\",\n    \"ensure_newline_at_eof_on_save\": true,\n    \"font_size\": 9,\n    \"ignored_packages\":\n    [\n        \"Vintage\"\n    ],\n    \"theme\": \"Soda Dark 3.sublime-theme\",\n    \"translate_tabs_to_spaces\": true,\n    \"rulers\": [100, 120],\n    \"word_wrap\": true,\n    \"wrap_width\": 120\n}\n\n\n\n\nConfig Keys\n\n\n    { \"keys\": [\"alt+shift+up\"], \"command\": \"select_lines\", \"args\": {\"forward\": false} },\n    { \"keys\": [\"alt+shift+down\"], \"command\": \"select_lines\", \"args\": {\"forward\": true} }\n\n\n\n\nConfig Keys OpenBox\n\n\n    { \"keys\": [\"super+shift+up\"], \"command\": \"select_lines\", \"args\": {\"forward\": false} },\n    { \"keys\": [\"super+shift+down\"], \"command\": \"select_lines\", \"args\": {\"forward\": true} }",
+            "title": "Sublime text"
+        },
+        {
+            "location": "/editor/sublime-text/#my-config-sublime",
+            "text": "{\n    \"color_scheme\": \"Packages/Color Scheme - Default/Monokai.tmTheme\",\n    \"draw_white_space\": \"all\",\n    \"ensure_newline_at_eof_on_save\": true,\n    \"font_size\": 9,\n    \"ignored_packages\":\n    [\n        \"Vintage\"\n    ],\n    \"theme\": \"Soda Dark 3.sublime-theme\",\n    \"translate_tabs_to_spaces\": true,\n    \"rulers\": [100, 120],\n    \"word_wrap\": true,\n    \"wrap_width\": 120\n}",
+            "title": "My Config Sublime"
+        },
+        {
+            "location": "/editor/sublime-text/#config-keys",
+            "text": "{ \"keys\": [\"alt+shift+up\"], \"command\": \"select_lines\", \"args\": {\"forward\": false} },\n    { \"keys\": [\"alt+shift+down\"], \"command\": \"select_lines\", \"args\": {\"forward\": true} }",
+            "title": "Config Keys"
+        },
+        {
+            "location": "/editor/sublime-text/#config-keys-openbox",
+            "text": "{ \"keys\": [\"super+shift+up\"], \"command\": \"select_lines\", \"args\": {\"forward\": false} },\n    { \"keys\": [\"super+shift+down\"], \"command\": \"select_lines\", \"args\": {\"forward\": true} }",
+            "title": "Config Keys OpenBox"
+        },
+        {
+            "location": "/editor/vim/",
+            "text": "Vim Atalhos\n\n\nModo normal:\n\n\nNavega\u00e7\u00e3o com vim, hjkl.\nNavega\u00e7\u00e3o por palavras, w, e\nIndo pro vim, com $, pro come\u00e7o com 0 ou ^ ou _\nIndo pro come\u00e7o, fim: gg, G\nIndo pra linha: 5G\nIndo pra cima, meio, baixo (High, Middle, Low): H, M, L\nIndo pro primeiro caracter k: fk\nRepetindo: ;\nProcurando outras ocorr\u00eancias da palavra: *, depois n\nMeia p\u00e1gina pra baixo ou cima: CTRL-D, CTRL-U\nBatendo par\u00eantesis, chave ou colchete: %\nCombinando: 3w, 3ft\nEditando com modo normal: r, d, y, p, P, ~\nCombinando: 3yy, 2dd, 3w, 3p\nRepetindo: .\nUndo: u\nRedo: CTRL-R\n\n\nModo visual e bloco:\n\n\nEditando com modo visual: u, U, ~\nCombinando: 3yy, 2dd, 3w\n\n\nComandos:\n\n\n:w, :x, :wq, :q, :q!\n\n\nInsert Mode:\n\n\nEntrando em insert mode: i, a, A, c, o, O",
+            "title": "Vim"
+        },
+        {
+            "location": "/editor/vim/#vim-atalhos",
+            "text": "",
+            "title": "Vim Atalhos"
+        },
+        {
+            "location": "/editor/vim/#modo-normal",
+            "text": "Navega\u00e7\u00e3o com vim, hjkl.\nNavega\u00e7\u00e3o por palavras, w, e\nIndo pro vim, com $, pro come\u00e7o com 0 ou ^ ou _\nIndo pro come\u00e7o, fim: gg, G\nIndo pra linha: 5G\nIndo pra cima, meio, baixo (High, Middle, Low): H, M, L\nIndo pro primeiro caracter k: fk\nRepetindo: ;\nProcurando outras ocorr\u00eancias da palavra: *, depois n\nMeia p\u00e1gina pra baixo ou cima: CTRL-D, CTRL-U\nBatendo par\u00eantesis, chave ou colchete: %\nCombinando: 3w, 3ft\nEditando com modo normal: r, d, y, p, P, ~\nCombinando: 3yy, 2dd, 3w, 3p\nRepetindo: .\nUndo: u\nRedo: CTRL-R",
+            "title": "Modo normal:"
+        },
+        {
+            "location": "/editor/vim/#modo-visual-e-bloco",
+            "text": "Editando com modo visual: u, U, ~\nCombinando: 3yy, 2dd, 3w",
+            "title": "Modo visual e bloco:"
+        },
+        {
+            "location": "/editor/vim/#comandos",
+            "text": ":w, :x, :wq, :q, :q!",
+            "title": "Comandos:"
+        },
+        {
+            "location": "/editor/vim/#insert-mode",
+            "text": "Entrando em insert mode: i, a, A, c, o, O",
+            "title": "Insert Mode:"
+        },
+        {
+            "location": "/interfaces/i3wm/",
+            "text": "",
+            "title": "I3wm"
+        },
+        {
+            "location": "/interfaces/openbox/",
+            "text": "",
+            "title": "Openbox"
+        },
+        {
+            "location": "/linux/arch-instalacao/",
+            "text": "Definiremos o layout do nosso teclado:\n\n\nloadkeys br-abnt2\n\n\n\n\nVamos alterar o idioma da instala\u00e7\u00e3o:\n\n\nnano /etc/locale.gen\n\n\n\n\nAperte \u201cCtrl + W\u201d para abrir um campo de pesquisa, digite \u201cpt_BR\u201d e d\u00ea Enter. Estar\u00e1 na linha exata para altera\u00e7\u00e3o: #pt_BR.UTF-8 UTF-8.\n\n\nAgora remova somente o # da respectiva linha, d\u00ea um \u201cCtrl + O\u201d  e Enter para salvar e depois um \u201cCtrl + X\u201d para sair do arquivo.\n\n\nAp\u00f3s o procedimento de altera\u00e7\u00e3o:\n\n\nlocale-gen && export LANG=pt_BR.UTF-8\n\n\nPasso 5: Lembra quando reservamos o espa\u00e7o no HD com o Windows? Ent\u00e3o, vamos organiz\u00e1-lo agora!\n\n\ncfdisk\n\n\nListar\u00e1 todas as parti\u00e7\u00f5es do seu HD. Ficar\u00e1 em destaque o Espa\u00e7o livre que reservamos.\n\n\nNota: Use as setas cima e baixo para navegar nas parti\u00e7\u00f5es do cfdisk. Direita e esquerda para setar as op\u00e7\u00f5es.\n\n\nSelecione Espa\u00e7o Livre  e d\u00ea  Enter na op\u00e7\u00e3o Nova. Pedir\u00e1 a confirma\u00e7\u00e3o do tamanho da parti\u00e7\u00e3o, confirme sem alter\u00e1-la.  Surgir\u00e1 outra op\u00e7\u00e3o, entre prim\u00e1ria e estendida, selecione a segunda.\n\n\nIr\u00e1 transferir o Espa\u00e7o Livre, virando uma subparti\u00e7\u00e3o.  Como j\u00e1 citado, reservamos os 47GB e partindo disso, criaremos apenas nossa raiz  e a mem\u00f3ria swap.  D\u00ea um Enter novamente em Nova, agora altere o tamanho da parti\u00e7\u00e3o. Nesse exemplo, utilizaremos 43G para raiz e 4G para swap.\n\n\nRaiz:\n\n\nTamanho da parti\u00e7\u00e3o: 43G\n\n\nAinda com a parti\u00e7\u00e3o selecionada, v\u00e1 na op\u00e7\u00e3o  \u201cIniciali.\u201d e d\u00ea um Enter. Assim, essa parti\u00e7\u00e3o se tornar\u00e1  inicializ\u00e1vel.\n\n\nPor padr\u00e3o do cfdisk, todas as parti\u00e7\u00f5es criadas, tornam-se do tipo 83 Linux. Prosseguiremos sem altera\u00e7\u00f5es.\n\n\nSwap:\n\n\nTamanho da parti\u00e7\u00e3o: 4G\n\n\nNessa parti\u00e7\u00e3o, teremos que alterar a tipagem.  Selecione a op\u00e7\u00e3o Tipo  e escolha a op\u00e7\u00e3o  82 Linux swap / Solaris.\n\n\nAp\u00f3s isso, v\u00e1 na op\u00e7\u00e3o Gravar e confirme. Fa\u00e7a esse procedimento nas novas parti\u00e7\u00f5es criadas. \u00c9 recomend\u00e1vel a repeti\u00e7\u00e3o da a\u00e7\u00e3o \u201cGravar\u201d tamb\u00e9m nas particoes do Windows.\n\n\nPasso 6: Configuraremos a nossa conex\u00e3o com a internet para seguir com a instala\u00e7\u00e3o. Exemplificaremos a configura\u00e7\u00e3o do Wireless. Para conex\u00f5es cabeadas, recomendo a leitura  desse t\u00f3pico. Geralmente esse reconhecimento  \u00e9 autom\u00e1tico.\n\n\nProsseguindo, precisamos saber o nome da nossa interface Wireless:\n\n\niwconfig\n\n\nNo meu caso, a interfase \u00e9 wlp3s0.\n\n\nAp\u00f3s, digite:\n\n\nwifi-menu wlp3s0\n\n\nAgora vamos fazer o teste de conex\u00e3o:\n\n\nping -c3 google.com\n\n\nPronto! Linguagem, particionamento e conex\u00e3o configurados!\n\n\nPasso 7: Formatando as parti\u00e7\u00f5es do Arch Linux:\n\n\nProcure o Device da parti\u00e7\u00e3o do Linux e Swap, pois ser\u00e1 a refer\u00eancia para formata\u00e7\u00e3o, com o comando:\n\n\nfdisk -l\n\n\nAp\u00f3s, seguiremos com a formata\u00e7\u00e3o:\n\n\nMontando as parti\u00e7\u00f5es\n\n\n/\n\n\nEndere\u00e7o que consta no seu fdisk -l.\n\n\nmkfs.ext4 /dev/sda3\nmount /dev/sda3 /mnt\n\n\n\n\nSwap\n\n\nmkswap /dev/sda2\nswapon /dev/sda2\n\n\n\n\nUEFI\n\n\nmkfs.fat -F32 /dev/sda1\nmkdir /mnt/boot\nmkdir /mnt/boot/efi\nmount /dev/sda1 /mnt/boot/efi\n\n\n\n\nHome\n\n\nmkdir /mnt/home\nmount /dev/sda7 /mnt/home\n\n\n\n\nAgora configuraremos os reposit\u00f3rios do Arch Linux:\n\n\nnano /etc/pacman.d/mirrorlist\n\n\nPressione \u201cCtrl + W\u201d para pesquisarmos os reposit\u00f3rios. Digite BRAZIL e d\u00ea um Enter.\n\n\nRecorte e cole no topo da lista, as linhas com os endere\u00e7os dos servidores brasileiros com o \u201cCtrl+K\u201d e \u201cCtrl+U\u201d respectivamente.\n\n\nD\u00ea um  \u201cCtrl+O\u201d para salvar e \u201cCtrl+X\u201d para fechar o arquivo.\n\n\nNa figura 4, exemplifica esse processo.\n\n\naa\nFigura 4. Meu mirrrorlist. (P\u00f3s-instala\u00e7\u00e3o)\n\n\nDepois, instalaremos o sistema base:\n\n\npacstrap -i /mnt base base-devel\n\n\nFstab:\n\n\ngenfstab -U -p /mnt >> /mnt/etc/fstab\n\n\nPasso 8: Iremos configurar o sistema base na pasta /mnt com o chroot. E ajustaremos algumas coisas b\u00e1sicas do sistema.\n\n\narch-chroot /mnt /bin/bash\n\n\nIdioma do Arch Linux:\n\n\nnano /etc/locale.gen\n\n\nNota: O processo do arquivo locale.gen \u00e9 mesmo do in\u00edcio da instala\u00e7\u00e3o.\n\n\nCarregue a altera\u00e7\u00e3o do arquivo locale.gen, digite:\n\n\nlocale-gen\n\n\nEm seguida, execute:\n\n\necho LANG=pt_BR.UTF-8 > /etc/locale.conf\n\n\nexport LANG=pt_BR.UTF-8\n\n\nFuso Hor\u00e1rio:\n\n\nln -s /usr/share/zoneinfo/America/Boa_Vista /etc/localtime\n\n\nTroque Boa_Vista por sua cidade. Caso queira listar as localidades:\n\n\nls /usr/share/zoneinfo\n\n\nRel\u00f3gio do Hardware:\n\n\nhwclock --systohc --utc\n\n\nHostname:\n\n\necho ArchLinux > /etc/hostname\n\n\nTroque o nome ArchLinux por outro de sua prefer\u00eancia.\n\n\nInstala\u00e7\u00e3o das ferramentas Wireless no sistema base do Arch Linux:\n\n\npacman -S wireless_tools wpa_supplicant wpa_actiond dialog\n\n\nAmbiente inicial:\n\n\nmkinitcpio -p linux\n\n\nSenha do root:\n\n\npasswd\n\n\nInforme sua senha, confirme e d\u00ea um Enter.\n\n\nHabilitar multilib\n\n\nnano /etc/pacman.conf\n\n\nNo arquivo procure as linhas:\n\n\n[multilib]\n\n\nInclude = /etc/pacman.d/mirrorlist\n\n\nRetire o # de ambas.\n\n\nAp\u00f3s essas altera\u00e7\u00f5es, atualize o sistema:\n\n\npacman -Syu\n\n\nNesse guia, utilizaremos o Grub como o gerenciador de boot, ent\u00e3o:\n\n\npacman -S grub\n\n\nInstalando o Grub.\n\n\ngrub-install --target=i386-pc --recheck /dev/sda\n\n\nNota: Aten\u00e7\u00e3o! A parte /dev/sda n\u00e3o leva n\u00fameros.\n\n\nPara que o Grub reconhe\u00e7a o seu Windows, \u00e9 necess\u00e1rio a instala\u00e7\u00e3o do pacote os-prober, ent\u00e3o digite:\n\n\npacman -S os-prober\n\n\nFinalizar o Grub\n\n\ngrub-mkconfig -o /boot/grub/grub.cfg\n\n\nCriar usu\u00e1rio padr\u00e3o:\n\n\nuseradd -m -g users -G wheel -s /bin/bash seu-usuario\n\n\nSenha:\n\n\npasswd seu-usuario\n\n\nCaso queira excluir:\n\n\nuserdel -r seu-usuario\n\n\nAdicionar permiss\u00f5es do sistema ao usu\u00e1rio:\n\n\n# gpasswd -a seu-usuario locate\n # gpasswd -a seu-usuario users\n # gpasswd -a seu-usuario audio\n # gpasswd -a seu-usuario video\n # gpasswd -a seu-usuario daemon\n # gpasswd -a seu-usuario dbus\n # gpasswd -a seu-usuario disk\n # gpasswd -a seu-usuario games\n # gpasswd -a seu-usuario rfkill\n # gpasswd -a seu-usuario lp\n # gpasswd -a seu-usuario network\n # gpasswd -a seu-usuario optical\n # gpasswd -a seu-usuario power\n # gpasswd -a seu-usuario scanner\n # gpasswd -a seu-usuario storage\n\n\nInstala\u00e7\u00e3o das fontes para tornar o ambiente mais agrad\u00e1vel:\n\n\npacman -S $(pacman -Ss ttf | grep -v ^\u201d \u201d | awk \u2018{print $1}\u2019) && fc-cache\n\n\nInstala\u00e7\u00e3o do monitor para a bateria do notebook:\n\n\npacman -S acpi acpid\n\n\nAgora vamos criar uma inicializa\u00e7\u00e3o autom\u00e1tica do  acpid no  sistema:\n\n\nsystemctl enable acpid.service\n\n\nPasso 9: A partir daqui, iremos providenciar a instala\u00e7\u00e3o do Xorg e o Driver de v\u00eddeo Intel.\n\n\nXorg\n\n\npacman -S xorg-xinit xorg-utils xorg-server\n\n\nIntel\n\n\npacman -S xf86-video-intel mesa mesa-demos\n\n\nNVIDIA\n\n\nMostrar os controladores compat\u00edveis VGA:\n\n\nlspci | grep VGA\n\n\nInstala\u00e7\u00e3o dos drivers:\n\n\npacman -S intel-dri xf86-video-intel bumblebee nvidia\n\n\nInstala\u00e7\u00e3o do bbswitch:\n\n\npacman -S bbswitch\n\n\nInstala\u00e7\u00e3o das libs 32bits (Caso seu Arch seja da arquitetura 86_x64, configurar o multilib no arquivo /etc/pacman.conf) e demais pacotes:\n\n\npacman -S lib32-nvidia-utils\n\n\npacman -S lib32-intel-dri\n\n\npacman -S opencl-nvidia\n\n\npacman -S lib32-virtualgl\n\n\nAdicionar o nosso usu\u00e1rio ao grupo Bumblebee:\n\n\ngpasswd -a nomeDoUsuario bumblebee\n\n\nVerificar e ativar o servi\u00e7o do Bumblebee:\n\n\nsystemctl status bumblebeed\n\n\nsystemctl enable bumblebeed\n\n\nsystemctl start bumblebeed\n\n\nTestar elemento gr\u00e1fico do pacote opencl:\n\n\nglxspheres64\n\n\nTestar elemento gr\u00e1fico do pacote opencl utilizando a placa dedicada Nvidia:\n\n\noptirun glxspheres64\n\n\nDICA: Para testar se o bbswitch est\u00e1 ativo:\n\n\n$ cat /proc/acpi/bbswitch\n\n\nDICA DE EXECU\u00c7\u00c3O: Para executar alguma aplica\u00e7\u00e3o com o uso da placa gr\u00e1fica NVIDIA:\n\n\noptirun nomeAplicacao\n\n\nPasso 10: Nesse ponto, iremos providenciar os gerenciadores: touchpad, mouse e teclado, respectivamente.\n\n\npacman -S xf86-input-synaptics xf86-input-mouse xf86-input-keyboard\n\n\nConfigura\u00e7\u00e3o do sudo:\n\n\nAqui iremos acrescentar privil\u00e9gios para o usu\u00e1rio padr\u00e3o que criamos anteriormente. Demostraremos duas sugest\u00f5es:\n\n\nEntre com o nano para editar o arquivo /etc/sudoers:\n\n\nnano /etc/sudoers\n\n\nPressione \u201cCtrl+W\u201d digite: root ALL=(ALL) ALL e d\u00ea um Enter. Sem alter\u00e1-la, acrescente na linha de abaixo a regra de privil\u00e9gios que lhe convir:\n\n\nUsu\u00e1rio padr\u00e3o com todos os privil\u00e9gios do root:\n\n\n\nseu-usuario ALL=(ALL) ALL\n\n\nUsu\u00e1rio padr\u00e3o com privil\u00e9gio apenas para execu\u00e7\u00e3o do pacman:\n\n\n\nseu-usuario ALL=(ALL) NOPASSWD:/usr/bin/pacman\n\n\nD\u00ea um \u201cCtrl+O\u201d para salvar e \u201cCtrl+X\u201d para sair do arquivo.\n\n\nPasso 11: Agora iremos habilitar o yaourt para usarmos os pacotes do AUR. Iremos novamente ao diret\u00f3rio, usando o nano:\n\n\nnano /etc/pacman.conf\n\n\nNo final de todo arquivo, acrescente as tr\u00eas linhas abaixo:\n\n\n[archlinuxfr]\nSigLevel =  Never\nServer = http://repo.archlinux.fr/$arch\n\n\nSalve com o \u201cCtrl+O\u201d e feche com \u201cCtrl+X\u201d.\n\n\nAp\u00f3s acrescentarmos as linhas no arquivo pacman.conf, finalize com a instala\u00e7\u00e3o do Yaourt:\n\n\npacman -Sy yaourt\n\n\nPronto! Finalizamos a instala\u00e7\u00e3o e configura\u00e7\u00e3o b\u00e1sica do sistema.\n\n\nSaia do chroot:\n\n\nexit\n\n\nDesmonte tudo relacionado a pasta /mnt e reinicie o sistema:\n\n\numount -R /mnt && reboot\n\n\nPasso 12: A partir desse ponto, iremos trabalhar a instala\u00e7\u00e3o do ambiente gr\u00e1fico do sistema.\n\n\nPrimeiramente, fa\u00e7a o login com seu-usuario e em seguida como root, com o comando:\n\n\nsu\n\n\nEm seguida, conecte a sua rede para que possamos baixar os pacotes das interfaces pretendidas:\n\n\nTroque o wlp3s0 por sua interface\n\n\nwifi-menu wlp3s0\n\n\nInstall the i3 package group. It includes the window manager i3-wm, i3status which writes a status line to i3bar through stdout, and i3lock, a screen locker.\n\n\nAdditional packages are available in the Arch User Repository. See the section #Patches for examples.\nDisplay manager\n\n\ni3-wm includes i3.desktop as Xsession which starts the window manager. i3-with-shmlog.desktop enables logs (useful for debugging).\nxinitrc\n\n\nEdit Xinitrc, and add:\n\n\nexec i3\n\n\nTo log the output from i3, add this line instead:\n\n\nexec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1\n\n\nusaremos o gdm:\n\n\npacman -S gdm\n\n\nAtivar a inicializa\u00e7\u00e3o junto com o sistema:\n\n\nsystemctl enable gdm.service\n\n\nsystemctl start gdm.service",
+            "title": "Arch instalacao"
+        },
+        {
+            "location": "/linux/arch-instalacao/#definiremos-o-layout-do-nosso-teclado",
+            "text": "loadkeys br-abnt2",
+            "title": "Definiremos o layout do nosso teclado:"
+        },
+        {
+            "location": "/linux/arch-instalacao/#vamos-alterar-o-idioma-da-instalacao",
+            "text": "nano /etc/locale.gen  Aperte \u201cCtrl + W\u201d para abrir um campo de pesquisa, digite \u201cpt_BR\u201d e d\u00ea Enter. Estar\u00e1 na linha exata para altera\u00e7\u00e3o: #pt_BR.UTF-8 UTF-8.  Agora remova somente o # da respectiva linha, d\u00ea um \u201cCtrl + O\u201d  e Enter para salvar e depois um \u201cCtrl + X\u201d para sair do arquivo.  Ap\u00f3s o procedimento de altera\u00e7\u00e3o:",
+            "title": "Vamos alterar o idioma da instala\u00e7\u00e3o:"
+        },
+        {
+            "location": "/linux/arch-instalacao/#locale-gen-export-langpt_brutf-8",
+            "text": "Passo 5: Lembra quando reservamos o espa\u00e7o no HD com o Windows? Ent\u00e3o, vamos organiz\u00e1-lo agora!",
+            "title": "locale-gen &amp;&amp; export LANG=pt_BR.UTF-8"
+        },
+        {
+            "location": "/linux/arch-instalacao/#cfdisk",
+            "text": "Listar\u00e1 todas as parti\u00e7\u00f5es do seu HD. Ficar\u00e1 em destaque o Espa\u00e7o livre que reservamos.  Nota: Use as setas cima e baixo para navegar nas parti\u00e7\u00f5es do cfdisk. Direita e esquerda para setar as op\u00e7\u00f5es.  Selecione Espa\u00e7o Livre  e d\u00ea  Enter na op\u00e7\u00e3o Nova. Pedir\u00e1 a confirma\u00e7\u00e3o do tamanho da parti\u00e7\u00e3o, confirme sem alter\u00e1-la.  Surgir\u00e1 outra op\u00e7\u00e3o, entre prim\u00e1ria e estendida, selecione a segunda.  Ir\u00e1 transferir o Espa\u00e7o Livre, virando uma subparti\u00e7\u00e3o.  Como j\u00e1 citado, reservamos os 47GB e partindo disso, criaremos apenas nossa raiz  e a mem\u00f3ria swap.  D\u00ea um Enter novamente em Nova, agora altere o tamanho da parti\u00e7\u00e3o. Nesse exemplo, utilizaremos 43G para raiz e 4G para swap.  Raiz:  Tamanho da parti\u00e7\u00e3o: 43G  Ainda com a parti\u00e7\u00e3o selecionada, v\u00e1 na op\u00e7\u00e3o  \u201cIniciali.\u201d e d\u00ea um Enter. Assim, essa parti\u00e7\u00e3o se tornar\u00e1  inicializ\u00e1vel.  Por padr\u00e3o do cfdisk, todas as parti\u00e7\u00f5es criadas, tornam-se do tipo 83 Linux. Prosseguiremos sem altera\u00e7\u00f5es.  Swap:  Tamanho da parti\u00e7\u00e3o: 4G  Nessa parti\u00e7\u00e3o, teremos que alterar a tipagem.  Selecione a op\u00e7\u00e3o Tipo  e escolha a op\u00e7\u00e3o  82 Linux swap / Solaris.  Ap\u00f3s isso, v\u00e1 na op\u00e7\u00e3o Gravar e confirme. Fa\u00e7a esse procedimento nas novas parti\u00e7\u00f5es criadas. \u00c9 recomend\u00e1vel a repeti\u00e7\u00e3o da a\u00e7\u00e3o \u201cGravar\u201d tamb\u00e9m nas particoes do Windows.  Passo 6: Configuraremos a nossa conex\u00e3o com a internet para seguir com a instala\u00e7\u00e3o. Exemplificaremos a configura\u00e7\u00e3o do Wireless. Para conex\u00f5es cabeadas, recomendo a leitura  desse t\u00f3pico. Geralmente esse reconhecimento  \u00e9 autom\u00e1tico.  Prosseguindo, precisamos saber o nome da nossa interface Wireless:",
+            "title": "cfdisk"
+        },
+        {
+            "location": "/linux/arch-instalacao/#iwconfig",
+            "text": "No meu caso, a interfase \u00e9 wlp3s0.  Ap\u00f3s, digite:",
+            "title": "iwconfig"
+        },
+        {
+            "location": "/linux/arch-instalacao/#wifi-menu-wlp3s0",
+            "text": "Agora vamos fazer o teste de conex\u00e3o:",
+            "title": "wifi-menu wlp3s0"
+        },
+        {
+            "location": "/linux/arch-instalacao/#ping-c3-googlecom",
+            "text": "Pronto! Linguagem, particionamento e conex\u00e3o configurados!  Passo 7: Formatando as parti\u00e7\u00f5es do Arch Linux:  Procure o Device da parti\u00e7\u00e3o do Linux e Swap, pois ser\u00e1 a refer\u00eancia para formata\u00e7\u00e3o, com o comando:",
+            "title": "ping -c3 google.com"
+        },
+        {
+            "location": "/linux/arch-instalacao/#fdisk-l",
+            "text": "Ap\u00f3s, seguiremos com a formata\u00e7\u00e3o:",
+            "title": "fdisk -l"
+        },
+        {
+            "location": "/linux/arch-instalacao/#montando-as-particoes",
+            "text": "",
+            "title": "Montando as parti\u00e7\u00f5es"
+        },
+        {
+            "location": "/linux/arch-instalacao/#_1",
+            "text": "Endere\u00e7o que consta no seu fdisk -l.  mkfs.ext4 /dev/sda3\nmount /dev/sda3 /mnt",
+            "title": "/"
+        },
+        {
+            "location": "/linux/arch-instalacao/#swap",
+            "text": "mkswap /dev/sda2\nswapon /dev/sda2",
+            "title": "Swap"
+        },
+        {
+            "location": "/linux/arch-instalacao/#uefi",
+            "text": "mkfs.fat -F32 /dev/sda1\nmkdir /mnt/boot\nmkdir /mnt/boot/efi\nmount /dev/sda1 /mnt/boot/efi",
+            "title": "UEFI"
+        },
+        {
+            "location": "/linux/arch-instalacao/#home",
+            "text": "mkdir /mnt/home\nmount /dev/sda7 /mnt/home  Agora configuraremos os reposit\u00f3rios do Arch Linux:",
+            "title": "Home"
+        },
+        {
+            "location": "/linux/arch-instalacao/#nano-etcpacmandmirrorlist",
+            "text": "Pressione \u201cCtrl + W\u201d para pesquisarmos os reposit\u00f3rios. Digite BRAZIL e d\u00ea um Enter.  Recorte e cole no topo da lista, as linhas com os endere\u00e7os dos servidores brasileiros com o \u201cCtrl+K\u201d e \u201cCtrl+U\u201d respectivamente.  D\u00ea um  \u201cCtrl+O\u201d para salvar e \u201cCtrl+X\u201d para fechar o arquivo.  Na figura 4, exemplifica esse processo.  aa\nFigura 4. Meu mirrrorlist. (P\u00f3s-instala\u00e7\u00e3o)  Depois, instalaremos o sistema base:",
+            "title": "nano /etc/pacman.d/mirrorlist"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacstrap-i-mnt-base-base-devel",
+            "text": "Fstab:",
+            "title": "pacstrap -i /mnt base base-devel"
+        },
+        {
+            "location": "/linux/arch-instalacao/#genfstab-u-p-mnt-mntetcfstab",
+            "text": "Passo 8: Iremos configurar o sistema base na pasta /mnt com o chroot. E ajustaremos algumas coisas b\u00e1sicas do sistema.",
+            "title": "genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab"
+        },
+        {
+            "location": "/linux/arch-instalacao/#arch-chroot-mnt-binbash",
+            "text": "Idioma do Arch Linux:",
+            "title": "arch-chroot /mnt /bin/bash"
+        },
+        {
+            "location": "/linux/arch-instalacao/#nano-etclocalegen",
+            "text": "Nota: O processo do arquivo locale.gen \u00e9 mesmo do in\u00edcio da instala\u00e7\u00e3o.  Carregue a altera\u00e7\u00e3o do arquivo locale.gen, digite:",
+            "title": "nano /etc/locale.gen"
+        },
+        {
+            "location": "/linux/arch-instalacao/#locale-gen",
+            "text": "Em seguida, execute:",
+            "title": "locale-gen"
+        },
+        {
+            "location": "/linux/arch-instalacao/#echo-langpt_brutf-8-etclocaleconf",
+            "text": "",
+            "title": "echo LANG=pt_BR.UTF-8 &gt; /etc/locale.conf"
+        },
+        {
+            "location": "/linux/arch-instalacao/#export-langpt_brutf-8",
+            "text": "Fuso Hor\u00e1rio:",
+            "title": "export LANG=pt_BR.UTF-8"
+        },
+        {
+            "location": "/linux/arch-instalacao/#ln-s-usrsharezoneinfoamericaboa_vista-etclocaltime",
+            "text": "Troque Boa_Vista por sua cidade. Caso queira listar as localidades:",
+            "title": "ln -s /usr/share/zoneinfo/America/Boa_Vista /etc/localtime"
+        },
+        {
+            "location": "/linux/arch-instalacao/#ls-usrsharezoneinfo",
+            "text": "Rel\u00f3gio do Hardware:",
+            "title": "ls /usr/share/zoneinfo"
+        },
+        {
+            "location": "/linux/arch-instalacao/#hwclock-systohc-utc",
+            "text": "Hostname:",
+            "title": "hwclock --systohc --utc"
+        },
+        {
+            "location": "/linux/arch-instalacao/#echo-archlinux-etchostname",
+            "text": "Troque o nome ArchLinux por outro de sua prefer\u00eancia.  Instala\u00e7\u00e3o das ferramentas Wireless no sistema base do Arch Linux:",
+            "title": "echo ArchLinux &gt; /etc/hostname"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-wireless_tools-wpa_supplicant-wpa_actiond-dialog",
+            "text": "Ambiente inicial:  mkinitcpio -p linux  Senha do root:",
+            "title": "pacman -S wireless_tools wpa_supplicant wpa_actiond dialog"
+        },
+        {
+            "location": "/linux/arch-instalacao/#passwd",
+            "text": "Informe sua senha, confirme e d\u00ea um Enter.  Habilitar multilib",
+            "title": "passwd"
+        },
+        {
+            "location": "/linux/arch-instalacao/#nano-etcpacmanconf",
+            "text": "No arquivo procure as linhas:",
+            "title": "nano /etc/pacman.conf"
+        },
+        {
+            "location": "/linux/arch-instalacao/#multilib",
+            "text": "",
+            "title": "[multilib]"
+        },
+        {
+            "location": "/linux/arch-instalacao/#include-etcpacmandmirrorlist",
+            "text": "Retire o # de ambas.  Ap\u00f3s essas altera\u00e7\u00f5es, atualize o sistema:",
+            "title": "Include = /etc/pacman.d/mirrorlist"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-syu",
+            "text": "Nesse guia, utilizaremos o Grub como o gerenciador de boot, ent\u00e3o:",
+            "title": "pacman -Syu"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-grub",
+            "text": "Instalando o Grub.",
+            "title": "pacman -S grub"
+        },
+        {
+            "location": "/linux/arch-instalacao/#grub-install-targeti386-pc-recheck-devsda",
+            "text": "Nota: Aten\u00e7\u00e3o! A parte /dev/sda n\u00e3o leva n\u00fameros.  Para que o Grub reconhe\u00e7a o seu Windows, \u00e9 necess\u00e1rio a instala\u00e7\u00e3o do pacote os-prober, ent\u00e3o digite:",
+            "title": "grub-install --target=i386-pc --recheck /dev/sda"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-os-prober",
+            "text": "Finalizar o Grub",
+            "title": "pacman -S os-prober"
+        },
+        {
+            "location": "/linux/arch-instalacao/#grub-mkconfig-o-bootgrubgrubcfg",
+            "text": "Criar usu\u00e1rio padr\u00e3o:",
+            "title": "grub-mkconfig -o /boot/grub/grub.cfg"
+        },
+        {
+            "location": "/linux/arch-instalacao/#useradd-m-g-users-g-wheel-s-binbash-seu-usuario",
+            "text": "Senha:",
+            "title": "useradd -m -g users -G wheel -s /bin/bash seu-usuario"
+        },
+        {
+            "location": "/linux/arch-instalacao/#passwd-seu-usuario",
+            "text": "Caso queira excluir:",
+            "title": "passwd seu-usuario"
+        },
+        {
+            "location": "/linux/arch-instalacao/#userdel-r-seu-usuario",
+            "text": "Adicionar permiss\u00f5es do sistema ao usu\u00e1rio:  # gpasswd -a seu-usuario locate\n # gpasswd -a seu-usuario users\n # gpasswd -a seu-usuario audio\n # gpasswd -a seu-usuario video\n # gpasswd -a seu-usuario daemon\n # gpasswd -a seu-usuario dbus\n # gpasswd -a seu-usuario disk\n # gpasswd -a seu-usuario games\n # gpasswd -a seu-usuario rfkill\n # gpasswd -a seu-usuario lp\n # gpasswd -a seu-usuario network\n # gpasswd -a seu-usuario optical\n # gpasswd -a seu-usuario power\n # gpasswd -a seu-usuario scanner\n # gpasswd -a seu-usuario storage  Instala\u00e7\u00e3o das fontes para tornar o ambiente mais agrad\u00e1vel:",
+            "title": "userdel -r seu-usuario"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-pacman-ss-ttf-grep-v-awk-print-1-fc-cache",
+            "text": "Instala\u00e7\u00e3o do monitor para a bateria do notebook:",
+            "title": "pacman -S $(pacman -Ss ttf | grep -v ^\u201d \u201d | awk \u2018{print $1}\u2019) &amp;&amp; fc-cache"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-acpi-acpid",
+            "text": "Agora vamos criar uma inicializa\u00e7\u00e3o autom\u00e1tica do  acpid no  sistema:",
+            "title": "pacman -S acpi acpid"
+        },
+        {
+            "location": "/linux/arch-instalacao/#systemctl-enable-acpidservice",
+            "text": "Passo 9: A partir daqui, iremos providenciar a instala\u00e7\u00e3o do Xorg e o Driver de v\u00eddeo Intel.  Xorg",
+            "title": "systemctl enable acpid.service"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-xorg-xinit-xorg-utils-xorg-server",
+            "text": "Intel",
+            "title": "pacman -S xorg-xinit xorg-utils xorg-server"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-xf86-video-intel-mesa-mesa-demos",
+            "text": "NVIDIA  Mostrar os controladores compat\u00edveis VGA:",
+            "title": "pacman -S xf86-video-intel mesa mesa-demos"
+        },
+        {
+            "location": "/linux/arch-instalacao/#lspci-grep-vga",
+            "text": "Instala\u00e7\u00e3o dos drivers:",
+            "title": "lspci | grep VGA"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-intel-dri-xf86-video-intel-bumblebee-nvidia",
+            "text": "Instala\u00e7\u00e3o do bbswitch:",
+            "title": "pacman -S intel-dri xf86-video-intel bumblebee nvidia"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-bbswitch",
+            "text": "Instala\u00e7\u00e3o das libs 32bits (Caso seu Arch seja da arquitetura 86_x64, configurar o multilib no arquivo /etc/pacman.conf) e demais pacotes:",
+            "title": "pacman -S bbswitch"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-lib32-nvidia-utils",
+            "text": "",
+            "title": "pacman -S lib32-nvidia-utils"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-lib32-intel-dri",
+            "text": "",
+            "title": "pacman -S lib32-intel-dri"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-opencl-nvidia",
+            "text": "",
+            "title": "pacman -S opencl-nvidia"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-lib32-virtualgl",
+            "text": "Adicionar o nosso usu\u00e1rio ao grupo Bumblebee:",
+            "title": "pacman -S lib32-virtualgl"
+        },
+        {
+            "location": "/linux/arch-instalacao/#gpasswd-a-nomedousuario-bumblebee",
+            "text": "Verificar e ativar o servi\u00e7o do Bumblebee:",
+            "title": "gpasswd -a nomeDoUsuario bumblebee"
+        },
+        {
+            "location": "/linux/arch-instalacao/#systemctl-status-bumblebeed",
+            "text": "",
+            "title": "systemctl status bumblebeed"
+        },
+        {
+            "location": "/linux/arch-instalacao/#systemctl-enable-bumblebeed",
+            "text": "",
+            "title": "systemctl enable bumblebeed"
+        },
+        {
+            "location": "/linux/arch-instalacao/#systemctl-start-bumblebeed",
+            "text": "Testar elemento gr\u00e1fico do pacote opencl:",
+            "title": "systemctl start bumblebeed"
+        },
+        {
+            "location": "/linux/arch-instalacao/#glxspheres64",
+            "text": "Testar elemento gr\u00e1fico do pacote opencl utilizando a placa dedicada Nvidia:",
+            "title": "glxspheres64"
+        },
+        {
+            "location": "/linux/arch-instalacao/#optirun-glxspheres64",
+            "text": "DICA: Para testar se o bbswitch est\u00e1 ativo:  $ cat /proc/acpi/bbswitch  DICA DE EXECU\u00c7\u00c3O: Para executar alguma aplica\u00e7\u00e3o com o uso da placa gr\u00e1fica NVIDIA:",
+            "title": "optirun glxspheres64"
+        },
+        {
+            "location": "/linux/arch-instalacao/#optirun-nomeaplicacao",
+            "text": "Passo 10: Nesse ponto, iremos providenciar os gerenciadores: touchpad, mouse e teclado, respectivamente.",
+            "title": "optirun nomeAplicacao"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-xf86-input-synaptics-xf86-input-mouse-xf86-input-keyboard",
+            "text": "Configura\u00e7\u00e3o do sudo:  Aqui iremos acrescentar privil\u00e9gios para o usu\u00e1rio padr\u00e3o que criamos anteriormente. Demostraremos duas sugest\u00f5es:  Entre com o nano para editar o arquivo /etc/sudoers:",
+            "title": "pacman -S xf86-input-synaptics xf86-input-mouse xf86-input-keyboard"
+        },
+        {
+            "location": "/linux/arch-instalacao/#nano-etcsudoers",
+            "text": "Pressione \u201cCtrl+W\u201d digite: root ALL=(ALL) ALL e d\u00ea um Enter. Sem alter\u00e1-la, acrescente na linha de abaixo a regra de privil\u00e9gios que lhe convir:  Usu\u00e1rio padr\u00e3o com todos os privil\u00e9gios do root:  seu-usuario ALL=(ALL) ALL  Usu\u00e1rio padr\u00e3o com privil\u00e9gio apenas para execu\u00e7\u00e3o do pacman:  seu-usuario ALL=(ALL) NOPASSWD:/usr/bin/pacman  D\u00ea um \u201cCtrl+O\u201d para salvar e \u201cCtrl+X\u201d para sair do arquivo.  Passo 11: Agora iremos habilitar o yaourt para usarmos os pacotes do AUR. Iremos novamente ao diret\u00f3rio, usando o nano:",
+            "title": "nano /etc/sudoers"
+        },
+        {
+            "location": "/linux/arch-instalacao/#nano-etcpacmanconf_1",
+            "text": "No final de todo arquivo, acrescente as tr\u00eas linhas abaixo:  [archlinuxfr]\nSigLevel =  Never\nServer = http://repo.archlinux.fr/$arch  Salve com o \u201cCtrl+O\u201d e feche com \u201cCtrl+X\u201d.  Ap\u00f3s acrescentarmos as linhas no arquivo pacman.conf, finalize com a instala\u00e7\u00e3o do Yaourt:",
+            "title": "nano /etc/pacman.conf"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-sy-yaourt",
+            "text": "Pronto! Finalizamos a instala\u00e7\u00e3o e configura\u00e7\u00e3o b\u00e1sica do sistema.  Saia do chroot:",
+            "title": "pacman -Sy yaourt"
+        },
+        {
+            "location": "/linux/arch-instalacao/#exit",
+            "text": "Desmonte tudo relacionado a pasta /mnt e reinicie o sistema:",
+            "title": "exit"
+        },
+        {
+            "location": "/linux/arch-instalacao/#umount-r-mnt-reboot",
+            "text": "Passo 12: A partir desse ponto, iremos trabalhar a instala\u00e7\u00e3o do ambiente gr\u00e1fico do sistema.  Primeiramente, fa\u00e7a o login com seu-usuario e em seguida como root, com o comando:",
+            "title": "umount -R /mnt &amp;&amp; reboot"
+        },
+        {
+            "location": "/linux/arch-instalacao/#su",
+            "text": "Em seguida, conecte a sua rede para que possamos baixar os pacotes das interfaces pretendidas:  Troque o wlp3s0 por sua interface",
+            "title": "su"
+        },
+        {
+            "location": "/linux/arch-instalacao/#wifi-menu-wlp3s0_1",
+            "text": "Install the i3 package group. It includes the window manager i3-wm, i3status which writes a status line to i3bar through stdout, and i3lock, a screen locker.  Additional packages are available in the Arch User Repository. See the section #Patches for examples.\nDisplay manager  i3-wm includes i3.desktop as Xsession which starts the window manager. i3-with-shmlog.desktop enables logs (useful for debugging).\nxinitrc  Edit Xinitrc, and add:  exec i3  To log the output from i3, add this line instead:  exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1  usaremos o gdm:",
+            "title": "wifi-menu wlp3s0"
+        },
+        {
+            "location": "/linux/arch-instalacao/#pacman-s-gdm",
+            "text": "Ativar a inicializa\u00e7\u00e3o junto com o sistema:",
+            "title": "pacman -S gdm"
+        },
+        {
+            "location": "/linux/arch-instalacao/#systemctl-enable-gdmservice",
+            "text": "",
+            "title": "systemctl enable gdm.service"
+        },
+        {
+            "location": "/linux/arch-instalacao/#systemctl-start-gdmservice",
+            "text": "",
+            "title": "systemctl start gdm.service"
+        },
+        {
+            "location": "/linux/arch-nvidia/",
+            "text": "Instala\u00e7\u00e3o\n\n\nsudo pacman -S nvidia nvidia-libgl xorg-xrandr\n\n\n\n\nConfig\n\n\nlspci | grep -E \"VGA|3D\"\n\n\n\n\n/etc/X11/xorg.conf\n\n\nSection \"Module\"\n    Load \"modesetting\"\nEndSection\n\nSection \"Device\"\n    Identifier \"nvidia\"\n    Driver \"nvidia\"\n    BusID \"PCI:8.0.0\"\n    Option \"AllowEmptyInitialConfiguration\"\nEndSection\n\n\n\n\n~/.xinitrc\n\n\nxrandr --setprovideroutputsource modesetting NVIDIA-0\nxrandr --auto",
+            "title": "Arch nvidia"
+        },
+        {
+            "location": "/linux/arch-nvidia/#instalacao",
+            "text": "sudo pacman -S nvidia nvidia-libgl xorg-xrandr",
+            "title": "Instala\u00e7\u00e3o"
+        },
+        {
+            "location": "/linux/arch-nvidia/#config",
+            "text": "lspci | grep -E \"VGA|3D\"  /etc/X11/xorg.conf  Section \"Module\"\n    Load \"modesetting\"\nEndSection\n\nSection \"Device\"\n    Identifier \"nvidia\"\n    Driver \"nvidia\"\n    BusID \"PCI:8.0.0\"\n    Option \"AllowEmptyInitialConfiguration\"\nEndSection  ~/.xinitrc  xrandr --setprovideroutputsource modesetting NVIDIA-0\nxrandr --auto",
+            "title": "Config"
+        },
+        {
+            "location": "/linux/arch/",
+            "text": "NETCat\n\n\nEsse carinha aqui faz funcionar meu docker corretamente\n\n\nsudo pacman -S netcat\n\n\n\n\nPreferencia IPV4\n\n\nsudo sh -c \"echo 'precedence ::ffff:0:0/96 100' >> /etc/gai.conf\"",
+            "title": "Arch"
+        },
+        {
+            "location": "/linux/arch/#netcat",
+            "text": "Esse carinha aqui faz funcionar meu docker corretamente  sudo pacman -S netcat",
+            "title": "NETCat"
+        },
+        {
+            "location": "/linux/arch/#preferencia-ipv4",
+            "text": "sudo sh -c \"echo 'precedence ::ffff:0:0/96 100' >> /etc/gai.conf\"",
+            "title": "Preferencia IPV4"
+        },
+        {
+            "location": "/linux/scrot/",
+            "text": "Scrot\n\n\nScreenshot da tela toda\n\n\nmanda para ~/imagens/shots e mostra com o gpicview\n\n\nscrot '%Y-%m-%d-%H:%M:%S_$wx$h_screenshot.png' -e 'mv $f ~/imagens/shots/; gpicview ~/imagens/shots/$f'\n\n\nSeleciona a \u00e1rea com o mouse\n\n\nscrot -s '%Y-%m-%d-%H:%M:%S_$wx$h_screenshot.png' -e 'mv $f ~/imagens/shots/; gpicview ~/imagens/shots/$f'",
+            "title": "Scrot"
+        },
+        {
+            "location": "/linux/scrot/#scrot",
+            "text": "",
+            "title": "Scrot"
+        },
+        {
+            "location": "/linux/scrot/#screenshot-da-tela-toda",
+            "text": "manda para ~/imagens/shots e mostra com o gpicview  scrot '%Y-%m-%d-%H:%M:%S_$wx$h_screenshot.png' -e 'mv $f ~/imagens/shots/; gpicview ~/imagens/shots/$f'",
+            "title": "Screenshot da tela toda"
+        },
+        {
+            "location": "/linux/scrot/#seleciona-a-area-com-o-mouse",
+            "text": "scrot -s '%Y-%m-%d-%H:%M:%S_$wx$h_screenshot.png' -e 'mv $f ~/imagens/shots/; gpicview ~/imagens/shots/$f'",
+            "title": "Seleciona a \u00e1rea com o mouse"
+        },
+        {
+            "location": "/linux/swap/",
+            "text": "Diminuindo prioridade da memoria swap\n\n\nEmbora n\u00e3o seja obrigat\u00f3ria em micros com um volume suficiente de mem\u00f3ria RAM, a parti\u00e7\u00e3o swap \u00e9 sempre recomendada, pois permite que o sistema disponha de uma \u00e1rea adicional para situa\u00e7\u00f5es onde precisa de uma quantidade muito grande de mem\u00f3ria RAM, como por exemplo ao editar v\u00eddeos.\n\n\nA propens\u00e3o do sistema a utilizar mem\u00f3ria swap \u00e9 configur\u00e1vel atrav\u00e9s de uma op\u00e7\u00e3o do kernel, a \"vm.swappiness\", que aceita valores de 0 a 100, sendo que um valor baixo orienta o sistema a usar swap apenas quando n\u00e3o houver mais mem\u00f3ria dispon\u00edvel e um valor mais alto faz com que o sistema a utilize de maneira mais liberal, movendo arquivos e bibliotecas que n\u00e3o est\u00e3o sendo usados.\n\n\nO default na maioria das distribui\u00e7\u00f5es \u00e9 \"60\", o que faz com que o sistema use um pouco de swap mesmo quando tem mem\u00f3ria de sobra dispon\u00edvel. Voc\u00ea pode evitar isso alterando o valor para \"20\" (ou menos, de acordo com o gosto do fregu\u00eas).\n\n\nPara isso, execute, como root o comando:\n\n\nsysctl vm.swappiness=20\n\n\nPara que a altera\u00e7\u00e3o se torne permanente, edite o arquivo \n/etc/sysctl.conf\n e adicione a linha \"vm.swappiness=20\". Este arquivo cont\u00e9m vari\u00e1veis para o kernel, que s\u00e3o carregadas durante o boot. \n\n\nAtiva e Desativa o Swap\n\n\nswapoff -a\n - desabilita \"todas\" as parti\u00e7\u00f5es swap em /etc/fstab\n\n\nswapon -a\n - habilita \"todas\" as parti\u00e7\u00f5es swap em /etc/fstab",
+            "title": "Swap"
+        },
+        {
+            "location": "/linux/swap/#diminuindo-prioridade-da-memoria-swap",
+            "text": "Embora n\u00e3o seja obrigat\u00f3ria em micros com um volume suficiente de mem\u00f3ria RAM, a parti\u00e7\u00e3o swap \u00e9 sempre recomendada, pois permite que o sistema disponha de uma \u00e1rea adicional para situa\u00e7\u00f5es onde precisa de uma quantidade muito grande de mem\u00f3ria RAM, como por exemplo ao editar v\u00eddeos.  A propens\u00e3o do sistema a utilizar mem\u00f3ria swap \u00e9 configur\u00e1vel atrav\u00e9s de uma op\u00e7\u00e3o do kernel, a \"vm.swappiness\", que aceita valores de 0 a 100, sendo que um valor baixo orienta o sistema a usar swap apenas quando n\u00e3o houver mais mem\u00f3ria dispon\u00edvel e um valor mais alto faz com que o sistema a utilize de maneira mais liberal, movendo arquivos e bibliotecas que n\u00e3o est\u00e3o sendo usados.  O default na maioria das distribui\u00e7\u00f5es \u00e9 \"60\", o que faz com que o sistema use um pouco de swap mesmo quando tem mem\u00f3ria de sobra dispon\u00edvel. Voc\u00ea pode evitar isso alterando o valor para \"20\" (ou menos, de acordo com o gosto do fregu\u00eas).  Para isso, execute, como root o comando:  sysctl vm.swappiness=20  Para que a altera\u00e7\u00e3o se torne permanente, edite o arquivo  /etc/sysctl.conf  e adicione a linha \"vm.swappiness=20\". Este arquivo cont\u00e9m vari\u00e1veis para o kernel, que s\u00e3o carregadas durante o boot.",
+            "title": "Diminuindo prioridade da memoria swap"
+        },
+        {
+            "location": "/linux/swap/#ativa-e-desativa-o-swap",
+            "text": "swapoff -a  - desabilita \"todas\" as parti\u00e7\u00f5es swap em /etc/fstab  swapon -a  - habilita \"todas\" as parti\u00e7\u00f5es swap em /etc/fstab",
+            "title": "Ativa e Desativa o Swap"
+        },
+        {
+            "location": "/linux/ubuntu/",
+            "text": "Alterar Usu\u00e1rio do arquivo\n\n\nsudo chown root:root [file]\n\n\n\n\nAtalhos Desktop\n\n\nPasta adicionar os .desktop na pasta \n/usr/share/applications/\n\n\nExample de arquivo\n\n\n[Desktop Entry]\nName=Steam\nComment=Application for managing and playing games on Steam\nExec=/usr/bin/steam %U\nIcon=steam\nTerminal=false\nType=Application\nCategories=Network;FileTransfer;Game;\nMimeType=x-scheme-handler/steam;\nActions=Store;Community;Library;Servers;Screenshots;News;Settings;BigPicture;Friends;\n\n\n\n\nPesquisar por processos existentes\n\n\nps -ef | grep [pesquisa]\n\n\n\nMatar processos\n\n\nkill [idProcesso^]\n\n\n\nPara gravar ISO em pendrive:\n\n\ndd if=/local/da/imagem.iso of=/dev/sd*\n\n\n\n\nPreferencia IPV4\n\n\nsudo sh -c \"echo 'precedence ::ffff:0:0/96 100' >> /etc/gai.conf\"",
+            "title": "Ubuntu"
+        },
+        {
+            "location": "/linux/ubuntu/#alterar-usuario-do-arquivo",
+            "text": "sudo chown root:root [file]",
+            "title": "Alterar Usu\u00e1rio do arquivo"
+        },
+        {
+            "location": "/linux/ubuntu/#atalhos-desktop",
+            "text": "Pasta adicionar os .desktop na pasta  /usr/share/applications/  Example de arquivo  [Desktop Entry]\nName=Steam\nComment=Application for managing and playing games on Steam\nExec=/usr/bin/steam %U\nIcon=steam\nTerminal=false\nType=Application\nCategories=Network;FileTransfer;Game;\nMimeType=x-scheme-handler/steam;\nActions=Store;Community;Library;Servers;Screenshots;News;Settings;BigPicture;Friends;",
+            "title": "Atalhos Desktop"
+        },
+        {
+            "location": "/linux/ubuntu/#pesquisar-por-processos-existentes",
+            "text": "ps -ef | grep [pesquisa]",
+            "title": "Pesquisar por processos existentes"
+        },
+        {
+            "location": "/linux/ubuntu/#matar-processos",
+            "text": "kill [idProcesso^]",
+            "title": "Matar processos"
+        },
+        {
+            "location": "/linux/ubuntu/#para-gravar-iso-em-pendrive",
+            "text": "dd if=/local/da/imagem.iso of=/dev/sd*",
+            "title": "Para gravar ISO em pendrive:"
+        },
+        {
+            "location": "/linux/ubuntu/#preferencia-ipv4",
+            "text": "sudo sh -c \"echo 'precedence ::ffff:0:0/96 100' >> /etc/gai.conf\"",
+            "title": "Preferencia IPV4"
+        },
+        {
+            "location": "/php/composer/",
+            "text": "Composer TimeOut\n\n\ncomposer --global config process-timeout 2000",
+            "title": "Composer"
+        },
+        {
+            "location": "/php/composer/#composer-timeout",
+            "text": "composer --global config process-timeout 2000",
+            "title": "Composer TimeOut"
+        },
+        {
+            "location": "/php/doctrine/",
+            "text": "Commands\n\n\nPrefixo instalado via composer: \nphp vendor/bin/doctrine *\n\n\n\n\norm:schema-tool:create\n - Create database\n\n\norm:schema-tool:drop --force\n - Delete database\n\n\norm:schema:update --dump-sql\n - Dump or update modifications\n\n\norm:validate-schema\n - Validate Entity with DataBase\n\n\norm:convert-mapping --force  --from-database annotation [path]\n - Generate entities by database\n\n\norm:generate-entities [path] --generate-annotations=true\n - Update entities and generate entities with annotations, get and set\n\n\n\n\nPersisting Usage\n\n\n- Persisting objects\n\n\n$user1 = new User();\n$user1->setFullName('MyName');\n$em->persist($user1);\n\n$user2 = new User();\n$user2->setFullName('MyName2');\n$em->persist($user2);\n\n$em->flush();\n\n\n\n\n- Updating an object\n\n\n$user = $em->find('User', 1);\n$user->setName('MyName');\n$em->flush();\n\n\n\n\n- Deleting an object\n\n\n$user = $em->find('User', 1);\n$em->remove($user);\n$em->flush();\n\n\n\n\nRetrieving an object\n\n\n- Repositories\n\n\nSingle user by id\n\n\n$user1 = $em->find('User', 1);\n$user2 = $em->getRepository('User')->find(1);\n\n\n\n\nSingle user by name and type.\n\n\n$user = $em->getRepository('User')->findOneBy(\n    array('name' => 'MyName', 'type' => 'MyType'));\n\n\n\n\nSingle user by its Name\n\n\n$user = $em->getRepository('User')->findOneByName('MyName');\n\n\n\n\nFind All users\n\n\n$users = $em->getRepository('User')->findAll();\n\n\n\n\nGroup users by type\n\n\n$users = $em->getRepository('User')->findByType('MyType');\n\n\n\n\nGroup users by criteria, order, limit, offset.\n\n\n$users = $em->getRepository('User')->findBy(\n    array('name' => 'MyName'), array('id' => 'ASC'), 10, 0);\n\n\n\n\n- DQL\n\n\n- Query Builder\n\n\nExample BETWEEN\n\n\n$queryBuilder = $em->createQueryBuilder();\n$queryBuilder->select('n')\n    ->from(Example\\Entity::class, 'n')\n    ->where('n.date BETWEEN :from AND :to')\n\n$queryBuilder->setParameters([\n    'from' => $from,\n    'to' => $to\n]);\n\n$result = $queryBuilder->getQuery()->fetchAll();\n\n\n\n\nAssociations\n\n\n- One to One\n\n\nMapping One to One\n\n\nuse Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"user\")\n */\nclass User\n{\n    /**\n     * @ORM\\OneToOne(targetEntity=\"Entity\\Role\", mappedBy=\"role\", cascade={\"persist\"})\n     */\n    protected $role;\n}\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"role\")\n */\nclass Role\n{\n    /**\n     * @ORM\\OneToOne(targetEntity=\"Entity\\User\", inversedBy=\"role\", cascade={\"persist\"})\n     * @ORM\\JoinColumn(name=\"userId\", referencedColumnName=\"id\", unique=false, nullable=false)\n     */\n    protected $user;\n}\n\n\n\n\nUsage example One to One\n\n\n//persist\n$user = new Entity\\User();\n$user->setEmail('email');\n$user->setName('name');\n\n$role = new Entity\\Role;\n$role->setName('name');\n\n$role->setUser($user);\n$user->setRole($role);\n\n$em->persist($user);\n$em->flush();\n\n//retrieving\n$user = $em->find('User', $user->getId());\n$user->getRole();\n\n\n\n\n- One to Many\n\n\nMapping One to Many\n\n\nuse Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"user\")\n */\nclass User\n{\n    /**\n     * @ORM\\OneToMany(targetEntity=\"Comment\", mappedBy=\"user\", cascade={\"persist\"})\n     */\n    protected $comments;\n\n    public function __construct()\n    {\n        $this->comments = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n    }\n}\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"comment\")\n */\nclass Comment\n{\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"User\", inversedBy=\"comments\", cascade={\"persist\"})\n     * @ORM\\JoinColumn(name=\"userId\", referencedColumnName=\"id\", unique=false, nullable=false)\n     */\n    protected $user;\n}\n\n\n\n\nUsage example One to Many\n\n\n//persist\n$user = new Entity\\User();\n$user->setEmail('email');\n$user->setName('name');\n\n$comment1 = new Entity\\Comment;\n$comment1->setCommentText('comment1');\n$comment1->setUser($user);\n$comment2 = new Entity\\Comment;\n$comment2->setCommentText('comment2');\n$comment2->setUser($user);\n\n$user->getComments()->add($comment2);\n$user->getComments()->add($comment1);\n\n$em->persist($user);\n$em->flush();\n\n//retrieving\n$user = $em->find('User', $user->getId());\n$user->getComments()->toArray();\n\n\n\n\nMapping One to Many Self Ref\n\n\nclass Comment\n{\n    /**\n     * @ORM\\OneToMany(targetEntity=\"Comment\", mappedBy=\"parent\", cascade={\"persist\"})\n     */\n    protected $children;\n\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"Comment\", inversedBy=\"children\", cascade={\"persist\"})\n     * @ORM\\JoinColumn(name=\"parentId\", referencedColumnName=\"id\", unique=false, nullable=true)\n     */\n    protected $parent;\n\n    public function __construct()\n    {\n        $this->children = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n    }\n}\n\n\n\n\nUsage example One to Many Self Ref\n\n\n// persisting\n$comment2 = new Entity\\Comment;\n$comment2->setCommentText('parent');\n\n$comment1 = new Entity\\Comment;\n$comment1->setCommentText('children1');\n$comment1->setParent($comment2);\n$comment3 = new Entity\\Comment;\n$comment3->setCommentText('children2');\n$comment3->setParent($comment2);\n\n$comment2->getChildrens()->add($comment1);\n$comment2->getChildrens()->add($comment3);\n\n$em->persist($comment2);\n$em->flush();\n\n//retrieving\n$comment = $em->find('Comment', $comment2->getId());\n$comment->getChildrens();\n\n\n\n\n- Many to Many\n\n\nMapping Many to Many\n\n\nuse Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"user\")\n */\nclass User\n{\n    /**\n     * @ORM\\ManyToMany(targetEntity=\"Category\", inversedBy=\"users\", cascade={\"persist\"})\n     * @ORM\\JoinColumn(name=\"categoryId\", referencedColumnName=\"id\", unique=false, nullable=true)\n     */\n    protected $categories;\n\n    public function __construct()\n    {\n        $this->categories = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n    }\n}\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"category\")\n */\nclass Category\n{\n    /**\n     * @ORM\\ManyToMany(targetEntity=\"User\", mappedBy=\"categories\", cascade={\"persist\"})\n     */\n    protected $users;\n\n    public function __construct()\n    {\n        $this->users = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n    }\n}\n\n\n\n\nUsage example Many to Many\n\n\n// persisting\n$user1 = new Entity\\User();\n$user1->setEmail('email');\n$user1->setName('Plumber Builder');\n\n$user2 = new Entity\\User;\n$user2->setEmail('email');\n$user2->setName('Plaster Builder');\n\n$categoryPlumber = new Entity\\Category;\n$categoryPlumber->setName('Plumber Category');\n$categoryBeer_Drinkers = new Entity\\Category;\n$categoryBeer_Drinkers->setName('Beer_Drinkers Category');\n\n$categoryPlumber->getUsers()->add($user1);\n$categoryBeer_Drinkers->getUsers()->add($user2);\n$categoryBeer_Drinkers->getUsers()->add($user1);\n\n$user1->getCategories()->add($categoryPlumber);\n$user1->getCategories()->add($categoryBeer_Drinkers);\n$user2->getCategories()->add($categoryBeer_Drinkers);\n\n$em->persist($user1);\n$em->persist($user2);\n$em->flush();\n\n//retrieving\n$user1 = $em->find('User', $user1->getId());\n//get last categories for user1\n$user1->getCategories()->toArray());\n//get last category(Beer_Drinkers Category) and all users for this category\n$user1->getCategories()->last()->getUsers()->toArray();\n\n\n\n\nLifecycle callbacks\n\n\nAnnotation which has to be set on the entity-class PHP DocBlock to notify Doctrine that this entity has entity lifecycle callback annotations set on at least one of its methods. Using @PostLoad, @PrePersist, @PostPersist, @PreRemove, @PostRemove, @PreUpdate or @PostUpdate without this marker annotation will make Doctrine ignore the callbacks.\n\n\nuse Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @ORM\\MappedSuperclass\n * @ORM\\HasLifecycleCallbacks\n */\nabstract class AbstractEntity\n{\n    /**\n     * @ORM\\Column(name=\"updated_at\", type=\"datetime\")\n     */\n    private $updatedAt;\n\n    /**\n     * @ORM\\PrePersist()\n     * @ORM\\PreUpdate\n     */\n    public function preUpdated()\n    {\n        $this->updated = new \\DateTime();\n    }\n\n    /**\n     * @PostPersist\n     */\n    public function sendOptinMail() {}\n}\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"user\")\n */\nclass User extends Abstract\n{\n    // [...]\n}\n\n\n\n\nCustom Repository\n\n\nEntity mapping for repository class\n\n\nuse Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @ORM\\Entity(repositoryClass=\"Repository\\Comment\")\n */\nclass Comment {\n    // [...]\n}\n\n//repository Class\nuse Doctrine\\ORM\\EntityRepository;\n\nclass Comment extends EntityRepository\n{\n    public function findUserComments($userId)\n    {\n        $query = $this->_em->createQuery(\"SELECT u FROM Entity\\Comment u WHERE u.userId = :userId\");\n        $query->setParameters(array('userId' => $userId));\n        return $query->getResult();\n    }\n}\n\n\n\n\nIn controller\n\n\n$repository = $em->getRepository(Entity\\Comment::class);\n$comments = $repository->findUserComments(10);\n\n\n\n\nZend Hydrator\n\n\nuse Doctrine\\ORM\\Mapping as ORM;\nuse Zend\\Hydrator;\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"user\")\n */\nclass User\n{\n    // [...]\n\n    public function hydrator(array $options) : User\n    {\n        $hydrator = new Hydrator\\ClassMethods();\n        $hydrator->hydrate($options, $this);\n        return $this;\n    }\n\n    public function extract() : array\n    {\n        $hydrator = new Hydrator\\ClassMethods();\n        return $hydrator->extract($this);\n    }\n}\n\n\n\n\nMy Entities\n\n\n- Abstract Entity\n\n\nnamespace Core\\Entity;\n\nuse Doctrine\\ORM\\Mapping as ORM;\nuse Zend\\Hydrator;\n\n/**\n * @author Jhon Mike <developer@jhonmike.com.br>\n *\n * @ORM\\MappedSuperclass\n * @ORM\\HasLifecycleCallbacks\n */\nabstract class AbstractEntity\n{\n    /**\n     * @ORM\\Id\n     * @ORM\\Column(type=\"integer\", nullable=false)\n     * @ORM\\GeneratedValue(strategy=\"IDENTITY\")\n     */\n    private $id;\n\n    /**\n     * @ORM\\Column(type=\"datetime\", nullable=false)\n     */\n    private $created;\n\n    /**\n     * @ORM\\Column(type=\"datetime\", nullable=false)\n     */\n    private $updated;\n\n    public function getId() : int\n    {\n        return $this->id;\n    }\n\n    public function getCreated() : DateTime\n    {\n        return $this->created;\n    }\n\n    /**\n     * @ORM\\PrePersist\n     */\n    public function setCreated()\n    {\n        $this->created = new \\DateTime();\n    }\n\n\n    public function getUpdated() : DateTime\n    {\n        return $this->updated;\n    }\n\n    /**\n     * @ORM\\PrePersist\n     * @ORM\\PreUpdate\n     */\n    public function setUpdated()\n    {\n        $this->updated = new \\DateTime();\n    }\n\n    public function hydrator(array $options) : Role\n    {\n        $hydrator = new Hydrator\\ClassMethods();\n        $hydrator->hydrate($options, $this);\n        return $this;\n    }\n\n    public function toArray() : array\n    {\n        $hydrator = new Hydrator\\ClassMethods();\n        return $hydrator->extract($this);\n    }\n}\n\n\n\n\n- Snippet Entity\n\n\nnamespace App\\Entity;\n\nuse Core\\Entity\\AbstractEntity;\nuse Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @author Jhon Mike <developer@jhonmike.com.br>\n *\n * @ORM\\Entity\n * @ORM\\Table(name=\"role\")\n */\nclass Role extends AbstractEntity\n{\n    /**\n     * @ORM\\Column(type=\"string\", length=100, nullable=false)\n     */\n    private $name;\n\n    public function setName(string $name) : Role\n    {\n        $this->name = $name;\n        return $this;\n    }\n\n    public function getName() : string\n    {\n        return $this->name;\n    }\n}\n\n\n\n\n- Snippet Entity Clean\n\n\nnamespace App\\Entity;\n\nuse DateTime;\nuse Doctrine\\ORM\\Mapping as ORM;\nuse Zend\\Hydrator;\nuse Zend\\Math\\Rand;\n\n/**\n * @author Jhon Mike <developer@jhonmike.com.br>\n *\n * @ORM\\Entity\n * @ORM\\Table(name=\"role\")\n * @ORM\\HasLifecycleCallbacks\n */\nclass Role\n{\n    /**\n     * @ORM\\Id\n     * @ORM\\Column(type=\"integer\", nullable=false)\n     * @ORM\\GeneratedValue(strategy=\"IDENTITY\")\n     */\n    private $id;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=100, nullable=false)\n     */\n    private $name;\n\n    /**\n     * @ORM\\Column(type=\"datetime\", nullable=false)\n     */\n    private $created;\n\n    /**\n     * @ORM\\Column(type=\"datetime\", nullable=false)\n     */\n    private $updated;\n\n    public function getId() : int\n    {\n        return $this->id;\n    }\n\n    public function setName(string $name) : Role\n    {\n        $this->name = $name;\n        return $this;\n    }\n\n    public function getName() : string\n    {\n        return $this->name;\n    }\n\n    public function getCreated() : DateTime\n    {\n        return $this->created;\n    }\n\n    /**\n     * @ORM\\PrePersist\n     */\n    public function preCreated()\n    {\n        $this->created = new \\DateTime();\n    }\n\n\n    public function getUpdated() : DateTime\n    {\n        return $this->updated;\n    }\n\n    /**\n     * @ORM\\PrePersist\n     * @ORM\\PreUpdate\n     */\n    public function preUpdated()\n    {\n        $this->updated = new \\DateTime();\n    }\n\n    public function hydrator(array $options) : Role\n    {\n        $hydrator = new Hydrator\\ClassMethods();\n        $hydrator->hydrate($options, $this);\n        return $this;\n    }\n\n    public function toArray() : array\n    {\n        $hydrator = new Hydrator\\ClassMethods();\n        return $hydrator->extract($this);\n    }\n}",
+            "title": "Doctrine"
+        },
+        {
+            "location": "/php/doctrine/#commands",
+            "text": "Prefixo instalado via composer:  php vendor/bin/doctrine *   orm:schema-tool:create  - Create database  orm:schema-tool:drop --force  - Delete database  orm:schema:update --dump-sql  - Dump or update modifications  orm:validate-schema  - Validate Entity with DataBase  orm:convert-mapping --force  --from-database annotation [path]  - Generate entities by database  orm:generate-entities [path] --generate-annotations=true  - Update entities and generate entities with annotations, get and set",
+            "title": "Commands"
+        },
+        {
+            "location": "/php/doctrine/#persisting-usage",
+            "text": "",
+            "title": "Persisting Usage"
+        },
+        {
+            "location": "/php/doctrine/#-persisting-objects",
+            "text": "$user1 = new User();\n$user1->setFullName('MyName');\n$em->persist($user1);\n\n$user2 = new User();\n$user2->setFullName('MyName2');\n$em->persist($user2);\n\n$em->flush();",
+            "title": "- Persisting objects"
+        },
+        {
+            "location": "/php/doctrine/#-updating-an-object",
+            "text": "$user = $em->find('User', 1);\n$user->setName('MyName');\n$em->flush();",
+            "title": "- Updating an object"
+        },
+        {
+            "location": "/php/doctrine/#-deleting-an-object",
+            "text": "$user = $em->find('User', 1);\n$em->remove($user);\n$em->flush();",
+            "title": "- Deleting an object"
+        },
+        {
+            "location": "/php/doctrine/#retrieving-an-object",
+            "text": "",
+            "title": "Retrieving an object"
+        },
+        {
+            "location": "/php/doctrine/#-repositories",
+            "text": "",
+            "title": "- Repositories"
+        },
+        {
+            "location": "/php/doctrine/#single-user-by-id",
+            "text": "$user1 = $em->find('User', 1);\n$user2 = $em->getRepository('User')->find(1);",
+            "title": "Single user by id"
+        },
+        {
+            "location": "/php/doctrine/#single-user-by-name-and-type",
+            "text": "$user = $em->getRepository('User')->findOneBy(\n    array('name' => 'MyName', 'type' => 'MyType'));",
+            "title": "Single user by name and type."
+        },
+        {
+            "location": "/php/doctrine/#single-user-by-its-name",
+            "text": "$user = $em->getRepository('User')->findOneByName('MyName');",
+            "title": "Single user by its Name"
+        },
+        {
+            "location": "/php/doctrine/#find-all-users",
+            "text": "$users = $em->getRepository('User')->findAll();",
+            "title": "Find All users"
+        },
+        {
+            "location": "/php/doctrine/#group-users-by-type",
+            "text": "$users = $em->getRepository('User')->findByType('MyType');",
+            "title": "Group users by type"
+        },
+        {
+            "location": "/php/doctrine/#group-users-by-criteria-order-limit-offset",
+            "text": "$users = $em->getRepository('User')->findBy(\n    array('name' => 'MyName'), array('id' => 'ASC'), 10, 0);",
+            "title": "Group users by criteria, order, limit, offset."
+        },
+        {
+            "location": "/php/doctrine/#-dql",
+            "text": "",
+            "title": "- DQL"
+        },
+        {
+            "location": "/php/doctrine/#-query-builder",
+            "text": "",
+            "title": "- Query Builder"
+        },
+        {
+            "location": "/php/doctrine/#example-between",
+            "text": "$queryBuilder = $em->createQueryBuilder();\n$queryBuilder->select('n')\n    ->from(Example\\Entity::class, 'n')\n    ->where('n.date BETWEEN :from AND :to')\n\n$queryBuilder->setParameters([\n    'from' => $from,\n    'to' => $to\n]);\n\n$result = $queryBuilder->getQuery()->fetchAll();",
+            "title": "Example BETWEEN"
+        },
+        {
+            "location": "/php/doctrine/#associations",
+            "text": "",
+            "title": "Associations"
+        },
+        {
+            "location": "/php/doctrine/#-one-to-one",
+            "text": "",
+            "title": "- One to One"
+        },
+        {
+            "location": "/php/doctrine/#mapping-one-to-one",
+            "text": "use Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"user\")\n */\nclass User\n{\n    /**\n     * @ORM\\OneToOne(targetEntity=\"Entity\\Role\", mappedBy=\"role\", cascade={\"persist\"})\n     */\n    protected $role;\n}\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"role\")\n */\nclass Role\n{\n    /**\n     * @ORM\\OneToOne(targetEntity=\"Entity\\User\", inversedBy=\"role\", cascade={\"persist\"})\n     * @ORM\\JoinColumn(name=\"userId\", referencedColumnName=\"id\", unique=false, nullable=false)\n     */\n    protected $user;\n}",
+            "title": "Mapping One to One"
+        },
+        {
+            "location": "/php/doctrine/#usage-example-one-to-one",
+            "text": "//persist\n$user = new Entity\\User();\n$user->setEmail('email');\n$user->setName('name');\n\n$role = new Entity\\Role;\n$role->setName('name');\n\n$role->setUser($user);\n$user->setRole($role);\n\n$em->persist($user);\n$em->flush();\n\n//retrieving\n$user = $em->find('User', $user->getId());\n$user->getRole();",
+            "title": "Usage example One to One"
+        },
+        {
+            "location": "/php/doctrine/#-one-to-many",
+            "text": "",
+            "title": "- One to Many"
+        },
+        {
+            "location": "/php/doctrine/#mapping-one-to-many",
+            "text": "use Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"user\")\n */\nclass User\n{\n    /**\n     * @ORM\\OneToMany(targetEntity=\"Comment\", mappedBy=\"user\", cascade={\"persist\"})\n     */\n    protected $comments;\n\n    public function __construct()\n    {\n        $this->comments = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n    }\n}\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"comment\")\n */\nclass Comment\n{\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"User\", inversedBy=\"comments\", cascade={\"persist\"})\n     * @ORM\\JoinColumn(name=\"userId\", referencedColumnName=\"id\", unique=false, nullable=false)\n     */\n    protected $user;\n}",
+            "title": "Mapping One to Many"
+        },
+        {
+            "location": "/php/doctrine/#usage-example-one-to-many",
+            "text": "//persist\n$user = new Entity\\User();\n$user->setEmail('email');\n$user->setName('name');\n\n$comment1 = new Entity\\Comment;\n$comment1->setCommentText('comment1');\n$comment1->setUser($user);\n$comment2 = new Entity\\Comment;\n$comment2->setCommentText('comment2');\n$comment2->setUser($user);\n\n$user->getComments()->add($comment2);\n$user->getComments()->add($comment1);\n\n$em->persist($user);\n$em->flush();\n\n//retrieving\n$user = $em->find('User', $user->getId());\n$user->getComments()->toArray();",
+            "title": "Usage example One to Many"
+        },
+        {
+            "location": "/php/doctrine/#mapping-one-to-many-self-ref",
+            "text": "class Comment\n{\n    /**\n     * @ORM\\OneToMany(targetEntity=\"Comment\", mappedBy=\"parent\", cascade={\"persist\"})\n     */\n    protected $children;\n\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"Comment\", inversedBy=\"children\", cascade={\"persist\"})\n     * @ORM\\JoinColumn(name=\"parentId\", referencedColumnName=\"id\", unique=false, nullable=true)\n     */\n    protected $parent;\n\n    public function __construct()\n    {\n        $this->children = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n    }\n}",
+            "title": "Mapping One to Many Self Ref"
+        },
+        {
+            "location": "/php/doctrine/#usage-example-one-to-many-self-ref",
+            "text": "// persisting\n$comment2 = new Entity\\Comment;\n$comment2->setCommentText('parent');\n\n$comment1 = new Entity\\Comment;\n$comment1->setCommentText('children1');\n$comment1->setParent($comment2);\n$comment3 = new Entity\\Comment;\n$comment3->setCommentText('children2');\n$comment3->setParent($comment2);\n\n$comment2->getChildrens()->add($comment1);\n$comment2->getChildrens()->add($comment3);\n\n$em->persist($comment2);\n$em->flush();\n\n//retrieving\n$comment = $em->find('Comment', $comment2->getId());\n$comment->getChildrens();",
+            "title": "Usage example One to Many Self Ref"
+        },
+        {
+            "location": "/php/doctrine/#-many-to-many",
+            "text": "",
+            "title": "- Many to Many"
+        },
+        {
+            "location": "/php/doctrine/#mapping-many-to-many",
+            "text": "use Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"user\")\n */\nclass User\n{\n    /**\n     * @ORM\\ManyToMany(targetEntity=\"Category\", inversedBy=\"users\", cascade={\"persist\"})\n     * @ORM\\JoinColumn(name=\"categoryId\", referencedColumnName=\"id\", unique=false, nullable=true)\n     */\n    protected $categories;\n\n    public function __construct()\n    {\n        $this->categories = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n    }\n}\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"category\")\n */\nclass Category\n{\n    /**\n     * @ORM\\ManyToMany(targetEntity=\"User\", mappedBy=\"categories\", cascade={\"persist\"})\n     */\n    protected $users;\n\n    public function __construct()\n    {\n        $this->users = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n    }\n}",
+            "title": "Mapping Many to Many"
+        },
+        {
+            "location": "/php/doctrine/#usage-example-many-to-many",
+            "text": "// persisting\n$user1 = new Entity\\User();\n$user1->setEmail('email');\n$user1->setName('Plumber Builder');\n\n$user2 = new Entity\\User;\n$user2->setEmail('email');\n$user2->setName('Plaster Builder');\n\n$categoryPlumber = new Entity\\Category;\n$categoryPlumber->setName('Plumber Category');\n$categoryBeer_Drinkers = new Entity\\Category;\n$categoryBeer_Drinkers->setName('Beer_Drinkers Category');\n\n$categoryPlumber->getUsers()->add($user1);\n$categoryBeer_Drinkers->getUsers()->add($user2);\n$categoryBeer_Drinkers->getUsers()->add($user1);\n\n$user1->getCategories()->add($categoryPlumber);\n$user1->getCategories()->add($categoryBeer_Drinkers);\n$user2->getCategories()->add($categoryBeer_Drinkers);\n\n$em->persist($user1);\n$em->persist($user2);\n$em->flush();\n\n//retrieving\n$user1 = $em->find('User', $user1->getId());\n//get last categories for user1\n$user1->getCategories()->toArray());\n//get last category(Beer_Drinkers Category) and all users for this category\n$user1->getCategories()->last()->getUsers()->toArray();",
+            "title": "Usage example Many to Many"
+        },
+        {
+            "location": "/php/doctrine/#lifecycle-callbacks",
+            "text": "Annotation which has to be set on the entity-class PHP DocBlock to notify Doctrine that this entity has entity lifecycle callback annotations set on at least one of its methods. Using @PostLoad, @PrePersist, @PostPersist, @PreRemove, @PostRemove, @PreUpdate or @PostUpdate without this marker annotation will make Doctrine ignore the callbacks.  use Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @ORM\\MappedSuperclass\n * @ORM\\HasLifecycleCallbacks\n */\nabstract class AbstractEntity\n{\n    /**\n     * @ORM\\Column(name=\"updated_at\", type=\"datetime\")\n     */\n    private $updatedAt;\n\n    /**\n     * @ORM\\PrePersist()\n     * @ORM\\PreUpdate\n     */\n    public function preUpdated()\n    {\n        $this->updated = new \\DateTime();\n    }\n\n    /**\n     * @PostPersist\n     */\n    public function sendOptinMail() {}\n}\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"user\")\n */\nclass User extends Abstract\n{\n    // [...]\n}",
+            "title": "Lifecycle callbacks"
+        },
+        {
+            "location": "/php/doctrine/#custom-repository",
+            "text": "Entity mapping for repository class  use Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @ORM\\Entity(repositoryClass=\"Repository\\Comment\")\n */\nclass Comment {\n    // [...]\n}\n\n//repository Class\nuse Doctrine\\ORM\\EntityRepository;\n\nclass Comment extends EntityRepository\n{\n    public function findUserComments($userId)\n    {\n        $query = $this->_em->createQuery(\"SELECT u FROM Entity\\Comment u WHERE u.userId = :userId\");\n        $query->setParameters(array('userId' => $userId));\n        return $query->getResult();\n    }\n}  In controller  $repository = $em->getRepository(Entity\\Comment::class);\n$comments = $repository->findUserComments(10);",
+            "title": "Custom Repository"
+        },
+        {
+            "location": "/php/doctrine/#zend-hydrator",
+            "text": "use Doctrine\\ORM\\Mapping as ORM;\nuse Zend\\Hydrator;\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"user\")\n */\nclass User\n{\n    // [...]\n\n    public function hydrator(array $options) : User\n    {\n        $hydrator = new Hydrator\\ClassMethods();\n        $hydrator->hydrate($options, $this);\n        return $this;\n    }\n\n    public function extract() : array\n    {\n        $hydrator = new Hydrator\\ClassMethods();\n        return $hydrator->extract($this);\n    }\n}",
+            "title": "Zend Hydrator"
+        },
+        {
+            "location": "/php/doctrine/#my-entities",
+            "text": "",
+            "title": "My Entities"
+        },
+        {
+            "location": "/php/doctrine/#-abstract-entity",
+            "text": "namespace Core\\Entity;\n\nuse Doctrine\\ORM\\Mapping as ORM;\nuse Zend\\Hydrator;\n\n/**\n * @author Jhon Mike <developer@jhonmike.com.br>\n *\n * @ORM\\MappedSuperclass\n * @ORM\\HasLifecycleCallbacks\n */\nabstract class AbstractEntity\n{\n    /**\n     * @ORM\\Id\n     * @ORM\\Column(type=\"integer\", nullable=false)\n     * @ORM\\GeneratedValue(strategy=\"IDENTITY\")\n     */\n    private $id;\n\n    /**\n     * @ORM\\Column(type=\"datetime\", nullable=false)\n     */\n    private $created;\n\n    /**\n     * @ORM\\Column(type=\"datetime\", nullable=false)\n     */\n    private $updated;\n\n    public function getId() : int\n    {\n        return $this->id;\n    }\n\n    public function getCreated() : DateTime\n    {\n        return $this->created;\n    }\n\n    /**\n     * @ORM\\PrePersist\n     */\n    public function setCreated()\n    {\n        $this->created = new \\DateTime();\n    }\n\n\n    public function getUpdated() : DateTime\n    {\n        return $this->updated;\n    }\n\n    /**\n     * @ORM\\PrePersist\n     * @ORM\\PreUpdate\n     */\n    public function setUpdated()\n    {\n        $this->updated = new \\DateTime();\n    }\n\n    public function hydrator(array $options) : Role\n    {\n        $hydrator = new Hydrator\\ClassMethods();\n        $hydrator->hydrate($options, $this);\n        return $this;\n    }\n\n    public function toArray() : array\n    {\n        $hydrator = new Hydrator\\ClassMethods();\n        return $hydrator->extract($this);\n    }\n}",
+            "title": "- Abstract Entity"
+        },
+        {
+            "location": "/php/doctrine/#-snippet-entity",
+            "text": "namespace App\\Entity;\n\nuse Core\\Entity\\AbstractEntity;\nuse Doctrine\\ORM\\Mapping as ORM;\n\n/**\n * @author Jhon Mike <developer@jhonmike.com.br>\n *\n * @ORM\\Entity\n * @ORM\\Table(name=\"role\")\n */\nclass Role extends AbstractEntity\n{\n    /**\n     * @ORM\\Column(type=\"string\", length=100, nullable=false)\n     */\n    private $name;\n\n    public function setName(string $name) : Role\n    {\n        $this->name = $name;\n        return $this;\n    }\n\n    public function getName() : string\n    {\n        return $this->name;\n    }\n}",
+            "title": "- Snippet Entity"
+        },
+        {
+            "location": "/php/doctrine/#-snippet-entity-clean",
+            "text": "namespace App\\Entity;\n\nuse DateTime;\nuse Doctrine\\ORM\\Mapping as ORM;\nuse Zend\\Hydrator;\nuse Zend\\Math\\Rand;\n\n/**\n * @author Jhon Mike <developer@jhonmike.com.br>\n *\n * @ORM\\Entity\n * @ORM\\Table(name=\"role\")\n * @ORM\\HasLifecycleCallbacks\n */\nclass Role\n{\n    /**\n     * @ORM\\Id\n     * @ORM\\Column(type=\"integer\", nullable=false)\n     * @ORM\\GeneratedValue(strategy=\"IDENTITY\")\n     */\n    private $id;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=100, nullable=false)\n     */\n    private $name;\n\n    /**\n     * @ORM\\Column(type=\"datetime\", nullable=false)\n     */\n    private $created;\n\n    /**\n     * @ORM\\Column(type=\"datetime\", nullable=false)\n     */\n    private $updated;\n\n    public function getId() : int\n    {\n        return $this->id;\n    }\n\n    public function setName(string $name) : Role\n    {\n        $this->name = $name;\n        return $this;\n    }\n\n    public function getName() : string\n    {\n        return $this->name;\n    }\n\n    public function getCreated() : DateTime\n    {\n        return $this->created;\n    }\n\n    /**\n     * @ORM\\PrePersist\n     */\n    public function preCreated()\n    {\n        $this->created = new \\DateTime();\n    }\n\n\n    public function getUpdated() : DateTime\n    {\n        return $this->updated;\n    }\n\n    /**\n     * @ORM\\PrePersist\n     * @ORM\\PreUpdate\n     */\n    public function preUpdated()\n    {\n        $this->updated = new \\DateTime();\n    }\n\n    public function hydrator(array $options) : Role\n    {\n        $hydrator = new Hydrator\\ClassMethods();\n        $hydrator->hydrate($options, $this);\n        return $this;\n    }\n\n    public function toArray() : array\n    {\n        $hydrator = new Hydrator\\ClassMethods();\n        return $hydrator->extract($this);\n    }\n}",
+            "title": "- Snippet Entity Clean"
+        },
+        {
+            "location": "/php/php/",
+            "text": "PHP Arch\n\n\nsudo pacman -S php php-gd php-intl php-pgsql php-mcrypt php-imap php-sqlite php-memcache\n\n\n\n\nDateTime\n\n\nnew \\DateTime();\n\n\n\n\nAdd dias no objeto\n\n\n$date->add(new \\DateInterval('P1D'));",
+            "title": "Php"
+        },
+        {
+            "location": "/php/php/#php-arch",
+            "text": "sudo pacman -S php php-gd php-intl php-pgsql php-mcrypt php-imap php-sqlite php-memcache",
+            "title": "PHP Arch"
+        },
+        {
+            "location": "/php/php/#datetime",
+            "text": "new \\DateTime();",
+            "title": "DateTime"
+        },
+        {
+            "location": "/php/php/#add-dias-no-objeto",
+            "text": "$date->add(new \\DateInterval('P1D'));",
+            "title": "Add dias no objeto"
+        },
+        {
+            "location": "/php/phpunit/",
+            "text": "Mock\n\n\nProphesize\n\n\nExample:\n\n\n$gateway = $this->prophesize(Example\\Gateway::class);\n$gateway->findAllExampleEntity(\\Prophecy\\Argument::any())->willReturn([$entity1, $entity2]);\n$service = new Example\\Service($gateway->reveal());\n// \\Prophecy\\Argument::type(\\Fiscal\\Model\\NFE::class) <-- type\n\n\n\n\nMockBuilder\n\n\nExample:\n\n\n$gateway = $this->getMockBuilder(DownloadGateway::class)\n    ->setConstructorArgs([])\n    ->setMethods(['getNFEByNumber'])\n    ->getMock();\n$gateway->expects($this->once())\n    ->method('getNFEByNumber')\n    ->willReturn([$nfe1, $nfe2]);\n\n\n\n\nMock que valida se entro no metodo e quais foram os parametros passados\n\n\n$gateway = $this->getMockBuilder(NFEGateway::class)\n    ->setMethods(['findNFEsByEmissorAndModelAndDates'])\n    ->disableOriginalConstructor()\n    ->getMock();\n$gateway->expects($this->once())\n    ->method('findNFEsByEmissorAndModelAndDates')\n    ->with(\n        $this->identicalTo($emissor),\n        $this->identicalTo($params['modelo']),\n        $this->callback(function ($from) { return $from === '2016-11-01'; }),\n        $this->callback(function ($to) { return $to === '2016-11-10'; }),\n        $this->identicalTo(20),\n        $this->identicalTo(0)\n    )\n    ->willReturn([]);\n\n\n\n\nException\n\n\n/**\n * @expectedException MyException\n * @expectedExceptionCode 20\n * @expectedExceptionMessage Some Message\n */\npublic function testExceptionHasErrorcode20()\n{\n    throw new MyException('Some Message', 20);\n}",
+            "title": "Phpunit"
+        },
+        {
+            "location": "/php/phpunit/#mock",
+            "text": "",
+            "title": "Mock"
+        },
+        {
+            "location": "/php/phpunit/#prophesize",
+            "text": "Example:  $gateway = $this->prophesize(Example\\Gateway::class);\n$gateway->findAllExampleEntity(\\Prophecy\\Argument::any())->willReturn([$entity1, $entity2]);\n$service = new Example\\Service($gateway->reveal());\n// \\Prophecy\\Argument::type(\\Fiscal\\Model\\NFE::class) <-- type",
+            "title": "Prophesize"
+        },
+        {
+            "location": "/php/phpunit/#mockbuilder",
+            "text": "Example:  $gateway = $this->getMockBuilder(DownloadGateway::class)\n    ->setConstructorArgs([])\n    ->setMethods(['getNFEByNumber'])\n    ->getMock();\n$gateway->expects($this->once())\n    ->method('getNFEByNumber')\n    ->willReturn([$nfe1, $nfe2]);  Mock que valida se entro no metodo e quais foram os parametros passados  $gateway = $this->getMockBuilder(NFEGateway::class)\n    ->setMethods(['findNFEsByEmissorAndModelAndDates'])\n    ->disableOriginalConstructor()\n    ->getMock();\n$gateway->expects($this->once())\n    ->method('findNFEsByEmissorAndModelAndDates')\n    ->with(\n        $this->identicalTo($emissor),\n        $this->identicalTo($params['modelo']),\n        $this->callback(function ($from) { return $from === '2016-11-01'; }),\n        $this->callback(function ($to) { return $to === '2016-11-10'; }),\n        $this->identicalTo(20),\n        $this->identicalTo(0)\n    )\n    ->willReturn([]);",
+            "title": "MockBuilder"
+        },
+        {
+            "location": "/php/phpunit/#exception",
+            "text": "/**\n * @expectedException MyException\n * @expectedExceptionCode 20\n * @expectedExceptionMessage Some Message\n */\npublic function testExceptionHasErrorcode20()\n{\n    throw new MyException('Some Message', 20);\n}",
+            "title": "Exception"
+        },
+        {
+            "location": "/php/zend/",
+            "text": "",
+            "title": "Zend"
+        },
+        {
+            "location": "/terminais/tmux/",
+            "text": "TMUX\n\n\nquando ler <Prefix> ser\u00e1 o padr\u00e3o Ctrl + b\n\n\n\nWindow\n\n\n<Prefix> c => para criar uma nova 'window'\n<Prefix> % => para dividir uma 'window' verticalmente\n<Prefix> \" => para dividir uma 'window' horizontalmente\n<Prefix> & => para fechar uma 'window'\n<Prefix> . => move a window para algum indice ainda n\u00e3o utilizado\n<Prefix> 0 a 9 => abre a 'window' com o numero digitado\n<Prefix> w => abre a 'window' a partir de uma lista\n<Prefix> n => (next) abre a pr\u00f3xima 'window'\n<Prefix> p => (previous) abre a 'window' anterior\n\n\n\nPane (split window)\n\n\n<Prefix> x => para fechar uma 'pane', pergunta de confirma\u00e7\u00e3o\n<Prefix> ! => para fechar uma 'pane', SEM pergunta de confirma\u00e7\u00e3o\n<Prefix> o => para ir para a proxima 'pane'\n<Prefix> Up ou Left ou Right ou Down => para ir para a 'pane' 'apontada'\n<Prefix> z => maximiza a 'pane' atual, se executar novamente volta a exibir as outras\n<Prefix> { ou } => mover 'pane' de lugar\n<Prefix> ; => alterana para a ultima pane\n<Prefix> Alt(segura) setas; => redimensiona o tamanho da pane\n\n\n\nCommands\n\n\n<Prefix> : => para digitar o comando a ser executado, ex: 'kill-window'\n<Prefix> f => procura o termo em todas as 'window' e 'panes'\n<Prefix> d => 'destaca' da sess\u00e3o, mas mantem a sess\u00e3o aberta\n<Prefix> ? => exibe uma lista de comandos que podem ser utilizados\n\n\n\nSessions\n\n\npara listar sess\u00f5es:\n\n\ntmux list-sessions\n\n\npara retornar a uma sess\u00e3o aberta:\n\n\ntmux attach -t 0  #=> Ou o nome da sess\u00e3o\n\n\npara destruir uma session:\n\n\ntmux kill-session -t 0  #=> Ou o nome da sess\u00e3o\n\n\npara destruir TODAS as sess\u00f5es abertas:\n\n\ntmux kill-server\n\n\npara criar uma nova sess\u00e3o (new-session ou alias new):\n\n\ntmux new -s nome-da-sess",
+            "title": "Tmux"
+        },
+        {
+            "location": "/terminais/tmux/#tmux",
+            "text": "quando ler <Prefix> ser\u00e1 o padr\u00e3o Ctrl + b",
+            "title": "TMUX"
+        },
+        {
+            "location": "/terminais/tmux/#window",
+            "text": "<Prefix> c => para criar uma nova 'window'\n<Prefix> % => para dividir uma 'window' verticalmente\n<Prefix> \" => para dividir uma 'window' horizontalmente\n<Prefix> & => para fechar uma 'window'\n<Prefix> . => move a window para algum indice ainda n\u00e3o utilizado\n<Prefix> 0 a 9 => abre a 'window' com o numero digitado\n<Prefix> w => abre a 'window' a partir de uma lista\n<Prefix> n => (next) abre a pr\u00f3xima 'window'\n<Prefix> p => (previous) abre a 'window' anterior",
+            "title": "Window"
+        },
+        {
+            "location": "/terminais/tmux/#pane-split-window",
+            "text": "<Prefix> x => para fechar uma 'pane', pergunta de confirma\u00e7\u00e3o\n<Prefix> ! => para fechar uma 'pane', SEM pergunta de confirma\u00e7\u00e3o\n<Prefix> o => para ir para a proxima 'pane'\n<Prefix> Up ou Left ou Right ou Down => para ir para a 'pane' 'apontada'\n<Prefix> z => maximiza a 'pane' atual, se executar novamente volta a exibir as outras\n<Prefix> { ou } => mover 'pane' de lugar\n<Prefix> ; => alterana para a ultima pane\n<Prefix> Alt(segura) setas; => redimensiona o tamanho da pane",
+            "title": "Pane (split window)"
+        },
+        {
+            "location": "/terminais/tmux/#commands",
+            "text": "<Prefix> : => para digitar o comando a ser executado, ex: 'kill-window'\n<Prefix> f => procura o termo em todas as 'window' e 'panes'\n<Prefix> d => 'destaca' da sess\u00e3o, mas mantem a sess\u00e3o aberta\n<Prefix> ? => exibe uma lista de comandos que podem ser utilizados",
+            "title": "Commands"
+        },
+        {
+            "location": "/terminais/tmux/#sessions",
+            "text": "para listar sess\u00f5es:  tmux list-sessions  para retornar a uma sess\u00e3o aberta:  tmux attach -t 0  #=> Ou o nome da sess\u00e3o  para destruir uma session:  tmux kill-session -t 0  #=> Ou o nome da sess\u00e3o  para destruir TODAS as sess\u00f5es abertas:  tmux kill-server  para criar uma nova sess\u00e3o (new-session ou alias new):  tmux new -s nome-da-sess",
+            "title": "Sessions"
+        }
+    ]
+}
