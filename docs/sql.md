@@ -29,7 +29,7 @@ SELECT * FROM table_name WHERE some_column=some_value ORDER BY column_name ASC, 
 # JOIN
 
 ```sql
-SELECT * FROM Orders INNER JOIN Customers ON Orders.customerId=Customers.id; 
+SELECT * FROM order INNER JOIN customer ON Orders.customerId=Customers.id; 
 ```
 
 # CREATE TABLE
@@ -51,13 +51,13 @@ CREATE TABLE table_name (
 # ALTER TABLE
 
 ```sql
-ALTER TABLE ApplicationClient ADD email_accountant varchar(100);
-ALTER TABLE CoreZipCode MODIFY COLUMN zipCode varchar(8);
-ALTER TABLE ApplicationClient CHANGE columnOldName columnNewName varchar(10);
+ALTER TABLE client ADD email_accountant varchar(100);
+ALTER TABLE zip_code MODIFY COLUMN zipCode varchar(8);
+ALTER TABLE client CHANGE columnOldName columnNewName varchar(10);
 ```
 
 # Show info table
 
 ```sql
-DESCRIBE ApplicationClient;
+DESCRIBE client;
 ```

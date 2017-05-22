@@ -92,7 +92,7 @@
         },
         {
             "location": "/sql/",
-            "text": "INSERT\n\n\nINSERT INTO table_name VALUES (value1,value2,value3);\n\nOR\n\nINSERT INTO table_name (column1,column2,column3) VALUES (value1,value2,value3);\n\n\n\n\nUPDATE\n\n\nUPDATE table_name SET column1=value1,column2=value2 WHERE some_column=some_value;\n\n\n\n\nDELETE\n\n\nDELETE FROM table_name WHERE some_column=some_value;\n\n\n\n\nSELECT\n\n\nSELECT * FROM table_name WHERE some_column=some_value ORDER BY column_name ASC, column_name DESC;\n\n\n\n\nJOIN\n\n\nSELECT * FROM Orders INNER JOIN Customers ON Orders.customerId=Customers.id; \n\n\n\n\nCREATE TABLE\n\n\nCREATE TABLE table_name (\n    id INT AUTO_INCREMENT NOT NULL,\n    sequence INT(10) NOT NULL,\n    account_id INT DEFAULT NULL,\n    revenue_id INT DEFAULT NULL,\n    created DATETIME NOT NULL,\n    updated DATETIME DEFAULT NULL,\n    INDEX IDX_921775439B6B5FBA (account_id),\n    INDEX IDX_92177543224718EB (revenue_id),\n    PRIMARY KEY(id)\n);\n\n\n\n\nALTER TABLE\n\n\nALTER TABLE ApplicationClient ADD email_accountant varchar(100);\nALTER TABLE CoreZipCode MODIFY COLUMN zipCode varchar(8);\nALTER TABLE ApplicationClient CHANGE columnOldName columnNewName varchar(10);\n\n\n\n\nShow info table\n\n\nDESCRIBE ApplicationClient;",
+            "text": "INSERT\n\n\nINSERT INTO table_name VALUES (value1,value2,value3);\n\nOR\n\nINSERT INTO table_name (column1,column2,column3) VALUES (value1,value2,value3);\n\n\n\n\nUPDATE\n\n\nUPDATE table_name SET column1=value1,column2=value2 WHERE some_column=some_value;\n\n\n\n\nDELETE\n\n\nDELETE FROM table_name WHERE some_column=some_value;\n\n\n\n\nSELECT\n\n\nSELECT * FROM table_name WHERE some_column=some_value ORDER BY column_name ASC, column_name DESC;\n\n\n\n\nJOIN\n\n\nSELECT * FROM order INNER JOIN customer ON Orders.customerId=Customers.id; \n\n\n\n\nCREATE TABLE\n\n\nCREATE TABLE table_name (\n    id INT AUTO_INCREMENT NOT NULL,\n    sequence INT(10) NOT NULL,\n    account_id INT DEFAULT NULL,\n    revenue_id INT DEFAULT NULL,\n    created DATETIME NOT NULL,\n    updated DATETIME DEFAULT NULL,\n    INDEX IDX_921775439B6B5FBA (account_id),\n    INDEX IDX_92177543224718EB (revenue_id),\n    PRIMARY KEY(id)\n);\n\n\n\n\nALTER TABLE\n\n\nALTER TABLE client ADD email_accountant varchar(100);\nALTER TABLE zip_code MODIFY COLUMN zipCode varchar(8);\nALTER TABLE client CHANGE columnOldName columnNewName varchar(10);\n\n\n\n\nShow info table\n\n\nDESCRIBE client;",
             "title": "Sql"
         },
         {
@@ -117,7 +117,7 @@
         },
         {
             "location": "/sql/#join",
-            "text": "SELECT * FROM Orders INNER JOIN Customers ON Orders.customerId=Customers.id;",
+            "text": "SELECT * FROM order INNER JOIN customer ON Orders.customerId=Customers.id;",
             "title": "JOIN"
         },
         {
@@ -127,12 +127,12 @@
         },
         {
             "location": "/sql/#alter-table",
-            "text": "ALTER TABLE ApplicationClient ADD email_accountant varchar(100);\nALTER TABLE CoreZipCode MODIFY COLUMN zipCode varchar(8);\nALTER TABLE ApplicationClient CHANGE columnOldName columnNewName varchar(10);",
+            "text": "ALTER TABLE client ADD email_accountant varchar(100);\nALTER TABLE zip_code MODIFY COLUMN zipCode varchar(8);\nALTER TABLE client CHANGE columnOldName columnNewName varchar(10);",
             "title": "ALTER TABLE"
         },
         {
             "location": "/sql/#show-info-table",
-            "text": "DESCRIBE ApplicationClient;",
+            "text": "DESCRIBE client;",
             "title": "Show info table"
         },
         {
@@ -162,7 +162,7 @@
         },
         {
             "location": "/editor/vim/",
-            "text": "Vim Atalhos\n\n\nModo normal:\n\n\nNavega\u00e7\u00e3o com vim, hjkl.\nNavega\u00e7\u00e3o por palavras, w, e\nIndo pro vim, com $, pro come\u00e7o com 0 ou ^ ou _\nIndo pro come\u00e7o, fim: gg, G\nIndo pra linha: 5G\nIndo pra cima, meio, baixo (High, Middle, Low): H, M, L\nIndo pro primeiro caracter k: fk\nRepetindo: ;\nProcurando outras ocorr\u00eancias da palavra: *, depois n\nMeia p\u00e1gina pra baixo ou cima: CTRL-D, CTRL-U\nBatendo par\u00eantesis, chave ou colchete: %\nCombinando: 3w, 3ft\nEditando com modo normal: r, d, y, p, P, ~\nCombinando: 3yy, 2dd, 3w, 3p\nRepetindo: .\nUndo: u\nRedo: CTRL-R\n\n\nModo visual e bloco:\n\n\nEditando com modo visual: u, U, ~\nCombinando: 3yy, 2dd, 3w\n\n\nComandos:\n\n\n:w, :x, :wq, :q, :q!\n\n\nInsert Mode:\n\n\nEntrando em insert mode: i, a, A, c, o, O",
+            "text": "Vim Atalhos\n\n\nModo normal:\n\n\n\n\nNavega\u00e7\u00e3o com vim, hjkl.\n\n\nNavega\u00e7\u00e3o por palavras, w, e\n\n\nIndo pro vim, com $, pro come\u00e7o com 0 ou ^ ou _\n\n\nIndo pro come\u00e7o, fim: gg, G\n\n\nIndo pra linha: 5G\n\n\nIndo pra cima, meio, baixo (High, Middle, Low): H, M, L\n\n\nIndo pro primeiro caracter k: fk\n\n\nRepetindo: ;\n\n\nProcurando outras ocorr\u00eancias da palavra: *, depois n\n\n\nMeia p\u00e1gina pra baixo ou cima: CTRL-D, CTRL-U\n\n\nBatendo par\u00eantesis, chave ou colchete: %\n\n\nCombinando: 3w, 3ft\n\n\nEditando com modo normal: r, d, y, p, P, ~\n\n\nCombinando: 3yy, 2dd, 3w, 3p\n\n\nRepetindo: .\n\n\nUndo: u\n\n\nRedo: CTRL-R\n\n\n\n\nModo visual e bloco:\n\n\n\n\nEditando com modo visual: u, U, ~\n\n\nCombinando: 3yy, 2dd, 3w\n\n\n\n\nComandos:\n\n\n:w, :x, :wq, :q, :q!\n\n\nInsert Mode:\n\n\n\n\nEntrando em insert mode: i, a, A, c, o, O",
             "title": "Vim"
         },
         {
@@ -172,12 +172,12 @@
         },
         {
             "location": "/editor/vim/#modo-normal",
-            "text": "Navega\u00e7\u00e3o com vim, hjkl.\nNavega\u00e7\u00e3o por palavras, w, e\nIndo pro vim, com $, pro come\u00e7o com 0 ou ^ ou _\nIndo pro come\u00e7o, fim: gg, G\nIndo pra linha: 5G\nIndo pra cima, meio, baixo (High, Middle, Low): H, M, L\nIndo pro primeiro caracter k: fk\nRepetindo: ;\nProcurando outras ocorr\u00eancias da palavra: *, depois n\nMeia p\u00e1gina pra baixo ou cima: CTRL-D, CTRL-U\nBatendo par\u00eantesis, chave ou colchete: %\nCombinando: 3w, 3ft\nEditando com modo normal: r, d, y, p, P, ~\nCombinando: 3yy, 2dd, 3w, 3p\nRepetindo: .\nUndo: u\nRedo: CTRL-R",
+            "text": "Navega\u00e7\u00e3o com vim, hjkl.  Navega\u00e7\u00e3o por palavras, w, e  Indo pro vim, com $, pro come\u00e7o com 0 ou ^ ou _  Indo pro come\u00e7o, fim: gg, G  Indo pra linha: 5G  Indo pra cima, meio, baixo (High, Middle, Low): H, M, L  Indo pro primeiro caracter k: fk  Repetindo: ;  Procurando outras ocorr\u00eancias da palavra: *, depois n  Meia p\u00e1gina pra baixo ou cima: CTRL-D, CTRL-U  Batendo par\u00eantesis, chave ou colchete: %  Combinando: 3w, 3ft  Editando com modo normal: r, d, y, p, P, ~  Combinando: 3yy, 2dd, 3w, 3p  Repetindo: .  Undo: u  Redo: CTRL-R",
             "title": "Modo normal:"
         },
         {
             "location": "/editor/vim/#modo-visual-e-bloco",
-            "text": "Editando com modo visual: u, U, ~\nCombinando: 3yy, 2dd, 3w",
+            "text": "Editando com modo visual: u, U, ~  Combinando: 3yy, 2dd, 3w",
             "title": "Modo visual e bloco:"
         },
         {
