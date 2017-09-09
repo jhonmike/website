@@ -132,82 +132,15 @@
     <a class="current" href="./">Arch instalacao</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#definiremos-o-layout-do-nosso-teclado">Definiremos o layout do nosso teclado:</a></li>
-    
-
-    <li class="toctree-l3"><a href="#vamos-alterar-o-idioma-da-instalacao">Vamos alterar o idioma da instalação:</a></li>
-    
-
-    <li class="toctree-l3"><a href="#particionando-o-hd-para-modo-uefi">Particionando o HD para modo UEFI</a></li>
-    
-
-    <li class="toctree-l3"><a href="#acessando-a-rede-wifi">Acessando a rede wifi</a></li>
-    
-
-    <li class="toctree-l3"><a href="#formatacao">Formatação</a></li>
+    <li class="toctree-l3"><a href="#instalacao-arch">Instalação Arch</a></li>
     
         <ul>
         
-            <li><a class="toctree-l4" href="#montando-as-particoes-sem-crypt">Montando as partições sem crypt</a></li>
+            <li><a class="toctree-l4" href="#wiki-perfeita">Wiki Perfeita</a></li>
         
-            <li><a class="toctree-l4" href="#montando-as-particoes-com-crypt">Montando as partições com crypt</a></li>
-        
-        </ul>
-    
-
-    <li class="toctree-l3"><a href="#agora-configuraremos-os-repositorios-do-arch-linux">Agora configuraremos os repositórios do Arch Linux:</a></li>
-    
-
-    <li class="toctree-l3"><a href="#fstab">Fstab</a></li>
-    
-
-    <li class="toctree-l3"><a href="#iniciando-root">Iniciando root</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#configuracoes-basicas-do-seu-archlinux">Configurações basicas do seu ArchLinux</a></li>
-        
-            <li><a class="toctree-l4" href="#instalacao-das-ferramentas-wireless-no-sistema-base-do-arch-linux">Instalação das ferramentas Wireless no sistema base do Arch Linux:</a></li>
-        
-            <li><a class="toctree-l4" href="#ambiente-inicial">Ambiente inicial:</a></li>
-        
-            <li><a class="toctree-l4" href="#senha-do-root">Senha do root:</a></li>
+            <li><a class="toctree-l4" href="#mais-ou-menos-como-fiz">Mais ou menos como fiz:</a></li>
         
         </ul>
-    
-
-    <li class="toctree-l3"><a href="#habilitar-multilib">Habilitar multilib</a></li>
-    
-
-    <li class="toctree-l3"><a href="#grub">GRUB</a></li>
-    
-
-    <li class="toctree-l3"><a href="#criar-usuario-padrao">Criar usuário padrão:</a></li>
-    
-
-    <li class="toctree-l3"><a href="#xorg">Xorg</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#intel">Intel</a></li>
-        
-            <li><a class="toctree-l4" href="#nvidia">NVIDIA</a></li>
-        
-            <li><a class="toctree-l4" href="#ati">ATI</a></li>
-        
-        </ul>
-    
-
-    <li class="toctree-l3"><a href="#touchpad-mouse-e-teclado-respectivamente">touchpad, mouse e teclado, respectivamente.</a></li>
-    
-
-    <li class="toctree-l3"><a href="#configuracao-do-sudo">Configuração do sudo:</a></li>
-    
-
-    <li class="toctree-l3"><a href="#pacotes-do-aur">Pacotes do AUR</a></li>
-    
-
-    <li class="toctree-l3"><a href="#pronto">Pronto!</a></li>
     
 
     </ul>
@@ -309,7 +242,17 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="definiremos-o-layout-do-nosso-teclado">Definiremos o layout do nosso teclado:</h3>
+                <h1 id="instalacao-arch">Instalação Arch</h1>
+<h2 id="wiki-perfeita">Wiki Perfeita</h2>
+<ul>
+<li>https://wiki.archlinux.org/index.php/Installation_guide_(Português)
+(o encrypt tem que ser feito pouco antes da formação das partições)</li>
+<li>https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Simple_partition_layout_with_LUKS</li>
+<li>https://wiki.archlinux.org/index.php/GRUB#UEFI_systems</li>
+<li>https://wiki.archlinux.org/index.php/Deepin_Desktop_Environment</li>
+</ul>
+<h2 id="mais-ou-menos-como-fiz">Mais ou menos como fiz:</h2>
+<h3 id="definiremos-o-layout-do-nosso-teclado">Definiremos o layout do nosso teclado:</h3>
 <pre><code class="shell">loadkeys br-abnt2
 </code></pre>
 
@@ -337,44 +280,42 @@ ping -c3 google.com
 </code></pre>
 
 <h4 id="montando-as-particoes-sem-crypt">Montando as partições sem crypt</h4>
-<h5 id="_1">/</h5>
-<p>Endereço que consta no seu fdisk -l</p>
+<p>/</p>
 <pre><code class="shell">mkfs.ext4 /dev/sda3
 mount /dev/sda3 /mnt
 </code></pre>
 
-<h5 id="swap">Swap</h5>
+<p>Swap</p>
 <pre><code class="shell">mkswap /dev/sda2
 swapon /dev/sda2
 </code></pre>
 
-<h5 id="uefi">UEFI</h5>
+<p>UEFI</p>
 <pre><code class="shell">mkfs.fat -F32 /dev/sda1
 mkdir /mnt/boot
 mkdir /mnt/boot/efi
 mount /dev/sda1 /mnt/boot/efi
 </code></pre>
 
-<h5 id="home-opcional">Home (opcional)</h5>
+<p>Home (opcional)</p>
 <pre><code class="shell">mkdir /mnt/home
 mount /dev/sda4 /mnt/home
 </code></pre>
 
 <h4 id="montando-as-particoes-com-crypt">Montando as partições com crypt</h4>
-<h5 id="_2">/</h5>
-<p>Endereço que consta no seu fdisk -l</p>
+<p>/</p>
 <pre><code class="shell">cryptsetup -y -v luksFormat /dev/sda3
 cryptsetup open /dev/sda3 cryptroot
 mkfs.ext4 /dev/mapper/cryptroot
 mount /dev/mapper/cryptroot /mnt
 </code></pre>
 
-<h5 id="swap_1">Swap</h5>
+<p>Swap</p>
 <pre><code class="shell">mkswap /dev/sda2
 swapon /dev/sda2
 </code></pre>
 
-<h5 id="uefi_1">UEFI</h5>
+<p>UEFI</p>
 <pre><code class="shell">mkfs.fat -F32 /dev/sda1
 mkdir /mnt/boot
 mkdir /mnt/boot/efi

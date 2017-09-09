@@ -1,3 +1,15 @@
+# Instalação Arch
+
+## Wiki Perfeita
+
+- https://wiki.archlinux.org/index.php/Installation_guide_(Português)
+(o encrypt tem que ser feito pouco antes da formação das partições)
+- https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Simple_partition_layout_with_LUKS
+- https://wiki.archlinux.org/index.php/GRUB#UEFI_systems
+- https://wiki.archlinux.org/index.php/Deepin_Desktop_Environment
+
+## Mais ou menos como fiz:
+
 ### Definiremos o layout do nosso teclado:
 
 ```shell
@@ -37,23 +49,19 @@ fdisk -l
 
 #### Montando as partições sem crypt
 
-##### /
-Endereço que consta no seu fdisk -l
-
+/
 ```shell
 mkfs.ext4 /dev/sda3
 mount /dev/sda3 /mnt
 ```
 
-##### Swap
-
+Swap
 ```shell
 mkswap /dev/sda2
 swapon /dev/sda2
 ```
 
-##### UEFI
-
+UEFI
 ```shell
 mkfs.fat -F32 /dev/sda1
 mkdir /mnt/boot
@@ -61,17 +69,14 @@ mkdir /mnt/boot/efi
 mount /dev/sda1 /mnt/boot/efi
 ```
 
-##### Home (opcional)
-
+Home (opcional)
 ```shell
 mkdir /mnt/home
 mount /dev/sda4 /mnt/home
 ```
 #### Montando as partições com crypt
 
-##### /
-Endereço que consta no seu fdisk -l
-
+/
 ```shell
 cryptsetup -y -v luksFormat /dev/sda3
 cryptsetup open /dev/sda3 cryptroot
@@ -79,15 +84,13 @@ mkfs.ext4 /dev/mapper/cryptroot
 mount /dev/mapper/cryptroot /mnt
 ```
 
-##### Swap
-
+Swap
 ```shell
 mkswap /dev/sda2
 swapon /dev/sda2
 ```
 
-##### UEFI
-
+UEFI
 ```shell
 mkfs.fat -F32 /dev/sda1
 mkdir /mnt/boot
