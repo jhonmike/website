@@ -1,11 +1,3 @@
-# NETCat
-
-Esse carinha aqui faz funcionar meu docker corretamente
-
-```shell
-sudo pacman -S netcat
-```
-
 # Preferencia IPV4
 
 ```bash
