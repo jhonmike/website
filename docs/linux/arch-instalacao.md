@@ -2,11 +2,11 @@
 
 ## Wiki Perfeita
 
-- https://wiki.archlinux.org/index.php/Installation_guide_(Português)
-(o encrypt tem que ser feito pouco antes da formação das partições)
-- https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Simple_partition_layout_with_LUKS
-- https://wiki.archlinux.org/index.php/GRUB#UEFI_systems
-- https://wiki.archlinux.org/index.php/Deepin_Desktop_Environment
+- [Guia de Instalação Arch](https://wiki.archlinux.org/index.php/Installation_guide_(Português))
+- (o encrypt tem que ser feito pouco antes da formação das partições e ele afeta em alguns detalhes do GRUB)
+- [Encrypt Partição](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Simple_partition_layout_with_LUKS)
+- [Configuração do GRUB](https://wiki.archlinux.org/index.php/GRUB#UEFI_systems)
+- [Deepin Interface no Arch](https://wiki.archlinux.org/index.php/Deepin_Desktop_Environment)
 
 ## Mais ou menos como fiz:
 
