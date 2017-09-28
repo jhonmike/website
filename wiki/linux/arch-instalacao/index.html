@@ -389,6 +389,12 @@ grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch_
 grub-mkconfig -o /boot/grub/grub.cfg
 </code></pre>
 
+<h4 id="encryption">Encryption</h4>
+<pre><code>/etc/default/grub
+GRUB_CMDLINE_LINUX=&quot;cryptdevice=/dev/sda2:cryptroot&quot;
+mkinitcpio -p linux
+</code></pre>
+
 <h3 id="criar-usuario-padrao">Criar usuário padrão:</h3>
 <pre><code class="shell">useradd -m -g users -G wheel -s /bin/bash seu-usuario
 passwd seu-usuario
