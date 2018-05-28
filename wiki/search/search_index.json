@@ -32,7 +32,7 @@
         },
         {
             "location": "/docker/",
-            "text": "Docker\n\n\nInstalling\n\n\nsudo pacman -S docker\nnewgrp docker\nsudo gpasswd -a jhon docker\nsystemctl start docker\n\n\n\n\nPull Image\n\n\nEx.:\n\n\ndocker pull postgres:9.5.7\n\n\n\n\nStart Container\n\n\nEx.:\n\n\ndocker run -i -p 5432:5432 --name postgres -e POSTGRES_DB=xpto_db -d postgres:9.5.7",
+            "text": "Docker\n\n\nInstalling\n\n\nsudo pacman -S docker\nnewgrp docker\nsudo gpasswd -a jhon docker\nsystemctl start docker\n\n\n\n\nPull Image\n\n\nEx.:\n\n\ndocker pull postgres:9.5.7\n\n\n\n\nStart Container\n\n\nEx.:\n\n\ndocker run -i -p 5432:5432 --name postgres -e POSTGRES_DB=xpto_db -d postgres:9.5.7\n\n\n\n\nExec command in container\n\n\nEx.:\n\n\ndocker exec postgres pg_dump -U postgres xpto_db > backup.sql\n\n\n\n\nDocker copy file from container\n\n\nEx.:\n\n\ndocker cp ./Downloads/backup.sql postgres:/backup.sql\n\n\n\n\nContaner access\n\n\nEx.:\n\n\ndocker exec -it postgres bash",
             "title": "Docker"
         },
         {
@@ -54,6 +54,21 @@
             "location": "/docker/#start-container",
             "text": "Ex.:  docker run -i -p 5432:5432 --name postgres -e POSTGRES_DB=xpto_db -d postgres:9.5.7",
             "title": "Start Container"
+        },
+        {
+            "location": "/docker/#exec-command-in-container",
+            "text": "Ex.:  docker exec postgres pg_dump -U postgres xpto_db > backup.sql",
+            "title": "Exec command in container"
+        },
+        {
+            "location": "/docker/#docker-copy-file-from-container",
+            "text": "Ex.:  docker cp ./Downloads/backup.sql postgres:/backup.sql",
+            "title": "Docker copy file from container"
+        },
+        {
+            "location": "/docker/#contaner-access",
+            "text": "Ex.:  docker exec -it postgres bash",
+            "title": "Contaner access"
         },
         {
             "location": "/go/",

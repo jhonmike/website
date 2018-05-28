@@ -72,6 +72,12 @@
         
             <li><a class="toctree-l3" href="#start-container">Start Container</a></li>
         
+            <li><a class="toctree-l3" href="#exec-command-in-container">Exec command in container</a></li>
+        
+            <li><a class="toctree-l3" href="#docker-copy-file-from-container">Docker copy file from container</a></li>
+        
+            <li><a class="toctree-l3" href="#contaner-access">Contaner access</a></li>
+        
         </ul>
     
 
@@ -261,6 +267,21 @@ systemctl start docker
 <h2 id="start-container">Start Container</h2>
 <p>Ex.:</p>
 <pre><code>docker run -i -p 5432:5432 --name postgres -e POSTGRES_DB=xpto_db -d postgres:9.5.7
+</code></pre>
+
+<h2 id="exec-command-in-container">Exec command in container</h2>
+<p>Ex.:</p>
+<pre><code>docker exec postgres pg_dump -U postgres xpto_db &gt; backup.sql
+</code></pre>
+
+<h2 id="docker-copy-file-from-container">Docker copy file from container</h2>
+<p>Ex.:</p>
+<pre><code>docker cp ./Downloads/backup.sql postgres:/backup.sql
+</code></pre>
+
+<h2 id="contaner-access">Contaner access</h2>
+<p>Ex.:</p>
+<pre><code>docker exec -it postgres bash
 </code></pre>
               
             </div>
