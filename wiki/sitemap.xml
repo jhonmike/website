@@ -128,6 +128,12 @@
     </url>
         
     <url>
+     <loc>/linux/grub/</loc>
+     <lastmod>2018-06-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/linux/scrot/</loc>
      <lastmod>2018-06-16</lastmod>
      <changefreq>daily</changefreq>
@@ -135,6 +141,12 @@
         
     <url>
      <loc>/linux/swap/</loc>
+     <lastmod>2018-06-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/linux/syslinux/</loc>
      <lastmod>2018-06-16</lastmod>
      <changefreq>daily</changefreq>
     </url>

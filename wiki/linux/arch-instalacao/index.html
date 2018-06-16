@@ -160,11 +160,19 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../grub/">Grub</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../scrot/">Scrot</a>
                 </li>
                 <li class="">
                     
     <a class="" href="../swap/">Swap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../syslinux/">Syslinux</a>
                 </li>
                 <li class="">
                     
@@ -387,52 +395,11 @@ Em seguida, execute:</p>
 <pre><code class="shell">pacman -Syu
 </code></pre>
 
-<h3 id="syslinux">Syslinux</h3>
-<p>Lembrando que o syslinux deve ser montado direto na partição <code>/boot</code>,
-porque quando o syslinux for ativar o linux ele precisa ler os arquivos <code>/boot/vmlinuz-linux</code> e
-<code>initramfs-linux.img</code> que tem que estar disponivel antes de subir a partição principal do linux
-que carrega simultanio quando usamos UEFI</p>
-<pre><code class="shell">pacman -S syslinux efibootmgr
-mkdir -p /boot/EFI/boot
-cp -r /usr/lib/syslinux/efi64/* /boot/EFI/boot/
-efibootmgr -c -g -d /dev/sda -p 1 -w -L boot -l '\\EFI\\boot\\bootx64.efi'
-</code></pre>
-
-<p>e crio o arquivo <code>/boot/EFI/boot/syslinux.cfg</code> com o seguinte conteudo:</p>
-<pre><code>PROMPT 0
-DEFAULT arch
-
-LABEL arch
-  LINUX ../../vmlinuz-linux
-  APPEND root=/dev/sda2 rw
-  INITRD ../../initramfs-linux.img
-</code></pre>
-
-<p>Caso tenha a partição cryptografada use o seguinte conteudo no APPEND:</p>
-<p><code>APPEND root=/dev/mapper/cryptroot cryptdevice=/dev/sda2:cryptroot rw</code></p>
-<h3 id="grub">GRUB</h3>
-<p>Nesse guia, utilizaremos o Grub como o gerenciador de boot, então:</p>
-<pre><code class="shell">pacman -S grub grub-efi-x86_64 efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=boot --recheck
-grub-mkconfig -o /boot/grub/grub.cfg
-mv boot/grubx64.efi boot/bootx64.efi
-efibootmgr -c -g -d /dev/sda -p 1 -w -L boot -l '\\EFI\\boot\\bootx64.efi'
-efibootmgr -n IDBOOT
-</code></pre>
-
-<h4 id="encryption-com-grub">Encryption com GRUB</h4>
-<pre><code>/etc/mkinitcpio.conf
-HOOKS=(base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems fsck)
-</code></pre>
-
-<pre><code>/etc/default/grub
-GRUB_CMDLINE_LINUX=&quot;cryptdevice=/dev/sda2:cryptroot&quot;
-GRUB_ENABLE_CRYPTODISK=y
-</code></pre>
-
-<pre><code>mkinitcpio -p linux
-</code></pre>
-
+<h3 id="config-de-boot">Config de BOOT</h3>
+<ul>
+<li><a href="http://jhonmike.com.br/wiki/linux/grub">Grub</a></li>
+<li><a href="http://jhonmike.com.br/wiki/linux/syslinux">Syslinux</a></li>
+</ul>
 <h3 id="criar-usuario-padrao">Criar usuário padrão:</h3>
 <pre><code class="shell">useradd -m -g users -G wheel -s /bin/bash seu-usuario
 passwd seu-usuario

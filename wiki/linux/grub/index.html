@@ -8,7 +8,7 @@
   
   <meta name="author" content="Jhon Mike <developer@jhonmike.com.br>">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Zend - Jhon Mike Wiki</title>
+  <title>GRUB - Jhon Mike Wiki</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Zend";
-    var mkdocs_page_input_path = "php/zend.md";
-    var mkdocs_page_url = "/php/zend/";
+    var mkdocs_page_name = "GRUB";
+    var mkdocs_page_input_path = "linux/grub.md";
+    var mkdocs_page_url = "/linux/grub/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -134,35 +134,47 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../linux/arch-instalacao/">Instalação Arch</a>
+    <a class="" href="../arch-instalacao/">Instalação Arch</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../linux/arch-nvidia/">Instalação</a>
+    <a class="" href="../arch-nvidia/">Instalação</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../linux/arch/">Preferencia IPV4</a>
+    <a class="" href="../arch/">Preferencia IPV4</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">GRUB</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#grub">GRUB</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#encryption-com-grub">Encryption com GRUB</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../linux/grub/">GRUB</a>
+    <a class="" href="../scrot/">Scrot</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../linux/scrot/">Scrot</a>
+    <a class="" href="../swap/">Swap</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../linux/swap/">Swap</a>
+    <a class="" href="../syslinux/">Syslinux</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../linux/syslinux/">Syslinux</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../linux/ubuntu/">Alterar Usuário do arquivo</a>
+    <a class="" href="../ubuntu/">Ubuntu</a>
                 </li>
     </ul>
 	    </li>
@@ -173,26 +185,23 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../composer/">Composer</a>
+    <a class="" href="../../php/composer/">Composer</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../doctrine/">Commands</a>
+    <a class="" href="../../php/doctrine/">Doctrine</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../php/">Php</a>
+    <a class="" href="../../php/php/">Php</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../phpunit/">Mock</a>
+    <a class="" href="../../php/phpunit/">Phpunit</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Zend</a>
-    <ul class="subnav">
-            
-    </ul>
+    <a class="" href="../../php/zend/">Zend</a>
                 </li>
     </ul>
 	    </li>
@@ -230,11 +239,11 @@
     
       
         
-          <li>Php &raquo;</li>
+          <li>Linux &raquo;</li>
         
       
     
-    <li>Zend</li>
+    <li>GRUB</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -244,7 +253,28 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="grub">GRUB</h1>
+<p>Nesse guia, utilizaremos o Grub como o gerenciador de boot, então:</p>
+<pre><code class="shell">pacman -S grub grub-efi-x86_64 efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=boot --recheck
+grub-mkconfig -o /boot/grub/grub.cfg
+mv boot/grubx64.efi boot/bootx64.efi
+efibootmgr -c -g -d /dev/sda -p 1 -w -L boot -l '\\EFI\\boot\\bootx64.efi'
+efibootmgr -n IDBOOT
+</code></pre>
+
+<h2 id="encryption-com-grub">Encryption com GRUB</h2>
+<pre><code>/etc/mkinitcpio.conf
+HOOKS=(base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems fsck)
+</code></pre>
+
+<pre><code>/etc/default/grub
+GRUB_CMDLINE_LINUX=&quot;cryptdevice=/dev/sda2:cryptroot&quot;
+GRUB_ENABLE_CRYPTODISK=y
+</code></pre>
+
+<pre><code>mkinitcpio -p linux
+</code></pre>
               
             </div>
           </div>
@@ -252,10 +282,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../terminais/tmux/" class="btn btn-neutral float-right" title="Tmux">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../scrot/" class="btn btn-neutral float-right" title="Scrot">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../phpunit/" class="btn btn-neutral" title="Mock"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../arch/" class="btn btn-neutral" title="Preferencia IPV4"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -281,10 +311,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../phpunit/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../arch/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../terminais/tmux/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../scrot/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
