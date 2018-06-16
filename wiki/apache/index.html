@@ -57,13 +57,19 @@
     <a class="current" href="./">Apache</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#virtual-host-example">Virtual Host Example</a></li>
+    <li class="toctree-l2"><a href="#apache">Apache</a></li>
     
-
-    <li class="toctree-l2"><a href="#ativando-virtual-host">Ativando Virtual Host</a></li>
-    
-
-    <li class="toctree-l2"><a href="#modrewrite">ModRewrite</a></li>
+        <ul>
+        
+            <li><a class="toctree-l3" href="#virtual-host-example">Virtual Host Example</a></li>
+        
+            <li><a class="toctree-l3" href="#ativando-virtual-host">Ativando Virtual Host</a></li>
+        
+            <li><a class="toctree-l3" href="#modrewrite">ModRewrite</a></li>
+        
+            <li><a class="toctree-l3" href="#arch_1">Arch</a></li>
+        
+        </ul>
     
 
     </ul>
@@ -241,7 +247,8 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="virtual-host-example">Virtual Host Example</h3>
+                <h1 id="apache">Apache</h1>
+<h2 id="virtual-host-example">Virtual Host Example</h2>
 <pre><code>&lt;VirtualHost *:80&gt;
     ServerName jhonmike.com.br
     ServerAlias www.jhonmike.com.br
@@ -249,23 +256,32 @@
     ServerAdmin developer@jhonmike.com.br
     DocumentRoot /var/www/jhonmike/public
     &lt;Directory /var/www/jhonmike/public&gt;
-        Options Indexes FollowSymLinks MultiViews
+        Options Indexes FollowSymLinks
         AllowOverride All
-        Order allow,deny
-        allow from all
+        Require all granted
     &lt;/Directory&gt;
 
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 &lt;/VirtualHost&gt;
-
 </code></pre>
 
-<h3 id="ativando-virtual-host">Ativando Virtual Host</h3>
+<p>Apache &gt; 2.4 using <code>Require all granted</code> instead of:</p>
+<pre><code>Order allow,deny
+Allow from all
+</code></pre>
+
+<h2 id="ativando-virtual-host">Ativando Virtual Host</h2>
+<h3 id="arch">Arch</h3>
+<p>Descomente <code>/etc/httpd/conf/extra/httpd-vhosts.conf</code> do arquivo <code>/etc/httpd/conf/httpd.conf</code> e adicione seus vhosts lá.</p>
+<h3 id="ubuntu">Ubuntu</h3>
 <pre><code class="bash">a2ensite /etc/apache2/sites-available/jhonmike.com.br.conf
 </code></pre>
 
-<h3 id="modrewrite">ModRewrite</h3>
+<h2 id="modrewrite">ModRewrite</h2>
+<h2 id="arch_1">Arch</h2>
+<p>Descomente <code>LoadModule rewrite_module modules/mod_rewrite.so</code> do arquivo <code>/etc/httpd/conf/httpd.conf</code> e restart o serviço <code>httpd</code></p>
+<h3 id="ubuntu_1">Ubuntu</h3>
 <p>Para habilitar o módulo no Apache basta esta linha:</p>
 <pre><code class="bash">a2enmod rewrite
 </code></pre>

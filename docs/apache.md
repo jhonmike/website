@@ -1,4 +1,6 @@
-### Virtual Host Example
+# Apache
+
+## Virtual Host Example
 
 ```
 <VirtualHost *:80>
@@ -8,25 +10,41 @@
     ServerAdmin developer@jhonmike.com.br
     DocumentRoot /var/www/jhonmike/public
     <Directory /var/www/jhonmike/public>
-        Options Indexes FollowSymLinks MultiViews
+        Options Indexes FollowSymLinks
         AllowOverride All
-        Order allow,deny
-        allow from all
+        Require all granted
     </Directory>
 
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-
 ```
 
-### Ativando Virtual Host
+Apache > 2.4 using `Require all granted` instead of:
+```
+Order allow,deny
+Allow from all
+```
+
+## Ativando Virtual Host
+
+### Arch
+
+Descomente `/etc/httpd/conf/extra/httpd-vhosts.conf` do arquivo `/etc/httpd/conf/httpd.conf` e adicione seus vhosts lá.
+
+### Ubuntu
 
 ```bash
 a2ensite /etc/apache2/sites-available/jhonmike.com.br.conf
 ```
 
-### ModRewrite
+## ModRewrite
+
+## Arch
+
+Descomente `LoadModule rewrite_module modules/mod_rewrite.so` do arquivo `/etc/httpd/conf/httpd.conf` e restart o serviço `httpd`
+
+### Ubuntu
 
 Para habilitar o módulo no Apache basta esta linha:
 
