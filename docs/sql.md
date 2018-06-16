@@ -1,4 +1,6 @@
-# INSERT
+# SQL
+
+## INSERT
 
 ```sql
 INSERT INTO table_name VALUES (value1,value2,value3);
@@ -8,31 +10,31 @@ OR
 INSERT INTO table_name (column1,column2,column3) VALUES (value1,value2,value3);
 ```
 
-# UPDATE
+## UPDATE
 
 ```sql
 UPDATE table_name SET column1=value1,column2=value2 WHERE some_column=some_value;
 ```
 
-# DELETE
+## DELETE
 
 ```sql
 DELETE FROM table_name WHERE some_column=some_value;
 ```
 
-# SELECT
+## SELECT
 
 ```sql
 SELECT * FROM table_name WHERE some_column=some_value ORDER BY column_name ASC, column_name DESC;
 ```
 
-# JOIN
+## JOIN
 
 ```sql
 SELECT * FROM order INNER JOIN customer ON Orders.customerId=Customers.id; 
 ```
 
-# CREATE TABLE
+## CREATE TABLE
 
 ```sql
 CREATE TABLE table_name (
@@ -48,7 +50,7 @@ CREATE TABLE table_name (
 );
 ```
 
-# ALTER TABLE
+## ALTER TABLE
 
 ```sql
 ALTER TABLE client ADD email_accountant varchar(100);
@@ -56,7 +58,7 @@ ALTER TABLE zip_code MODIFY COLUMN zipCode varchar(8);
 ALTER TABLE client CHANGE columnOldName columnNewName varchar(10);
 ```
 
-# Show info table
+## Show info table
 
 ```sql
 DESCRIBE client;

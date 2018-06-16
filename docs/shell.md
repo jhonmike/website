@@ -1,10 +1,12 @@
-# Comando para dar redirect no shell e limpar mensagens
+# Shell
+
+## Comando para dar redirect no shell e limpar mensagens
 
 ```bash
 [:command] &>/dev/null
 ```
 
-# Python pipe
+## Python pipe
 
 
 With Python 2.6+ you can just do:

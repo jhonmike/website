@@ -142,8 +142,13 @@
         },
         {
             "location": "/shell/",
-            "text": "Comando para dar redirect no shell e limpar mensagens\n\n\n[:command] &>/dev/null\n\n\n\n\nPython pipe\n\n\nWith Python 2.6+ you can just do:\n\n\necho '{\"foo\": \"lorem\", \"bar\": \"ipsum\"}' | python -m json.tool\n\n\nor, if the JSON is in a file, you can do:\n\n\npython -m json.tool my_json.json\n\n\nif the JSON is from an internet source such as an API, you can use\n\n\ncurl http://my_url/ | python -m json.tool\n\n\nfor convenience in all of these cases you can make an alias:\n\n\nalias prettyjson='python -m json.tool'",
-            "title": "Comando para dar redirect no shell e limpar mensagens"
+            "text": "Shell\n\n\nComando para dar redirect no shell e limpar mensagens\n\n\n[:command] &>/dev/null\n\n\n\n\nPython pipe\n\n\nWith Python 2.6+ you can just do:\n\n\necho '{\"foo\": \"lorem\", \"bar\": \"ipsum\"}' | python -m json.tool\n\n\nor, if the JSON is in a file, you can do:\n\n\npython -m json.tool my_json.json\n\n\nif the JSON is from an internet source such as an API, you can use\n\n\ncurl http://my_url/ | python -m json.tool\n\n\nfor convenience in all of these cases you can make an alias:\n\n\nalias prettyjson='python -m json.tool'",
+            "title": "Shell"
+        },
+        {
+            "location": "/shell/#shell",
+            "text": "",
+            "title": "Shell"
         },
         {
             "location": "/shell/#comando-para-dar-redirect-no-shell-e-limpar-mensagens",
@@ -157,8 +162,13 @@
         },
         {
             "location": "/sql/",
-            "text": "INSERT\n\n\nINSERT INTO table_name VALUES (value1,value2,value3);\n\nOR\n\nINSERT INTO table_name (column1,column2,column3) VALUES (value1,value2,value3);\n\n\n\n\nUPDATE\n\n\nUPDATE table_name SET column1=value1,column2=value2 WHERE some_column=some_value;\n\n\n\n\nDELETE\n\n\nDELETE FROM table_name WHERE some_column=some_value;\n\n\n\n\nSELECT\n\n\nSELECT * FROM table_name WHERE some_column=some_value ORDER BY column_name ASC, column_name DESC;\n\n\n\n\nJOIN\n\n\nSELECT * FROM order INNER JOIN customer ON Orders.customerId=Customers.id; \n\n\n\n\nCREATE TABLE\n\n\nCREATE TABLE table_name (\n    id INT AUTO_INCREMENT NOT NULL,\n    sequence INT(10) NOT NULL,\n    account_id INT DEFAULT NULL,\n    revenue_id INT DEFAULT NULL,\n    created DATETIME NOT NULL,\n    updated DATETIME DEFAULT NULL,\n    INDEX IDX_921775439B6B5FBA (account_id),\n    INDEX IDX_92177543224718EB (revenue_id),\n    PRIMARY KEY(id)\n);\n\n\n\n\nALTER TABLE\n\n\nALTER TABLE client ADD email_accountant varchar(100);\nALTER TABLE zip_code MODIFY COLUMN zipCode varchar(8);\nALTER TABLE client CHANGE columnOldName columnNewName varchar(10);\n\n\n\n\nShow info table\n\n\nDESCRIBE client;",
-            "title": "INSERT"
+            "text": "SQL\n\n\nINSERT\n\n\nINSERT INTO table_name VALUES (value1,value2,value3);\n\nOR\n\nINSERT INTO table_name (column1,column2,column3) VALUES (value1,value2,value3);\n\n\n\n\nUPDATE\n\n\nUPDATE table_name SET column1=value1,column2=value2 WHERE some_column=some_value;\n\n\n\n\nDELETE\n\n\nDELETE FROM table_name WHERE some_column=some_value;\n\n\n\n\nSELECT\n\n\nSELECT * FROM table_name WHERE some_column=some_value ORDER BY column_name ASC, column_name DESC;\n\n\n\n\nJOIN\n\n\nSELECT * FROM order INNER JOIN customer ON Orders.customerId=Customers.id; \n\n\n\n\nCREATE TABLE\n\n\nCREATE TABLE table_name (\n    id INT AUTO_INCREMENT NOT NULL,\n    sequence INT(10) NOT NULL,\n    account_id INT DEFAULT NULL,\n    revenue_id INT DEFAULT NULL,\n    created DATETIME NOT NULL,\n    updated DATETIME DEFAULT NULL,\n    INDEX IDX_921775439B6B5FBA (account_id),\n    INDEX IDX_92177543224718EB (revenue_id),\n    PRIMARY KEY(id)\n);\n\n\n\n\nALTER TABLE\n\n\nALTER TABLE client ADD email_accountant varchar(100);\nALTER TABLE zip_code MODIFY COLUMN zipCode varchar(8);\nALTER TABLE client CHANGE columnOldName columnNewName varchar(10);\n\n\n\n\nShow info table\n\n\nDESCRIBE client;",
+            "title": "SQL"
+        },
+        {
+            "location": "/sql/#sql",
+            "text": "",
+            "title": "SQL"
         },
         {
             "location": "/sql/#insert",
