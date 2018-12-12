@@ -6,18 +6,19 @@
     <description>Recent content in Posts on Jhon Mike</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Dec 2018 23:38:02 -0200</lastBuildDate>
+    <lastBuildDate>Sat, 17 Sep 2016 23:38:02 -0200</lastBuildDate>
     
 	<atom:link href="http://jhonmike.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>My First Post</title>
-      <link>http://jhonmike.com.br/posts/my-first-post/</link>
-      <pubDate>Tue, 11 Dec 2018 23:38:02 -0200</pubDate>
+      <title>Iniciando com Angular2</title>
+      <link>http://jhonmike.com.br/posts/iniciando-com-angular2/</link>
+      <pubDate>Sat, 17 Sep 2016 23:38:02 -0200</pubDate>
       
-      <guid>http://jhonmike.com.br/posts/my-first-post/</guid>
-      <description>Hello Hugo world! No more excuses for having no blog or documentation now!</description>
+      <guid>http://jhonmike.com.br/posts/iniciando-com-angular2/</guid>
+      <description>Configuração do Projeto Finalmente saiu a versão estável do Angular 2, depois de suas 71 releases :p agora estamos com nosso framework totalmente reescrito e componentizado.
+Quero demonstrar neste post apenas como estou trabalhando com o Angular2, talvez não seja o melhor padrão ou o mais completo, mas para mim está fazendo sentido aos poucos estou melhorando, e sempre que possível vou postar novidades sobre como está o projeto e também conforme atualizações do framework vou atualizando o source do tutorial.</description>
     </item>
     
   </channel>

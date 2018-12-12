@@ -2,3 +2,5 @@ baseURL = "http://jhonmike.com.br/"
 languageCode = "en-us"
 title = "Jhon Mike"
 publishDir = "docs"
+PygmentsCodeFences = true
+PygmentsStyle = "monokai"

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jhon Mike</title>
-    <link>http://jhonmike.com.br/</link>
-    <description>Recent content on Jhon Mike</description>
+    <title>Javascript on Jhon Mike</title>
+    <link>http://jhonmike.com.br/tags/javascript/</link>
+    <description>Recent content in Javascript on Jhon Mike</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 17 Sep 2016 23:38:02 -0200</lastBuildDate>
     
-	<atom:link href="http://jhonmike.com.br/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://jhonmike.com.br/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
