@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="generator" content="Hugo 0.52" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Jhon Mike">
+<title>Angular2 com Angular Router 3 - Jhon Mike</title>
+</head>
+<body>
+
+<header>
+  <div class="container clearfix">
+    <a class="path" href="http://jhonmike.com.br/">[Jhon Mike]</a>
+    <span class="caret"># _</span>
+    <div class="right">
+      
+      |
+      <a href="https://medium.com/@jhonmike" class="path" target="_blank">
+        <i class="fab fa-medium"></i>
+      </a>
+      <a href="https://github.com/jhonmike" class="path" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://twitter.com/JhonMikeSoares" class="path" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.facebook.com/jhonmikesoares" class="path" target="_blank">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-09-19">September 19, 2016</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="/categories/Na%20Pr%c3%a1tica">Na Prática</a>
+
+    </span>
+
+
+    <br>
+    <span class="key">tags:</span>
+    <span class="val">
+
+        <a href="/tags/angular">angular</a>
+
+        <a href="/tags/javascript">javascript</a>
+
+    </span>
+
+  </div>
+  <h1 class="headline" itemprop="headline">Angular2 com Angular Router 3</h1>
+  <section class="body" itemprop="articleBody">
+    
+
+<h1 id="part-02-configuração-das-rotas">Part 02 - Configuração das rotas</h1>
+
+<p>Bom vamos dar continuidade à base do projeto do primeiro post, partindo agora para as rotas e criando nossa primeira tela.</p>
+
+<p>Já configuramos o module router na part1 do tutorial, agora vamos botar em prática e aplicar essas rotas iniciando com a criação do arquivo src/app.rounting.ts nele terá a configuração das rotas.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// src/app.rounting.ts
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">Routes</span>, <span style="color:#a6e22e">RouterModule</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@angular/router&#39;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appRoutes</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Routes</span> <span style="color:#f92672">=</span> [ ];
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">routing</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RouterModule</span>.<span style="color:#a6e22e">forRoot</span>(<span style="color:#a6e22e">appRoutes</span>);
+</code></pre></div>
+<p>e agora vamos adicioná-lo em nosso modulo principal do projeto, o src/app.module.ts.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// src/app.module.ts
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">NgModule</span>}      <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">BrowserModule</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@angular/platform-browser&#39;</span>;
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">routing</span>}       <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./app.rounting&#34;</span>; <span style="color:#75715e">// &lt;&lt;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">AppComponent</span>}  <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./app.component&#39;</span>;
+
+<span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">NgModule</span>({
+    <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [
+        <span style="color:#a6e22e">BrowserModule</span>,
+        <span style="color:#a6e22e">routing</span> <span style="color:#75715e">// &lt;&lt;
+</span><span style="color:#75715e"></span>    ],
+    <span style="color:#a6e22e">declarations</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">AppComponent</span>],
+    <span style="color:#a6e22e">providers</span><span style="color:#f92672">:</span> [ ],
+    <span style="color:#a6e22e">bootstrap</span><span style="color:#f92672">:</span> [ <span style="color:#a6e22e">AppComponent</span> ]
+})
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppModule</span> { }
+</code></pre></div>
+<p>algo necessário para as rotas funcionar é utilizar a tag base do html5 no head de seu arquivo index.html</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">base</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span>&gt;</code></pre></div>
+<p>até agora apenas criamos nosso arquivo de configurações das rotas e o adicionamos ao módulo do projeto, antes de iniciar a criação das primeiras telas vamos adicionar a tag router-outlet do modulo router do angular dentro do componente src/app.component.ts</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// src/app.component.ts
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">Component</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
+
+<span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">Component</span>({
+    <span style="color:#a6e22e">selector</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;my-app&#39;</span>,
+    <span style="color:#a6e22e">template</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`&lt;router-outlet&gt;&lt;/router-outlet&gt;`</span> <span style="color:#75715e">// &lt;&lt;
+</span><span style="color:#75715e"></span>})
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppComponent</span> { }
+</code></pre></div>
+<p>a partir de agora podemos iniciar a criação da primeira tela do nosso projeto e configurar a nossa primeira rota, vamos criar nada mais nada menos que o componente HOME, para organizar melhor os componentes vamos usar a pasta screen para componentes referenciados em rotas, agora crie o arquivo src/screen/home/home.component.ts</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// src/screen/home/home.component.ts
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">Component</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@angular/core&#34;</span>;
+
+<span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">Component</span>({
+    <span style="color:#a6e22e">selector</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;app-home&#39;</span>,
+    <span style="color:#a6e22e">template</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`&lt;h1&gt;Page Home&lt;/h1&gt;`</span>
+})
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HomeComponent</span> { }
+</code></pre></div>
+<p>por que colocamos o componente home dentro de uma pasta chamada home? apenas porque caso eu queira separar e criar o arquivo home.component.html com o template de nosso componente ou um home.component.css e até nossos testes home.component.spec.ts que será legal deixar todo agrupado com nosso componente, pelo menos essa é a base para componentização.</p>
+
+<p>e agora dando continuidade, vamos registrar nosso component no app.module.ts</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// app.module.ts
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">NgModule</span>}      <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">BrowserModule</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@angular/platform-browser&#39;</span>;
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">routing</span>}       <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./app.rounting&#34;</span>;
+
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">AppComponent</span>}  <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./app.component&#39;</span>;
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">HomeComponent</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./screen/home/home.component&#34;</span>; <span style="color:#75715e">// &lt;&lt;
+</span><span style="color:#75715e"></span>
+<span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">NgModule</span>({
+    <span style="color:#a6e22e">imports</span><span style="color:#f92672">:</span> [
+        <span style="color:#a6e22e">BrowserModule</span>,
+        <span style="color:#a6e22e">routing</span>
+    ],
+    <span style="color:#a6e22e">declarations</span><span style="color:#f92672">:</span> [
+        <span style="color:#a6e22e">AppComponent</span>,
+        <span style="color:#a6e22e">HomeComponent</span> <span style="color:#75715e">// &lt;&lt;
+</span><span style="color:#75715e"></span>    ],
+    <span style="color:#a6e22e">providers</span><span style="color:#f92672">:</span> [ ],
+    <span style="color:#a6e22e">bootstrap</span><span style="color:#f92672">:</span> [ <span style="color:#a6e22e">AppComponent</span> ]
+})
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppModule</span> { }
+</code></pre></div>
+<p>agora basta editar nosso arquivo app.rounting.ts e adicionar nossa rota home</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// app.rounting.ts
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">Routes</span>, <span style="color:#a6e22e">RouterModule</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@angular/router&#39;</span>;
+
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">HomeComponent</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./screen/home/home.component&#34;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appRoutes</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Routes</span> <span style="color:#f92672">=</span> [
+    {
+        <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+        <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">HomeComponent</span>
+    }
+];
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">routing</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RouterModule</span>.<span style="color:#a6e22e">forRoot</span>(<span style="color:#a6e22e">appRoutes</span>);
+</code></pre></div>
+<p>agora basta editar nosso arquivo app.rounting.ts e adicionar nossa rota home</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// app.rounting.ts
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">Routes</span>, <span style="color:#a6e22e">RouterModule</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@angular/router&#39;</span>;
+
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">HomeComponent</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./screen/home/home.component&#34;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appRoutes</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Routes</span> <span style="color:#f92672">=</span> [
+    {
+        <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>,
+        <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">HomeComponent</span>
+    }
+];
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">routing</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RouterModule</span>.<span style="color:#a6e22e">forRoot</span>(<span style="color:#a6e22e">appRoutes</span>);
+</code></pre></div>
+<p>acho que aqui já podemos rodar e testar nossa primeira tela do projeto executando o comando:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm start</code></pre></div>
+<p>espero que ajude o pessoal que está começando com o NG2 e qualquer dúvida sintam-se à vontade de comentar, até a próxima!</p>
+
+  </section>
+</article>
+
+</main>
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2016 Jhon Mike</span>
+  </div>
+</footer>
+
+<script defer src="https://use.fontawesome.com/releases/v5.6.0/js/all.js" integrity="sha384-z9ZOvGHHo21RqN5De4rfJMoAxYpaVoiYhuJXPyVmSs8yn20IE3PmBM534CffwSJI" crossorigin="anonymous"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-66932751-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-66932751-1');
+</script>
+</body>
+</html>
+

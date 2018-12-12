@@ -7,7 +7,7 @@ tags: ["angular", "javascript"]
 categories: ["Na Prática"]
 ---
 
-#  Configuração do Projeto
+#  Part 01 - Configuração do Projeto
 
 Finalmente saiu a versão estável do Angular 2, depois de suas 71 releases :p agora estamos com nosso framework totalmente reescrito e componentizado.
 

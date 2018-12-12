@@ -6,10 +6,31 @@
     <description>Recent content in Javascript on Jhon Mike</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Sep 2016 23:38:02 -0200</lastBuildDate>
+    <lastBuildDate>Sun, 25 Sep 2016 01:06:40 -0200</lastBuildDate>
     
 	<atom:link href="http://jhonmike.com.br/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Angular2 Material</title>
+      <link>http://jhonmike.com.br/posts/angular2-material/</link>
+      <pubDate>Sun, 25 Sep 2016 01:06:40 -0200</pubDate>
+      
+      <guid>http://jhonmike.com.br/posts/angular2-material/</guid>
+      <description>Part 03 - Dando uma cara para o projeto no estilo google app Nesse pequeno e simples tutorial vamos dar continuidade no projetinho que você pode conferir a part1 e a part2, então vamos dar uma cara ao projeto usando o Angular Material 2 desda instalação até adicionarmos alguns componentes em nosso template.
+Adicionando os módulos que vamos usar no package.json, detalhe não vamos adicionar todos os módulos do angular material, apenas o core e os 5 primeiros componentes que peguei da lista no atual readme do projeto no caso o core e os componentes md-button, md-card, md-checkbox, md-icon, md-input e md-radio.</description>
+    </item>
+    
+    <item>
+      <title>Angular2 com Angular Router 3</title>
+      <link>http://jhonmike.com.br/posts/angular2-com-angular-router-3/</link>
+      <pubDate>Mon, 19 Sep 2016 02:06:40 -0200</pubDate>
+      
+      <guid>http://jhonmike.com.br/posts/angular2-com-angular-router-3/</guid>
+      <description>Part 02 - Configuração das rotas Bom vamos dar continuidade à base do projeto do primeiro post, partindo agora para as rotas e criando nossa primeira tela.
+Já configuramos o module router na part1 do tutorial, agora vamos botar em prática e aplicar essas rotas iniciando com a criação do arquivo src/app.rounting.ts nele terá a configuração das rotas.
+// src/app.rounting.ts import {Routes, RouterModule} from &amp;#39;@angular/router&amp;#39;; const appRoutes: Routes = [ ]; export const routing = RouterModule.</description>
+    </item>
     
     <item>
       <title>Iniciando com Angular2</title>
@@ -17,7 +38,7 @@
       <pubDate>Sat, 17 Sep 2016 23:38:02 -0200</pubDate>
       
       <guid>http://jhonmike.com.br/posts/iniciando-com-angular2/</guid>
-      <description>Configuração do Projeto Finalmente saiu a versão estável do Angular 2, depois de suas 71 releases :p agora estamos com nosso framework totalmente reescrito e componentizado.
+      <description>Part 01 - Configuração do Projeto Finalmente saiu a versão estável do Angular 2, depois de suas 71 releases :p agora estamos com nosso framework totalmente reescrito e componentizado.
 Quero demonstrar neste post apenas como estou trabalhando com o Angular2, talvez não seja o melhor padrão ou o mais completo, mas para mim está fazendo sentido aos poucos estou melhorando, e sempre que possível vou postar novidades sobre como está o projeto e também conforme atualizações do framework vou atualizando o source do tutorial.</description>
     </item>
     

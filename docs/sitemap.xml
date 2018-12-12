@@ -3,13 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://jhonmike.com.br/posts/angular2-material/</loc>
+    <lastmod>2016-09-25T01:06:40-02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jhonmike.com.br/posts/angular2-com-angular-router-3/</loc>
+    <lastmod>2016-09-19T02:06:40-02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://jhonmike.com.br/posts/iniciando-com-angular2/</loc>
     <lastmod>2016-09-17T23:38:02-02:00</lastmod>
   </url>
   
   <url>
     <loc>http://jhonmike.com.br/tags/angular/</loc>
-    <lastmod>2016-09-17T23:38:02-02:00</lastmod>
+    <lastmod>2016-09-25T01:06:40-02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -20,31 +30,31 @@
   
   <url>
     <loc>http://jhonmike.com.br/tags/javascript/</loc>
-    <lastmod>2016-09-17T23:38:02-02:00</lastmod>
+    <lastmod>2016-09-25T01:06:40-02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://jhonmike.com.br/</loc>
-    <lastmod>2016-09-17T23:38:02-02:00</lastmod>
+    <lastmod>2016-09-25T01:06:40-02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://jhonmike.com.br/categories/na-pr%C3%A1tica/</loc>
-    <lastmod>2016-09-17T23:38:02-02:00</lastmod>
+    <lastmod>2016-09-25T01:06:40-02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://jhonmike.com.br/posts/</loc>
-    <lastmod>2016-09-17T23:38:02-02:00</lastmod>
+    <lastmod>2016-09-25T01:06:40-02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://jhonmike.com.br/tags/</loc>
-    <lastmod>2016-09-17T23:38:02-02:00</lastmod>
+    <lastmod>2016-09-25T01:06:40-02:00</lastmod>
     <priority>0</priority>
   </url>
   
