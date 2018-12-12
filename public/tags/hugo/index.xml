@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Jhon Mike</title>
+    <link>http://jhonmike.com.br/tags/hugo/</link>
+    <description>Recent content in Hugo on Jhon Mike</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Dec 2018 23:38:02 -0200</lastBuildDate>
+    
+	<atom:link href="http://jhonmike.com.br/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My First Post</title>
+      <link>http://jhonmike.com.br/posts/my-first-post/</link>
+      <pubDate>Tue, 11 Dec 2018 23:38:02 -0200</pubDate>
+      
+      <guid>http://jhonmike.com.br/posts/my-first-post/</guid>
+      <description>Hello Hugo world! No more excuses for having no blog or documentation now!</description>
+    </item>
+    
+  </channel>
+</rss>

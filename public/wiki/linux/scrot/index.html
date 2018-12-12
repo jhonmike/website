@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Jhon Mike <developer@jhonmike.com.br>">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Scrot - Jhon Mike Wiki</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Scrot";
+    var mkdocs_page_input_path = "linux/scrot.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Jhon Mike Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Welcome to my Wiki</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../apache/">Apache</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../docker/">Docker</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../go/">Go Lang</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../ingles/">Ingles</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mkdocs/">Welcome to MkDocs</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../shell/">Shell</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../sql/">SQL</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Ecmascript</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../ecmascript/angular/">Angular</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Editor</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../editor/sublime-text/">My Config Sublime</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../editor/vim/">Vim Atalhos</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Interfaces</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../interfaces/i3wm/">I3wm</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../interfaces/openbox/">Openbox</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Linux</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-instalacao/">Instalação Arch</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../arch-nvidia/">Instalação</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../arch/">Preferencia IPV4</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../grub/">GRUB</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Scrot</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#scrot">Scrot</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#screenshot-da-tela-toda">Screenshot da tela toda</a></li>
+        
+            <li><a class="toctree-l4" href="#seleciona-a-area-com-o-mouse">Seleciona a área com o mouse</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../swap/">Swap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../syslinux/">Syslinux</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ubuntu/">Alterar Usuário do arquivo</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Php</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../php/composer/">Composer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../php/doctrine/">Commands</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../php/php/">Php</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../php/phpunit/">Mock</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../php/zend/">Zend</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Terminais</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../terminais/tmux/">TMUX</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Jhon Mike Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Linux &raquo;</li>
+        
+      
+    
+    <li>Scrot</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="scrot">Scrot</h1>
+<h3 id="screenshot-da-tela-toda">Screenshot da tela toda</h3>
+<p>manda para ~/imagens/shots e mostra com o gpicview</p>
+<p><code>scrot '%Y-%m-%d-%H:%M:%S_$wx$h_screenshot.png' -e 'mv $f ~/imagens/shots/; gpicview ~/imagens/shots/$f'</code></p>
+<h3 id="seleciona-a-area-com-o-mouse">Seleciona a área com o mouse</h3>
+<p><code>scrot -s '%Y-%m-%d-%H:%M:%S_$wx$h_screenshot.png' -e 'mv $f ~/imagens/shots/; gpicview ~/imagens/shots/$f'</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../swap/" class="btn btn-neutral float-right" title="Swap">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../grub/" class="btn btn-neutral" title="GRUB"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../grub/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../swap/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
