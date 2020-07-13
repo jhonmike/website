@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Jhon Mike <jhon.msdev@gmail.com>">
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Commands - Jhon Mike Wiki</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Commands";
+    var mkdocs_page_input_path = "php/doctrine.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Jhon Mike Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to my Wiki</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../apache/">Apache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docker/">Docker</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../go/">Go Lang</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ingles/">Ingles</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../mkdocs/">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../shell/">Shell</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sql/">SQL</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Ecmascript</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ecmascript/angular/">Angular</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Editor</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../editor/sublime-text/">My Config Sublime</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../editor/vim/">Vim Atalhos</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Interfaces</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../interfaces/i3wm/">I3wm</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../interfaces/openbox/">Openbox</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Linux</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../linux/arch-instalacao/">Instalação Arch</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../linux/arch-nvidia/">Instalação</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../linux/arch/">Preferencia IPV4</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../linux/grub/">GRUB</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../linux/scrot/">Scrot</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../linux/swap/">Swap</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../linux/syslinux/">Syslinux</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../linux/ubuntu/">Alterar Usuário do arquivo</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Php</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../composer/">Composer</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Commands</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../php/">Php</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../phpunit/">Mock</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../zend/">Zend</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Terminais</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../terminais/tmux/">TMUX</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Jhon Mike Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Php &raquo;</li>
+        
+      
+    
+    <li>Commands</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="commands">Commands</h1>
+<p>Prefixo instalado via composer: <code>php vendor/bin/doctrine *</code></p>
+<ul>
+<li><code>orm:schema-tool:create</code> - Create database</li>
+<li><code>orm:schema-tool:drop --force</code> - Delete database</li>
+<li><code>orm:schema:update --dump-sql</code> - Dump or update modifications</li>
+<li><code>orm:validate-schema</code> - Validate Entity with DataBase</li>
+<li><code>orm:convert-mapping --force  --from-database annotation [path]</code> - Generate entities by database</li>
+<li><code>orm:generate-entities [path] --generate-annotations=true</code> - Update entities and generate entities with annotations, get and set</li>
+</ul>
+<h1 id="persisting-usage">Persisting Usage</h1>
+<h3 id="-persisting-objects">- Persisting objects</h3>
+<pre><code class="php">$user1 = new User();
+$user1-&gt;setFullName('MyName');
+$em-&gt;persist($user1);
+
+$user2 = new User();
+$user2-&gt;setFullName('MyName2');
+$em-&gt;persist($user2);
+
+$em-&gt;flush();
+</code></pre>
+
+<h3 id="-updating-an-object">- Updating an object</h3>
+<pre><code class="php">$user = $em-&gt;find('User', 1);
+$user-&gt;setName('MyName');
+$em-&gt;flush();
+</code></pre>
+
+<h3 id="-deleting-an-object">- Deleting an object</h3>
+<pre><code class="php">$user = $em-&gt;find('User', 1);
+$em-&gt;remove($user);
+$em-&gt;flush();
+</code></pre>
+
+<h1 id="retrieving-an-object">Retrieving an object</h1>
+<h2 id="-repositories">- Repositories</h2>
+<h3 id="single-user-by-id">Single user by id</h3>
+<pre><code class="php">$user1 = $em-&gt;find('User', 1);
+$user2 = $em-&gt;getRepository('User')-&gt;find(1);
+</code></pre>
+
+<h3 id="single-user-by-name-and-type">Single user by name and type.</h3>
+<pre><code class="php">$user = $em-&gt;getRepository('User')-&gt;findOneBy(
+    array('name' =&gt; 'MyName', 'type' =&gt; 'MyType'));
+</code></pre>
+
+<h3 id="single-user-by-its-name">Single user by its Name</h3>
+<pre><code class="php">$user = $em-&gt;getRepository('User')-&gt;findOneByName('MyName');
+</code></pre>
+
+<h3 id="find-all-users">Find All users</h3>
+<pre><code class="php">$users = $em-&gt;getRepository('User')-&gt;findAll();
+</code></pre>
+
+<h3 id="group-users-by-type">Group users by type</h3>
+<pre><code class="php">$users = $em-&gt;getRepository('User')-&gt;findByType('MyType');
+</code></pre>
+
+<h3 id="group-users-by-criteria-order-limit-offset">Group users by criteria, order, limit, offset.</h3>
+<pre><code class="php">$users = $em-&gt;getRepository('User')-&gt;findBy(
+    array('name' =&gt; 'MyName'), array('id' =&gt; 'ASC'), 10, 0);
+</code></pre>
+
+<h2 id="-dql">- DQL</h2>
+<h2 id="-query-builder">- Query Builder</h2>
+<h3 id="example-between">Example BETWEEN</h3>
+<pre><code class="php">$queryBuilder = $em-&gt;createQueryBuilder();
+$queryBuilder-&gt;select('n')
+    -&gt;from(Example\Entity::class, 'n')
+    -&gt;where('n.date BETWEEN :from AND :to')
+
+$queryBuilder-&gt;setParameters([
+    'from' =&gt; $from,
+    'to' =&gt; $to
+]);
+
+$result = $queryBuilder-&gt;getQuery()-&gt;fetchAll();
+</code></pre>
+
+<h1 id="associations">Associations</h1>
+<h2 id="-one-to-one">- One to One</h2>
+<h3 id="mapping-one-to-one">Mapping One to One</h3>
+<pre><code class="php">use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name=&quot;user&quot;)
+ */
+class User
+{
+    /**
+     * @ORM\OneToOne(targetEntity=&quot;Entity\Role&quot;, mappedBy=&quot;role&quot;, cascade={&quot;persist&quot;})
+     */
+    protected $role;
+}
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name=&quot;role&quot;)
+ */
+class Role
+{
+    /**
+     * @ORM\OneToOne(targetEntity=&quot;Entity\User&quot;, inversedBy=&quot;role&quot;, cascade={&quot;persist&quot;})
+     * @ORM\JoinColumn(name=&quot;userId&quot;, referencedColumnName=&quot;id&quot;, unique=false, nullable=false)
+     */
+    protected $user;
+}
+</code></pre>
+
+<h3 id="usage-example-one-to-one">Usage example One to One</h3>
+<pre><code class="php">//persist
+$user = new Entity\User();
+$user-&gt;setEmail('email');
+$user-&gt;setName('name');
+
+$role = new Entity\Role;
+$role-&gt;setName('name');
+
+$role-&gt;setUser($user);
+$user-&gt;setRole($role);
+
+$em-&gt;persist($user);
+$em-&gt;flush();
+
+//retrieving
+$user = $em-&gt;find('User', $user-&gt;getId());
+$user-&gt;getRole();
+</code></pre>
+
+<h2 id="-one-to-many">- One to Many</h2>
+<h3 id="mapping-one-to-many">Mapping One to Many</h3>
+<pre><code class="php">use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name=&quot;user&quot;)
+ */
+class User
+{
+    /**
+     * @ORM\OneToMany(targetEntity=&quot;Comment&quot;, mappedBy=&quot;user&quot;, cascade={&quot;persist&quot;})
+     */
+    protected $comments;
+
+    public function __construct()
+    {
+        $this-&gt;comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+}
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name=&quot;comment&quot;)
+ */
+class Comment
+{
+    /**
+     * @ORM\ManyToOne(targetEntity=&quot;User&quot;, inversedBy=&quot;comments&quot;, cascade={&quot;persist&quot;})
+     * @ORM\JoinColumn(name=&quot;userId&quot;, referencedColumnName=&quot;id&quot;, unique=false, nullable=false)
+     */
+    protected $user;
+}
+</code></pre>
+
+<h3 id="usage-example-one-to-many">Usage example One to Many</h3>
+<pre><code class="php">//persist
+$user = new Entity\User();
+$user-&gt;setEmail('email');
+$user-&gt;setName('name');
+
+$comment1 = new Entity\Comment;
+$comment1-&gt;setCommentText('comment1');
+$comment1-&gt;setUser($user);
+$comment2 = new Entity\Comment;
+$comment2-&gt;setCommentText('comment2');
+$comment2-&gt;setUser($user);
+
+$user-&gt;getComments()-&gt;add($comment2);
+$user-&gt;getComments()-&gt;add($comment1);
+
+$em-&gt;persist($user);
+$em-&gt;flush();
+
+//retrieving
+$user = $em-&gt;find('User', $user-&gt;getId());
+$user-&gt;getComments()-&gt;toArray();
+</code></pre>
+
+<h3 id="mapping-one-to-many-self-ref">Mapping One to Many Self Ref</h3>
+<pre><code class="php">class Comment
+{
+    /**
+     * @ORM\OneToMany(targetEntity=&quot;Comment&quot;, mappedBy=&quot;parent&quot;, cascade={&quot;persist&quot;})
+     */
+    protected $children;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=&quot;Comment&quot;, inversedBy=&quot;children&quot;, cascade={&quot;persist&quot;})
+     * @ORM\JoinColumn(name=&quot;parentId&quot;, referencedColumnName=&quot;id&quot;, unique=false, nullable=true)
+     */
+    protected $parent;
+
+    public function __construct()
+    {
+        $this-&gt;children = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+}
+</code></pre>
+
+<h3 id="usage-example-one-to-many-self-ref">Usage example One to Many Self Ref</h3>
+<pre><code class="php">// persisting
+$comment2 = new Entity\Comment;
+$comment2-&gt;setCommentText('parent');
+
+$comment1 = new Entity\Comment;
+$comment1-&gt;setCommentText('children1');
+$comment1-&gt;setParent($comment2);
+$comment3 = new Entity\Comment;
+$comment3-&gt;setCommentText('children2');
+$comment3-&gt;setParent($comment2);
+
+$comment2-&gt;getChildrens()-&gt;add($comment1);
+$comment2-&gt;getChildrens()-&gt;add($comment3);
+
+$em-&gt;persist($comment2);
+$em-&gt;flush();
+
+//retrieving
+$comment = $em-&gt;find('Comment', $comment2-&gt;getId());
+$comment-&gt;getChildrens();
+</code></pre>
+
+<h2 id="-many-to-many">- Many to Many</h2>
+<h3 id="mapping-many-to-many">Mapping Many to Many</h3>
+<pre><code class="php">use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name=&quot;user&quot;)
+ */
+class User
+{
+    /**
+     * @ORM\ManyToMany(targetEntity=&quot;Category&quot;, inversedBy=&quot;users&quot;, cascade={&quot;persist&quot;})
+     * @ORM\JoinColumn(name=&quot;categoryId&quot;, referencedColumnName=&quot;id&quot;, unique=false, nullable=true)
+     */
+    protected $categories;
+
+    public function __construct()
+    {
+        $this-&gt;categories = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+}
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name=&quot;category&quot;)
+ */
+class Category
+{
+    /**
+     * @ORM\ManyToMany(targetEntity=&quot;User&quot;, mappedBy=&quot;categories&quot;, cascade={&quot;persist&quot;})
+     */
+    protected $users;
+
+    public function __construct()
+    {
+        $this-&gt;users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+}
+</code></pre>
+
+<h3 id="usage-example-many-to-many">Usage example Many to Many</h3>
+<pre><code class="php">// persisting
+$user1 = new Entity\User();
+$user1-&gt;setEmail('email');
+$user1-&gt;setName('Plumber Builder');
+
+$user2 = new Entity\User;
+$user2-&gt;setEmail('email');
+$user2-&gt;setName('Plaster Builder');
+
+$categoryPlumber = new Entity\Category;
+$categoryPlumber-&gt;setName('Plumber Category');
+$categoryBeer_Drinkers = new Entity\Category;
+$categoryBeer_Drinkers-&gt;setName('Beer_Drinkers Category');
+
+$categoryPlumber-&gt;getUsers()-&gt;add($user1);
+$categoryBeer_Drinkers-&gt;getUsers()-&gt;add($user2);
+$categoryBeer_Drinkers-&gt;getUsers()-&gt;add($user1);
+
+$user1-&gt;getCategories()-&gt;add($categoryPlumber);
+$user1-&gt;getCategories()-&gt;add($categoryBeer_Drinkers);
+$user2-&gt;getCategories()-&gt;add($categoryBeer_Drinkers);
+
+$em-&gt;persist($user1);
+$em-&gt;persist($user2);
+$em-&gt;flush();
+
+//retrieving
+$user1 = $em-&gt;find('User', $user1-&gt;getId());
+//get last categories for user1
+$user1-&gt;getCategories()-&gt;toArray());
+//get last category(Beer_Drinkers Category) and all users for this category
+$user1-&gt;getCategories()-&gt;last()-&gt;getUsers()-&gt;toArray();
+</code></pre>
+
+<h1 id="lifecycle-callbacks">Lifecycle callbacks</h1>
+<p>Annotation which has to be set on the entity-class PHP DocBlock to notify Doctrine that this entity has entity lifecycle callback annotations set on at least one of its methods. Using @PostLoad, @PrePersist, @PostPersist, @PreRemove, @PostRemove, @PreUpdate or @PostUpdate without this marker annotation will make Doctrine ignore the callbacks.</p>
+<pre><code class="php">use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\MappedSuperclass
+ * @ORM\HasLifecycleCallbacks
+ */
+abstract class AbstractEntity
+{
+    /**
+     * @ORM\Column(name=&quot;updated_at&quot;, type=&quot;datetime&quot;)
+     */
+    private $updatedAt;
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate
+     */
+    public function preUpdated()
+    {
+        $this-&gt;updated = new \DateTime();
+    }
+
+    /**
+     * @PostPersist
+     */
+    public function sendOptinMail() {}
+}
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name=&quot;user&quot;)
+ */
+class User extends Abstract
+{
+    // [...]
+}
+</code></pre>
+
+<h1 id="custom-repository">Custom Repository</h1>
+<p>Entity mapping for repository class</p>
+<pre><code class="php">use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity(repositoryClass=&quot;Repository\Comment&quot;)
+ */
+class Comment {
+    // [...]
+}
+
+//repository Class
+use Doctrine\ORM\EntityRepository;
+
+class Comment extends EntityRepository
+{
+    public function findUserComments($userId)
+    {
+        $query = $this-&gt;_em-&gt;createQuery(&quot;SELECT u FROM Entity\Comment u WHERE u.userId = :userId&quot;);
+        $query-&gt;setParameters(array('userId' =&gt; $userId));
+        return $query-&gt;getResult();
+    }
+}
+</code></pre>
+
+<p>In controller</p>
+<pre><code class="php">$repository = $em-&gt;getRepository(Entity\Comment::class);
+$comments = $repository-&gt;findUserComments(10);
+</code></pre>
+
+<h1 id="zend-hydrator">Zend Hydrator</h1>
+<pre><code class="php">use Doctrine\ORM\Mapping as ORM;
+use Zend\Hydrator;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name=&quot;user&quot;)
+ */
+class User
+{
+    // [...]
+
+    public function hydrator(array $options) : User
+    {
+        $hydrator = new Hydrator\ClassMethods();
+        $hydrator-&gt;hydrate($options, $this);
+        return $this;
+    }
+
+    public function extract() : array
+    {
+        $hydrator = new Hydrator\ClassMethods();
+        return $hydrator-&gt;extract($this);
+    }
+}
+</code></pre>
+
+<h1 id="my-entities">My Entities</h1>
+<h3 id="-abstract-entity">- Abstract Entity</h3>
+<pre><code class="php">namespace Core\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Zend\Hydrator;
+
+/**
+ * @author Jhon Mike &lt;developer@jhonmike.com.br&gt;
+ *
+ * @ORM\MappedSuperclass
+ * @ORM\HasLifecycleCallbacks
+ */
+abstract class AbstractEntity
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type=&quot;integer&quot;, nullable=false)
+     * @ORM\GeneratedValue(strategy=&quot;IDENTITY&quot;)
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type=&quot;datetime&quot;, nullable=false)
+     */
+    private $created;
+
+    /**
+     * @ORM\Column(type=&quot;datetime&quot;, nullable=false)
+     */
+    private $updated;
+
+    public function getId() : int
+    {
+        return $this-&gt;id;
+    }
+
+    public function getCreated() : DateTime
+    {
+        return $this-&gt;created;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreated()
+    {
+        $this-&gt;created = new \DateTime();
+    }
+
+
+    public function getUpdated() : DateTime
+    {
+        return $this-&gt;updated;
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function setUpdated()
+    {
+        $this-&gt;updated = new \DateTime();
+    }
+
+    public function hydrator(array $options) : Role
+    {
+        $hydrator = new Hydrator\ClassMethods();
+        $hydrator-&gt;hydrate($options, $this);
+        return $this;
+    }
+
+    public function toArray() : array
+    {
+        $hydrator = new Hydrator\ClassMethods();
+        return $hydrator-&gt;extract($this);
+    }
+}
+</code></pre>
+
+<h3 id="-snippet-entity">- Snippet Entity</h3>
+<pre><code class="php">namespace App\Entity;
+
+use Core\Entity\AbstractEntity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @author Jhon Mike &lt;developer@jhonmike.com.br&gt;
+ *
+ * @ORM\Entity
+ * @ORM\Table(name=&quot;role&quot;)
+ */
+class Role extends AbstractEntity
+{
+    /**
+     * @ORM\Column(type=&quot;string&quot;, length=100, nullable=false)
+     */
+    private $name;
+
+    public function setName(string $name) : Role
+    {
+        $this-&gt;name = $name;
+        return $this;
+    }
+
+    public function getName() : string
+    {
+        return $this-&gt;name;
+    }
+}
+</code></pre>
+
+<h3 id="-snippet-entity-clean">- Snippet Entity Clean</h3>
+<pre><code class="php">namespace App\Entity;
+
+use DateTime;
+use Doctrine\ORM\Mapping as ORM;
+use Zend\Hydrator;
+use Zend\Math\Rand;
+
+/**
+ * @author Jhon Mike &lt;developer@jhonmike.com.br&gt;
+ *
+ * @ORM\Entity
+ * @ORM\Table(name=&quot;role&quot;)
+ * @ORM\HasLifecycleCallbacks
+ */
+class Role
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type=&quot;integer&quot;, nullable=false)
+     * @ORM\GeneratedValue(strategy=&quot;IDENTITY&quot;)
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type=&quot;string&quot;, length=100, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type=&quot;datetime&quot;, nullable=false)
+     */
+    private $created;
+
+    /**
+     * @ORM\Column(type=&quot;datetime&quot;, nullable=false)
+     */
+    private $updated;
+
+    public function getId() : int
+    {
+        return $this-&gt;id;
+    }
+
+    public function setName(string $name) : Role
+    {
+        $this-&gt;name = $name;
+        return $this;
+    }
+
+    public function getName() : string
+    {
+        return $this-&gt;name;
+    }
+
+    public function getCreated() : DateTime
+    {
+        return $this-&gt;created;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function preCreated()
+    {
+        $this-&gt;created = new \DateTime();
+    }
+
+
+    public function getUpdated() : DateTime
+    {
+        return $this-&gt;updated;
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function preUpdated()
+    {
+        $this-&gt;updated = new \DateTime();
+    }
+
+    public function hydrator(array $options) : Role
+    {
+        $hydrator = new Hydrator\ClassMethods();
+        $hydrator-&gt;hydrate($options, $this);
+        return $this;
+    }
+
+    public function toArray() : array
+    {
+        $hydrator = new Hydrator\ClassMethods();
+        return $hydrator-&gt;extract($this);
+    }
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../php/" class="btn btn-neutral float-right" title="Php">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../composer/" class="btn btn-neutral" title="Composer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../composer/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../php/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
