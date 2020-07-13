@@ -1,6 +1,76 @@
-baseURL = "http://jhonmike.com.br/"
-languageCode = "en-us"
-title = "Jhon Mike"
-publishDir = "docs"
-PygmentsCodeFences = true
-PygmentsStyle = "monokai"
+baseurl       = "http://jhonmike.com.br/"
+title         = "Jhon Mike"
+languageCode  = "en-us"
+theme         = "hello-friend-ng"
+paginate      = 10
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
+
+  # Subtitle for home
+  homeSubtitle = "Software Engineer at Conta Azul"
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts = true
+
+  # Enable sharing buttons, if you linke
+  enableSharingButtons = true
+
+  # Metadata mostly used in document's head
+  description = "My new homepage"
+  keywords = "homepage, blog"
+  images = [""]
+
+  # Default theme "light" or "dark"
+  defaultTheme = "dark"
+
+  # Social icons
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/JhonMikeSoares"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:jhon.msdev@gmail.com"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/jhonmike"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/jhonmike/"
+
+  [[params.social]]
+    name = "stackoverflow"
+    url  = "https://stackoverflow.com/users/2296099"
+
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
+
+[languages]
+  [languages.en]
+    title = "Jhon Mike"
+    subtitle = ""
+    # keywords = ""
+    # copyright = ''
+    # readOtherPosts = "Read other posts"
+
+    [languages.en.params.logo]
+      logoText = "jhon mike"
+      logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
+
+  # And you can even create generic menu
+  # [[menu.main]]
+  #   identifier = "blog"
+  #   name       = "Blog"
+  #   url        = "/posts"
